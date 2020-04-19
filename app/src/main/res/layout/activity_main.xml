@@ -4,15 +4,85 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/default_padding"
+    android:paddingRight="@dimen/default_padding"
     tools:context=".MainActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:src="@drawable/logo5"
+
+        app:layout_constraintTop_toTopOf="@id/horizontalGuideLine"
+        tools:layout_editor_absoluteX="105dp" />
+
+    <EditText
+        android:id="@+id/epostaEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/e_posta_edittext_hint"
+
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView"/>
+
+    <EditText
+        android:id="@+id/sifreEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/sifre"
+
+        app:layout_constraintTop_toBottomOf="@+id/epostaEditText"/>
+
+
+    <RelativeLayout
+        android:id="@+id/registrationContainerLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalBottomGuideLine"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/sign_up_label_text"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Üye değil misin?"/>
+        <Button
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Giriş Yap"
+            android:layout_marginLeft="16dp"
+            android:layout_toEndOf="@+id/sign_up_label_text"
+            android:layout_toRightOf="@+id/sign_up_label_text" />
+
+
+
+    </RelativeLayout>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalBottomGuideLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="@dimen/default_padding"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="16dp" />
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
