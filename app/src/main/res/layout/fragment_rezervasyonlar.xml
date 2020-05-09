@@ -6,15 +6,73 @@
     android:background="@drawable/backgroundcustom"
     tools:context=".RezervasyonlarFragment">
 
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Rezervasyonlarım"
-        style="@style/textView"
-        android:textSize="30sp"
-        android:gravity="center"
-        android:layout_centerInParent="true"
-        />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:src="@drawable/ic_action_geri"
+                style="@style/backbutton"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Rezervasyonlarım"
+                style="@style/textView"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/ButtonRezervasyonlarim"
+                style="@style/Button"
+                android:drawableLeft="@drawable/ic_action_date"
+                android:layout_width="match_parent"
+                android:text="Rezervasyonlarım" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/ButtonRezervasyonEkle"
+                style="@style/Button"
+                android:drawableLeft="@drawable/ic_action_add"
+                android:layout_width="match_parent"
+                android:text="Rezervasyon Ekle" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/ButtonParkUzat"
+                style="@style/Button"
+                android:drawableLeft="@drawable/ic_action_clock"
+                android:layout_width="match_parent"
+                android:text="Park Süremi Uzat" />
+        </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>

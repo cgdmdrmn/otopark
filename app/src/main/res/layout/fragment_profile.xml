@@ -7,14 +7,85 @@
     tools:context=".ProfileFragment">
 
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hesabım"
-        style="@style/textView"
-        android:textSize="30sp"
-        android:gravity="center"
-        android:layout_centerInParent="true"
-        />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:src="@drawable/ic_action_geri"
+                style="@style/backbutton"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Hesabım"
+                style="@style/textView"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/ButtonHesabim"
+                style="@style/Button"
+                android:drawableLeft="@drawable/ic_action_person"
+                android:layout_width="match_parent"
+                android:text="Bilgilerim" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/ButtonRezervasyon"
+                style="@style/Button"
+                android:drawableLeft="@drawable/ic_action_date"
+                android:layout_width="match_parent"
+                android:text="Otopark Geçmişim" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/ButtonBildirim"
+                style="@style/Button"
+                android:drawableLeft="@drawable/ic_action_zil"
+                android:layout_width="match_parent"
+                android:text="İletişim Tercihlerim" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/ButtonExit"
+                style="@style/Button"
+                android:drawableLeft="@drawable/ic_action_cikis"
+                android:layout_width="match_parent"
+                android:text="Çıkış Yap" />
+        </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>
