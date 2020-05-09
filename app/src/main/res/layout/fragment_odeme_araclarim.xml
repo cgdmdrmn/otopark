@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Ödeme Araçlarım"
-        android:style="@style/TextView"
+        style="@style/textView"
         android:textSize="30sp"
         android:gravity="center"
         android:layout_centerInParent="true"

@@ -6,15 +6,13 @@
     android:background="@drawable/backgroundcustom"
     tools:context=".CuzdanimFragment">
 
-
     <TextView
+        style="@style/textView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Cüzdanım"
-        android:style="@style/TextView"
-        android:textSize="30sp"
-        android:gravity="center"
         android:layout_centerInParent="true"
-        />
+        android:gravity="center"
+        android:text="Cüzdanım"
+        android:textSize="30sp" />
 
 </RelativeLayout>
