@@ -57,30 +57,28 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
             R.id.nav_plakalarim -> {
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.frame_layout, PlakalarFragment(), " plakalarFragment")
+                    .replace(R.id.frame_layout, PlakalarFragment(), "plakalarFragment")
                     .commit()
             }
-//            R.id.nav_rezervasyonlarim -> {
-//                rezervasyonlarFragment = RezervasyonlarFragment()
-//                supportFragmentManager
-//                    .beginTransaction()
-//                    .replace(R.id.frame_layout, rezervasyonlarFragment)
-//                    .commit()
-//            }
-//            R.id.nav_cuzdanim -> {
-//                cuzdanimFragment = CuzdanimFragment()
-//                supportFragmentManager
-//                    .beginTransaction()
-//                    .replace(R.id.frame_layout, cuzdanimFragment)
-//                    .commit()
-//            }
-//            R.id.nav_odeme_araclarim -> {
-//                odemeAraclarimFragment = OdemeAraclarimFragment()
-//                supportFragmentManager
-//                    .beginTransaction()
-//                    .replace(R.id.frame_layout, odemeAraclarimFragment)
-//                    .commit()
-//            }
+
+            R.id.nav_rezervasyonlarim -> {
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, RezervasyonlarFragment(), "rezervasyonlarFragment")
+                    .commit()
+            }
+            R.id.nav_cuzdanim -> {
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, CuzdanimFragment(), " cuzdanimFragment")
+                    .commit()
+            }
+            R.id.nav_odeme_araclarim -> {
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, OdemeAraclarimFragment(), " odemeAraclarimFragment")
+                    .commit()
+            }
         }
 
         drawerLayout.closeDrawer(GravityCompat.START)
