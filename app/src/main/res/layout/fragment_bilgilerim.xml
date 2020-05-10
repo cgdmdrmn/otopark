@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroundcustom"
-    tools:context="DrawableMenuFragments.ProfileFragment">
-
+    tools:context=".BilgilerimFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,52 +39,66 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
 
-            <Button
-                android:id="@+id/ButtonHesabim"
-                style="@style/Button"
-                android:drawableLeft="@drawable/ic_action_person"
+            <ImageView
+                android:id="@+id/profileImage"
                 android:layout_width="match_parent"
-                android:text="Bilgilerim" />
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_action_person" />
+
+            <TextView
+                android:id="@+id/Textisimsoyisim"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="İsim Soyisim"
+                style="@style/textView"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:layout_weight="1" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/Texteskisifre"
+                android:layout_width="match_parent"
+                android:importantForAutofill="no"
+                android:layout_height="50dp"
+                android:text="Eski şifreniz"
+                android:drawableLeft="@drawable/ic_action_key"
+                style="@style/textView"
+                android:gravity="center"
+                android:layout_centerInParent="true" />
+
+            <EditText
+                android:id="@+id/Textyenisifre"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Yeni şifreniz"
+                android:importantForAutofill="no"
+                android:drawableLeft="@drawable/ic_action_key"
+                style="@style/textView"
+                android:gravity="center"
+                android:layout_centerInParent="true" />
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
 
             <Button
-                android:id="@+id/ButtonRezervasyon"
+                android:id="@+id/ButtonKaydet"
                 style="@style/Button"
-                android:drawableLeft="@drawable/ic_action_date"
                 android:layout_width="match_parent"
-                android:text="Otopark Geçmişim" />
+                android:text="Kaydet" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
 
-            <Button
-                android:id="@+id/ButtonBildirim"
-                style="@style/Button"
-                android:drawableLeft="@drawable/ic_action_zil"
-                android:layout_width="match_parent"
-                android:text="İletişim Tercihlerim" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
 
-            <Button
-                android:id="@+id/ButtonExit"
-                style="@style/Button"
-                android:drawableLeft="@drawable/ic_action_cikis"
-                android:layout_width="match_parent"
-                android:text="Çıkış Yap" />
-        </LinearLayout>
     </LinearLayout>
 
-</RelativeLayout>
+</FrameLayout>

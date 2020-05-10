@@ -1,5 +1,6 @@
 package com.example.otopark
 
+import DrawableMenuFragments.*
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -50,33 +51,38 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
             R.id.nav_hesabim -> {
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.frame_layout, ProfileFragment(), "profileFragment")
+                    .replace(R.id.frame_layout,
+                        ProfileFragment(), "profileFragment")
                     .commit()
             }
 
             R.id.nav_plakalarim -> {
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.frame_layout, PlakalarFragment(), "plakalarFragment")
+                    .replace(R.id.frame_layout,
+                        PlakalarFragment(), "plakalarFragment")
                     .commit()
             }
 
             R.id.nav_rezervasyonlarim -> {
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.frame_layout, RezervasyonlarFragment(), "rezervasyonlarFragment")
+                    .replace(R.id.frame_layout,
+                        RezervasyonlarFragment(), "rezervasyonlarFragment")
                     .commit()
             }
             R.id.nav_cuzdanim -> {
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.frame_layout, CuzdanimFragment(), " cuzdanimFragment")
+                    .replace(R.id.frame_layout,
+                        CuzdanimFragment(), " cuzdanimFragment")
                     .commit()
             }
             R.id.nav_odeme_araclarim -> {
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.frame_layout, OdemeAraclarimFragment(), " odemeAraclarimFragment")
+                    .replace(R.id.frame_layout,
+                        OdemeAraclarimFragment(), " odemeAraclarimFragment")
                     .commit()
             }
         }
