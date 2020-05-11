@@ -8,6 +8,15 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp">
+
+        <include layout="@layout/layout_toolbar" />
+
+    </androidx.appcompat.widget.Toolbar>
+
     <include
         layout="@layout/fragment_ana_ekran"
         android:layout_width="match_parent"

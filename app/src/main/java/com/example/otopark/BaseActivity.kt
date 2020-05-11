@@ -21,8 +21,7 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
         drawerLayout = findViewById(R.id.drawer_layout)
         navView = findViewById(R.id.nav_view)
         setSupportActionBar(toolbar)
-        val actionBar = supportActionBar
-        actionBar?.title = "E-Park"
+
 
         val drawerToggle: ActionBarDrawerToggle = object : ActionBarDrawerToggle(
             this,
