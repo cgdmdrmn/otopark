@@ -1,48 +1,42 @@
-package DrawableMenuFragments
+package com.example.otopark
 
-import Adapter.YakinimdakiOtoparklarAdapter
+import Adapter.OtoparkGecmisimAdapter
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.example.otopark.R
-import kotlinx.android.synthetic.main.fragment_ana_ekran.*
+import kotlinx.android.synthetic.main.fragment_otopark_gecmisim.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-
-
-class AnaEkranFragment : Fragment() {
-    var fragment: Fragment? = null
-
-
-
-
-    private var yakinimdakiOtoparklarAdapter: YakinimdakiOtoparklarAdapter? = null
-    private val yakinimdakiotoparklarList : List<String> =
-    listOf(" Büyük Beşiktaş Otoparkı", "Beşiktaş Kapalı Otopark", "Beltaş Otoparkı", "Ulus Otoparkı")
+/**
+ * A simple [Fragment] subclass.
+ * Use the [OtoparkGecmisimFragment.newInstance] factory method to
+ * create an instance of this fragment.
+ */
+class OtoparkGecmisimFragment : Fragment() {
+    private var otoparkGecmisimAdapter: OtoparkGecmisimAdapter? = null
+    private val otoparkGecmisimList : List<String> =
+        listOf("34 GA 1527", "34 CD 1527", "34 HK 2020")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        yakinimdakiOtoparklarAdapter= YakinimdakiOtoparklarAdapter(yakinimdakiotoparklarList)
-        RecyclerView1.adapter=yakinimdakiOtoparklarAdapter
-
+        otoparkGecmisimAdapter= OtoparkGecmisimAdapter(otoparkGecmisimList)
+        RecyclerView5.adapter=otoparkGecmisimAdapter
 
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ana_ekran, container, false)
+        return inflater.inflate(R.layout.fragment_otopark_gecmisim, container, false)
     }
-
 
     companion object {
         /**
@@ -51,12 +45,12 @@ class AnaEkranFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment AnaEkranFragment.
+         * @return A new instance of fragment OtoparkGecmisimFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            AnaEkranFragment().apply {
+            OtoparkGecmisimFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

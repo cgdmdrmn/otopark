@@ -1,11 +1,13 @@
 package DrawableMenuFragments
 
+import Adapter.OdemeAraclarimAdapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.otopark.R
+import kotlinx.android.synthetic.main.fragment_odeme_araclarim.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,16 +20,15 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class OdemeAraclarimFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var odemeAraclarimAdapter: OdemeAraclarimAdapter? = null
+    private val odemearaclarimlist : List<String> =
+        listOf("4926 **** **** **11", "1527 **** **** **89", "2222 **** **** **15")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        odemeAraclarimAdapter= OdemeAraclarimAdapter(odemearaclarimlist)
+        RecyclerView2.adapter=odemeAraclarimAdapter
+
     }
 
     override fun onCreateView(

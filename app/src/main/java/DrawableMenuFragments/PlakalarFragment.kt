@@ -1,11 +1,13 @@
 package DrawableMenuFragments
 
+import Adapter.PlakalarAdapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.otopark.R
+import kotlinx.android.synthetic.main.fragment_plakalar.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,16 +20,15 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class PlakalarFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var plakalarAdapter: PlakalarAdapter? = null
+    private val plakalarlist : List<String> =
+        listOf("34 GA 1527", "34 CD 1527", "34 HK 2020")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        plakalarAdapter= PlakalarAdapter(plakalarlist)
+        RecyclerView3.adapter=plakalarAdapter
+
     }
 
     override fun onCreateView(

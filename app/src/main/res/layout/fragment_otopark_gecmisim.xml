@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroundcustom"
-    tools:context="DrawableMenuFragments.OdemeAraclarimFragment">
-
+    tools:context=".OtoparkGecmisimFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +27,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Ödeme Araçlarım"
+                android:text="Otopark Geçmişim"
                 style="@style/textView"
                 android:gravity="center"
                 android:layout_centerInParent="true"
@@ -36,28 +35,12 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/RecyclerView2"
+            android:id="@+id/RecyclerView5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbars="vertical">
         </androidx.recyclerview.widget.RecyclerView>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:orientation="horizontal" >
-
-        <Button
-            android:id="@+id/ButtonKartEkle"
-            style="@style/Button"
-            android:drawableLeft="@drawable/ic_action_ekle"
-            android:layout_width="match_parent"
-            android:text="Kart Ekle" />
     </LinearLayout>
 
 </RelativeLayout>
