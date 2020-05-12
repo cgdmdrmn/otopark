@@ -6,9 +6,11 @@
     android:background="@drawable/backgroundcustom"
     android:orientation="vertical">
 
-    <FrameLayout
-        android:id="@+id/frame_layout"
+    <TextView
+        style="@style/textView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Ana Ekranım"
+        android:textSize="30sp" />
 </LinearLayout>

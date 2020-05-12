@@ -7,12 +7,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 
 open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var toolbar: Toolbar
     lateinit var drawerLayout: DrawerLayout
     lateinit var navView: NavigationView
+    lateinit var drawerToggle: ActionBarDrawerToggle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
@@ -22,19 +24,7 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
         navView = findViewById(R.id.nav_view)
         setSupportActionBar(toolbar)
 
-
-        val drawerToggle: ActionBarDrawerToggle = object : ActionBarDrawerToggle(
-            this,
-            drawerLayout,
-            toolbar,
-            (R.string.open),
-            (R.string.close)
-        ) {
-
-        }
-        drawerToggle.isDrawerIndicatorEnabled = true
-        drawerLayout.addDrawerListener(drawerToggle)
-        drawerToggle.syncState()
+        initializeDrawableToggle()
         navView.setNavigationItemSelectedListener(this)
 
         supportFragmentManager
@@ -44,51 +34,72 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
 
     }
 
+    fun changeToolbarIconAndTitle(title:String,icon:Int){
+        supportActionBar?.title = title
+        drawerToggle.setHomeAsUpIndicator(icon)
+    }
+
+    private fun initializeDrawableToggle() {
+            drawerToggle = ActionBarDrawerToggle(
+            this,
+            drawerLayout,
+            toolbar,
+            (R.string.open),
+            (R.string.close)
+        )
+        drawerToggle.isDrawerIndicatorEnabled = false
+        drawerToggle.setHomeAsUpIndicator(R.drawable.toolbar_hamburger_icon)
+        drawerToggle.setToolbarNavigationClickListener {
+            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                drawerLayout.closeDrawer(GravityCompat.START)
+            } else {
+                drawerLayout.openDrawer(GravityCompat.START)
+            }
+
+        }
+        drawerLayout.addDrawerListener(drawerToggle)
+        drawerToggle.syncState()
+    }
+
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         when (menuItem.itemId) {
-            R.id.nav_hesabim -> {
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.frame_layout, ProfileFragment(), "profileFragment")
-                    .commit()
-            }
+            R.id.nav_hesabim -> changeFragment(ProfileFragment(), "PROFIL")
 
-            R.id.nav_plakalarim -> {
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.frame_layout, PlakalarFragment(), "plakalarFragment")
-                    .commit()
-            }
+            R.id.nav_plakalarim -> changeFragment(PlakalarFragment(), "PLAKALARIM")
 
-            R.id.nav_rezervasyonlarim -> {
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.frame_layout, RezervasyonlarFragment(), "rezervasyonlarFragment")
-                    .commit()
-            }
-            R.id.nav_cuzdanim -> {
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.frame_layout, CuzdanimFragment(), " cuzdanimFragment")
-                    .commit()
-            }
-            R.id.nav_odeme_araclarim -> {
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.frame_layout, OdemeAraclarimFragment(), " odemeAraclarimFragment")
-                    .commit()
-            }
+            R.id.nav_rezervasyonlarim -> changeFragment(
+                RezervasyonlarFragment(),
+                "REZERVASYONLARIM"
+            )
+            R.id.nav_cuzdanim -> changeFragment(CuzdanimFragment(), "CUZDANIM")
+
+            R.id.nav_odeme_araclarim -> changeFragment(
+                OdemeAraclarimFragment(),
+                ODEME_ARACLARIM_TAG
+            )
         }
 
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
 
     }
+
+    private fun changeFragment(fragment: Fragment, tag: String) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.frame_layout, fragment, tag)
+            .commit()
+    }
+
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()
         }
+    }
+
+    companion object {
+        const val ODEME_ARACLARIM_TAG = "ODEME_ARACLARIM"
     }
 }
