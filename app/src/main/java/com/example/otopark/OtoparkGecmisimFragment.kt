@@ -26,7 +26,7 @@ class OtoparkGecmisimFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         otoparkGecmisimAdapter= OtoparkGecmisimAdapter(otoparkGecmisimList)
-        RecyclerView5.adapter=otoparkGecmisimAdapter
+        autoparkhistoryListRecyclerView.adapter=otoparkGecmisimAdapter
 
     }
 

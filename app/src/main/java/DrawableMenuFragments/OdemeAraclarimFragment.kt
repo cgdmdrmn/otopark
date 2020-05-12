@@ -27,7 +27,7 @@ class OdemeAraclarimFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         odemeAraclarimAdapter= OdemeAraclarimAdapter(odemearaclarimlist)
-        RecyclerView2.adapter=odemeAraclarimAdapter
+        cardListRecyclerView.adapter=odemeAraclarimAdapter
 
     }
 

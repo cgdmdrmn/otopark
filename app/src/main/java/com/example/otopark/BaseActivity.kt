@@ -54,6 +54,8 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
                     .replace(R.id.frame_layout,
                         ProfileFragment(), "profileFragment")
                     .commit()
+
+
             }
 
             R.id.nav_plakalarim -> {
@@ -62,6 +64,7 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
                     .replace(R.id.frame_layout,
                         PlakalarFragment(), "plakalarFragment")
                     .commit()
+
             }
 
             R.id.nav_rezervasyonlarim -> {
@@ -70,6 +73,7 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
                     .replace(R.id.frame_layout,
                         RezervasyonlarFragment(), "rezervasyonlarFragment")
                     .commit()
+
             }
             R.id.nav_cuzdanim -> {
                 supportFragmentManager

@@ -26,7 +26,7 @@ class AramaEkraniFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         otoparkSonAramalarimAdapter= OtoparkSonAramalarimAdapter(otoparkSonAramalarimList)
-        RecyclerView4.adapter=otoparkSonAramalarimAdapter
+        recentsearchautoparkListRecyclerView.adapter=otoparkSonAramalarimAdapter
 
     }
 

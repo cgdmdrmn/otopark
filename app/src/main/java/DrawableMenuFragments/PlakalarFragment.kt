@@ -27,7 +27,7 @@ class PlakalarFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         plakalarAdapter= PlakalarAdapter(plakalarlist)
-        RecyclerView3.adapter=plakalarAdapter
+        plakalarListRecyclerView.adapter=plakalarAdapter
 
     }
 

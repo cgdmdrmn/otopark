@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/backgroundcustom"
     tools:context="AramaEkraniFragment"
     android:id="@+id/frame_layout">
@@ -78,22 +79,20 @@
                 android:layout_centerInParent="true"
                 android:layout_weight="1" />
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
+
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/RecyclerView4"
+                android:id="@+id/recentsearchautoparkListRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scrollbars="vertical">
-            </androidx.recyclerview.widget.RecyclerView>
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:scrollbars="vertical"/>
 
         </LinearLayout>
 
-
     </LinearLayout>
-
 
 </FrameLayout>

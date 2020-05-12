@@ -8,18 +8,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.otopark.R
 
 
-class OdemeAraclarimAdapter(private val OdemeAraclarimList: List<String>) : RecyclerView.Adapter<Adapter.OdemeAraclarimAdapter.PlateViewHolder>() {
+class OdemeAraclarimAdapter(private val odemeAraclarimList: List<String>) : RecyclerView.Adapter<Adapter.OdemeAraclarimAdapter.PlateViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):PlateViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.odemearaclarimlist, parent, false)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.cards_list_item, parent, false)
         return PlateViewHolder(view)
     }
     override fun getItemCount(): Int {
-        return OdemeAraclarimList.size
+        return odemeAraclarimList.size
     }
 
     override fun onBindViewHolder(holder:PlateViewHolder, position: Int) {
-        holder.titleTextView.text=OdemeAraclarimList[position]
+        holder.titleTextView.text=odemeAraclarimList[position]
     }
 
     class PlateViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

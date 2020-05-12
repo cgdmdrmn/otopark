@@ -29,7 +29,7 @@ class AnaEkranFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         yakinimdakiOtoparklarAdapter= YakinimdakiOtoparklarAdapter(yakinimdakiotoparklarList)
-        RecyclerView1.adapter=yakinimdakiOtoparklarAdapter
+        autoparkListRecyclerView.adapter=yakinimdakiOtoparklarAdapter
 
 
     }

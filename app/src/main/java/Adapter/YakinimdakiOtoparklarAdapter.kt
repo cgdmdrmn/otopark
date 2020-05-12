@@ -8,18 +8,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.otopark.R
 
 
-class YakinimdakiOtoparklarAdapter(private val YakinimdakiOtoparklarList: List<String>) : RecyclerView.Adapter<Adapter.YakinimdakiOtoparklarAdapter.PlateViewHolder>() {
+class YakinimdakiOtoparklarAdapter(private val yakinimdakiOtoparklarList: List<String>) : RecyclerView.Adapter<Adapter.YakinimdakiOtoparklarAdapter.PlateViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):PlateViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.yakinimdakiotoparklarlist, parent, false)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.closest_auto_park_list_item, parent, false)
         return PlateViewHolder(view)
     }
     override fun getItemCount(): Int {
-        return YakinimdakiOtoparklarList.size
+        return yakinimdakiOtoparklarList.size
     }
 
     override fun onBindViewHolder(holder:PlateViewHolder, position: Int) {
-        holder.titleTextView.text=YakinimdakiOtoparklarList[position]
+        holder.titleTextView.text=yakinimdakiOtoparklarList[position]
     }
 
     class PlateViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
