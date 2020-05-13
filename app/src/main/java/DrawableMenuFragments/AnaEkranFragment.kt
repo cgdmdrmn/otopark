@@ -26,14 +26,6 @@ class AnaEkranFragment : Fragment() {
     private val yakinimdakiotoparklarList : List<String> =
     listOf(" Büyük Beşiktaş Otoparkı", "Beşiktaş Kapalı Otopark", "Beltaş Otoparkı", "Ulus Otoparkı")
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        yakinimdakiOtoparklarAdapter= YakinimdakiOtoparklarAdapter(yakinimdakiotoparklarList)
-        autoparkListRecyclerView.adapter=yakinimdakiOtoparklarAdapter
-
-
-    }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +33,12 @@ class AnaEkranFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ana_ekran, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        yakinimdakiOtoparklarAdapter= YakinimdakiOtoparklarAdapter(yakinimdakiotoparklarList)
+        autoparkListRecyclerView.adapter=yakinimdakiOtoparklarAdapter
     }
 
 

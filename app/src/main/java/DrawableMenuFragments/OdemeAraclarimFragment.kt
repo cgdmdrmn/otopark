@@ -24,11 +24,11 @@ class OdemeAraclarimFragment : Fragment() {
     private val odemearaclarimlist : List<String> =
         listOf("4926 **** **** **11", "1527 **** **** **89", "2222 **** **** **15")
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         odemeAraclarimAdapter= OdemeAraclarimAdapter(odemearaclarimlist)
         cardListRecyclerView.adapter=odemeAraclarimAdapter
-
     }
 
     override fun onCreateView(
