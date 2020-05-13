@@ -22,7 +22,7 @@ class OtoparkGecmisimFragment : Fragment() {
     private var otoparkGecmisimAdapter: OtoparkGecmisimAdapter? = null
     private val otoparkGecmisimList : List<String> =
         listOf("34 GA 1527", "34 CD 1527", "34 HK 2020")
-    
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

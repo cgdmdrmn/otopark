@@ -36,7 +36,6 @@
         style="@style/textView"
         android:gravity="center"
         android:autofillHints=""
-        android:inputType="TODO"
         android:layout_below="@+id/haritaImage" />
 
     <TextView
