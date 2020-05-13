@@ -27,11 +27,12 @@
                 app:srcCompat="@drawable/ic_action_location" />
 
             <TextView
+                style="@style/textView"
                 android:id="@+id/textContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Liste Elemenı" />
+                android:text="Liste Elemenı"/>
         </LinearLayout>
 
     </LinearLayout>
