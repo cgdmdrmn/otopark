@@ -1,5 +1,13 @@
 <resources>
-    <string name="app_name">Otopark</string>
-    <string name="sifre">şifre</string>
-    <string name="e_posta_edittext_hint">E-posta</string>
+    <string name="app_name">E-Park - Navigation Drawer</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="hamburger_menu">Hamburger Menu</string>
+    <string name="hosgeldiniz">2-01-Ana Ekran</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="baslik">Başlık</string>
+    <string name="ototopark_ara">Otopark veya bir adres arayın</string>
+    <string name="yakinimdaki_otoparklar">Yakınımdaki Otoparklar</string>
 </resources>

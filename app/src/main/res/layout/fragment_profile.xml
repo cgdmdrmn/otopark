@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="DrawableMenuFragments.ProfileFragment"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="25dp"
+    android:paddingBottom="5dp"
+    android:background="@color/white">
+
+            <Button
+                android:id="@+id/ButtonHesabim"
+                style="@style/Button"
+                android:drawableLeft="@drawable/ic_action_person"
+                android:layout_width="match_parent"
+                android:text="Bilgilerim"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <Button
+                android:id="@+id/ButtonRezervasyon"
+                style="@style/Button"
+                android:drawableLeft="@drawable/ic_action_date"
+                android:layout_width="match_parent"
+                android:text="Otopark Geçmişim"
+                android:layout_below="@+id/ButtonHesabim"
+                android:layout_marginTop="4dp"/>
+
+            <Button
+                android:id="@+id/ButtonBildirim"
+                style="@style/Button"
+                android:drawableLeft="@drawable/ic_action_zil"
+                android:layout_width="match_parent"
+                android:text="İletişim Tercihlerim"
+                android:layout_below="@+id/ButtonRezervasyon"
+                android:layout_marginTop="4dp"/>
+
+
+            <Button
+                android:id="@+id/ButtonExit"
+                style="@style/Button"
+                android:drawableLeft="@drawable/ic_action_cikis"
+                android:layout_width="match_parent"
+                android:text="Çıkış Yap"
+                android:layout_below="@+id/ButtonBildirim"
+                android:layout_marginTop="4dp"/>
+
+</RelativeLayout>

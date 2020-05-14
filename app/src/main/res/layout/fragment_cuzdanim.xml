@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="25dp"
+    android:paddingBottom="5dp"
+    android:background="@color/white">
+
+
+            <TextView
+                android:id="@+id/karekoduokutunTextView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="Ödeme yapmak için karekodu okutun."
+                style="@style/textView"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"/>
+
+
+            <ImageView
+                android:id="@+id/karekodImage"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/karekod"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/karekoduokutunTextView"/>
+
+            <TextView
+                android:id="@+id/bakiyemTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bakiyem:"
+                style="@style/textView"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/karekodImage" />
+
+            <Button
+                android:id="@+id/ButtonParkUzat"
+                style="@style/Button"
+                android:layout_width="match_parent"
+                android:text="Hesaptan Aktar"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/bakiyemTextView" />
+
+
+    </RelativeLayout>

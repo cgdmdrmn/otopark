@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context="AramaEkraniFragment"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="25dp"
+    android:paddingBottom="5dp">
+
+            <EditText
+                android:id="@+id/araEditText"
+                style="@style/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableLeft="@drawable/ic_action_search"
+                android:text="Otopark veya adres arayın."
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/sonaramalarimTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Son Aramalarım"
+                style="@style/textView"
+                android:layout_below="@+id/araEditText"/>
+
+            <TextView
+                android:id="@+id/temizleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temizle"
+                android:textColor="#200FB6"
+                style="@style/textView"
+                android:layout_below="@+id/sonaramalarimTextView"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recentsearchautoparkListRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/recent_search_auto_park_list_item"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:scrollbars="vertical"
+                android:layout_below="@+id/temizleTextView"/>
+</RelativeLayout>
