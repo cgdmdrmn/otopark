@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.otopark.BaseActivity
 import com.example.otopark.R
 import kotlinx.android.synthetic.main.fragment_plakalar.*
 
@@ -20,6 +21,9 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class PlakalarFragment : Fragment() {
+
+
+
     private var plakalarAdapter: PlakalarAdapter? = null
     private val plakalarlist : List<String> =
         listOf("34 GA 1527", "34 CD 1527", "34 HK 2020")
@@ -39,6 +43,11 @@ class PlakalarFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_plakalar, container, false)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        (activity as BaseActivity).changeToolbarIconAndTitle("Plakalarım", R.drawable.toolbar_back_icon)
     }
 
     companion object {

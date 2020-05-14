@@ -25,7 +25,7 @@ class CuzdanimFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity as BaseActivity).changeToolbarIconAndTitle("cuzdanim", R.drawable.toolbar_back_icon)
+        (activity as BaseActivity).changeToolbarIconAndTitle("Cüzdanım", R.drawable.toolbar_back_icon)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)

@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundcustom"
+    android:background="@color/white"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="25dp"
+    android:paddingBottom="5dp"
     tools:context=".BilgilerimFragment">
 
     <LinearLayout
@@ -14,38 +18,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
             android:orientation="horizontal" >
-
-            <ImageButton
-                android:src="@drawable/ic_action_geri"
-                style="@style/backbutton"
-                android:layout_weight="1" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Hesabım"
-                style="@style/textView"
-                android:gravity="center"
-                android:layout_centerInParent="true"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
             <ImageView
                 android:id="@+id/profileImage"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:src="@drawable/ic_action_person" />
-
             <TextView
                 android:id="@+id/Textisimsoyisim"
                 android:layout_width="match_parent"
@@ -61,7 +40,6 @@
             android:layout_width="match_parent"
             android:layout_height="350dp"
             android:orientation="vertical" >
-
             <EditText
                 android:id="@+id/Texteskisifre"
                 android:layout_width="match_parent"
@@ -84,11 +62,11 @@
                 android:gravity="center"
                 android:layout_centerInParent="true" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
-
             <Button
                 android:id="@+id/ButtonKaydet"
                 style="@style/Button"
@@ -96,9 +74,5 @@
                 android:text="Kaydet" />
         </LinearLayout>
 
-
-
-
     </LinearLayout>
-
-</FrameLayout>
+</RelativeLayout>

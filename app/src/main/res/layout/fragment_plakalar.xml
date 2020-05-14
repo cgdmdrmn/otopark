@@ -4,67 +4,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/backgroundcustom"
-    tools:context="DrawableMenuFragments.PlakalarFragment">
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:orientation="horizontal" >
-
-        <ImageButton
-            android:src="@drawable/ic_action_geri"
-            style="@style/backbutton"
-            android:layout_weight="1" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Plakalarım"
-            style="@style/textView"
-            android:gravity="center"
-            android:layout_centerInParent="true"
-            android:layout_weight="1" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+    tools:context="DrawableMenuFragments.PlakalarFragment"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="25dp"
+    android:paddingBottom="5dp"
+    android:background="@color/white">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/plakalarListRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:scrollbars="vertical"></androidx.recyclerview.widget.RecyclerView>
-
-    </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:orientation="horizontal" >
+            android:scrollbars="vertical"
+            tools:listitem="@layout/plakalar_list_item"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
 
         <Button
             android:id="@+id/ButtonPlakaEkle"
             style="@style/Button"
             android:drawableLeft="@drawable/ic_action_ekle"
             android:layout_width="match_parent"
-            android:text="Plaka Ekle" />
-    </LinearLayout>
+            android:text="Plaka Ekle"
+            android:layout_below="@+id/plakalarListRecyclerView" />
+
 </RelativeLayout>

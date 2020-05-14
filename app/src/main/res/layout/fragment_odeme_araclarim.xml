@@ -4,61 +4,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/backgroundcustom"
-    tools:context="DrawableMenuFragments.OdemeAraclarimFragment">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:orientation="horizontal" >
-
-            <ImageButton
-                android:src="@drawable/ic_action_geri"
-                style="@style/backbutton"
-                android:layout_weight="1" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Ödeme Araçlarım"
-                style="@style/textView"
-                android:gravity="center"
-                android:layout_centerInParent="true"
-                android:layout_weight="1" />
-        </LinearLayout>
+    tools:context="DrawableMenuFragments.OdemeAraclarimFragment"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="25dp"
+    android:paddingBottom="5dp"
+    android:background="@color/white">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/cardListRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:scrollbars="vertical"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:orientation="horizontal" >
+            android:scrollbars="vertical"
+            tools:listitem="@layout/cards_list_item"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
 
         <Button
             android:id="@+id/ButtonKartEkle"
             style="@style/Button"
             android:drawableLeft="@drawable/ic_action_ekle"
             android:layout_width="match_parent"
-            android:text="Kart Ekle" />
-    </LinearLayout>
+            android:text="Kart Ekle"
+            android:layout_below="@+id/cardListRecyclerView"/>
 
 </RelativeLayout>

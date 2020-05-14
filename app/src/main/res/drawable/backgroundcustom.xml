@@ -5,6 +5,7 @@
     <gradient
         android:angle="0"
         android:endColor="@color/lightbluebutton"
-        android:startColor="@color/buttontextcolor" />
+        android:centerColor="@color/white"
+        android:startColor="@color/white" />
 
 </shape>

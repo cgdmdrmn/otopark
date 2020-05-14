@@ -64,19 +64,17 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         when (menuItem.itemId) {
-            R.id.nav_hesabim -> changeFragment(ProfileFragment(), "PROFIL")
+            R.id.nav_hesabim -> changeFragment(ProfileFragment(), PROFILE_TAG)
 
-            R.id.nav_plakalarim -> changeFragment(PlakalarFragment(), "PLAKALARIM")
+            R.id.nav_plakalarim -> changeFragment(PlakalarFragment(), PLAKALARIM_TAG)
 
             R.id.nav_rezervasyonlarim -> changeFragment(
-                RezervasyonlarFragment(),
-                "REZERVASYONLARIM"
+                RezervasyonlarFragment(), REZERVASYONLARIM_TAG
             )
-            R.id.nav_cuzdanim -> changeFragment(CuzdanimFragment(), "CUZDANIM")
+            R.id.nav_cuzdanim -> changeFragment(CuzdanimFragment(), CUZDANIM_TAG)
 
             R.id.nav_odeme_araclarim -> changeFragment(
-                OdemeAraclarimFragment(),
-                ODEME_ARACLARIM_TAG
+                OdemeAraclarimFragment(), ODEME_ARACLARIM_TAG
             )
         }
 
@@ -102,5 +100,9 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
 
     companion object {
         const val ODEME_ARACLARIM_TAG = "ODEME_ARACLARIM"
+        const val CUZDANIM_TAG = "CUZDANIM"
+        const val REZERVASYONLARIM_TAG = "REZERVASYONLARIM"
+        const val PLAKALARIM_TAG = "PLAKALARIM"
+        const val PROFILE_TAG = "HESABIM"
     }
 }

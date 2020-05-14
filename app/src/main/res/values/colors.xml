@@ -3,7 +3,7 @@
     <color name="lightbluebutton">#9100B7EB</color>
     <color name="darkbluebutton">#007fff</color>
     <color name="bacgroundcolor">#f0f8ff</color>
-    <color name="buttontextcolor">#ffffff</color>
+    <color name="white">#ffffff</color>
     <color name="textcolor">#363636</color>
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
