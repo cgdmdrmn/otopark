@@ -64,7 +64,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/btn_custom"
+        android:background="@drawable/buttoncustom"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/login"
         android:textColor="@android:color/white" />
@@ -77,7 +77,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/btn_custom"
+        android:background="@drawable/buttoncustom"
         android:fontFamily="@font/roboto_regular"
         android:text="Şifremi Unuttum"
         android:textColor="@android:color/white" />
