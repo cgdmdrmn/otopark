@@ -69,6 +69,19 @@
         android:text="@string/login"
         android:textColor="@android:color/white" />
 
+    <Button
+        android:id="@+id/btn_frgt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_login"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/btn_custom"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Şifremi Unuttum"
+        android:textColor="@android:color/white" />
+
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
