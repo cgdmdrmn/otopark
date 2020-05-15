@@ -23,12 +23,12 @@
             <ImageView
                 android:id="@+id/iconcar"
                 android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:srcCompat="@drawable/ic_action_car" />
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/ic_action_date" />
 
             <TextView
                 android:id="@+id/textContent"
-                android:layout_width="310dp"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:text="Liste Elemenı"
@@ -43,7 +43,7 @@
             <ImageView
                 android:id="@+id/iconDelete"
                 android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 app:srcCompat="@drawable/ic_action_delete" />
 
         </LinearLayout>

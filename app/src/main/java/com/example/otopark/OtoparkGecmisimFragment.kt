@@ -30,6 +30,11 @@ class OtoparkGecmisimFragment : Fragment() {
         autoparkhistoryListRecyclerView.adapter=otoparkGecmisimAdapter
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        (activity as BaseActivity).changeToolbarIconAndTitle("Otopark Geçmişim", R.drawable.toolbar_back_icon)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="DrawableMenuFragments.PlakalarFragment"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="25dp"
+    android:paddingBottom="5dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/parkyeriTextView"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:text="Park Yeri"
+        style="@style/textView"
+        android:padding="5dp"
+        android:layout_marginLeft="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/aracTextView"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Araç"
+        style="@style/textView"
+        android:layout_toRightOf="@+id/parkyeriTextView" />
+
+    <TextView
+        android:id="@+id/baslangictarihsaatTextView"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Başlangıç Tarihi/Saati"
+        style="@style/textView"
+        android:layout_toRightOf="@+id/aracTextView"/>
+
+    <TextView
+        android:id="@+id/bitistarihsaatTextView"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Bitiş tarihi/saati"
+        style="@style/textView"
+        android:layout_toRightOf="@+id/baslangictarihsaatTextView"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/historyRezervationListRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/history_rezervation_list_item"
+        android:layout_below="@+id/bitistarihsaatTextView"/>
+
+</RelativeLayout>
