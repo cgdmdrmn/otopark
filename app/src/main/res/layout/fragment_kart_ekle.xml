@@ -54,6 +54,6 @@
         android:drawableLeft="@drawable/ic_action_ekle"
         android:layout_width="match_parent"
         android:text="Kart Ekle"
-        android:layout_below="@+id/checkBox"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="8dp"
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>

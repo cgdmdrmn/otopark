@@ -38,12 +38,12 @@
         android:layout_marginTop="4dp"/>
 
     <Button
-        android:id="@+id/ButtonKartEkle"
+        android:id="@+id/ButtonPlakaEkle"
         style="@style/Button"
         android:drawableLeft="@drawable/ic_action_ekle"
         android:layout_width="match_parent"
-        android:text="Kart Ekle"
-        android:layout_below="@+id/checkBox"
-        android:layout_marginTop="4dp"/>
+        android:text="Plaka Ekle"
+        android:layout_marginTop="4dp"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

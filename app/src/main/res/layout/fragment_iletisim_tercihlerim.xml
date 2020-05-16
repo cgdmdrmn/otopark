@@ -10,42 +10,46 @@
     android:paddingBottom="5dp"
     android:background="@color/white">
 
-    <EditText
-        android:id="@+id/editText1"
-        style="@style/textView"
+
+    <Switch
+        android:id="@+id/switch1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kart No"
+        android:text="Kampanyalar ile ilgili bildirim almak istiyorum."
+        android:textColor="@color/black"
+        android:checked="true"
+        android:textOff="OFF"
+        android:textOn="ON"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:drawableStart="@drawable/ic_action_phone"/>
 
-    <EditText
-        android:id="@+id/editText2"
-        style="@style/textView"
+    <Switch
+        android:id="@+id/switch2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="AA/YYYY"
+        android:text="Kampanyalar ile ilgili e-posta almak istiyorum."
+        android:textColor="@color/black"
         android:layout_marginTop="4dp"
-        android:layout_below="@+id/editText1"/>
+        android:checked="true"
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:layout_below="@+id/switch1"
+        android:drawableStart="@drawable/ic_action_mail"/>
 
-    <EditText
-        android:id="@+id/editText3"
-        style="@style/textView"
+    <Switch
+        android:id="@+id/switch3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CCV"
+        android:text="Kampanyalar ile ilgili SMS almak istiyorum."
+        android:textColor="@color/black"
         android:layout_marginTop="4dp"
-        android:layout_below="@+id/editText2"/>
-
-    <CheckBox
-        style="@style/textView"
-        android:id="@+id/checkBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Kullanım koşullarını kabul ediyorum."
-        android:layout_below="@+id/editText3"
-        android:layout_marginTop="4dp"/>
+        android:checked="true"
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:layout_below="@+id/switch2"
+        android:drawableStart="@drawable/ic_action_message"/>
 
     <Button
         style="@style/Button"
