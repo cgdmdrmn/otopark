@@ -6,8 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.otopark.LoginActivity
-import com.example.otopark.MainActivity
+import com.example.otopark.BaseActivity
 import com.example.otopark.R
 import kotlinx.android.synthetic.main.fragment_login.*
 
@@ -24,7 +23,7 @@ class LoginFragment : Fragment() {
             context?.startActivity(
                 Intent(
                     context,
-                    MainActivity::class.java
+                    BaseActivity::class.java
                 )
             )
         }
