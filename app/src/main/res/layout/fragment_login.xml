@@ -8,6 +8,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".LoginFragment">
 
+
+
     <!-- TODO: Update blank fragment layout -->
 
 
@@ -27,7 +29,7 @@
         android:layout_height="50dp"
         android:layout_centerInParent="true"
         android:layout_marginLeft="20dp"
-
+        android:textColor="@color/black"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="40dp"
         android:background="@drawable/et_custom"
@@ -50,6 +52,7 @@
         android:background="@drawable/et_custom"
         android:fontFamily="@font/roboto_regular"
         android:hint="@string/e_mail"
+        android:textColor="@color/black"
         android:inputType="textEmailAddress"
         android:padding="15dp"
         android:textColorHint="@color/black"

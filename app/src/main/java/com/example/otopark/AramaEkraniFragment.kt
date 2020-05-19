@@ -25,6 +25,7 @@ class AramaEkraniFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        (activity as BaseActivity).changeToolbarIconAndTitle("Ara", R.drawable.toolbar_back_icon)
         otoparkSonAramalarimAdapter= OtoparkSonAramalarimAdapter(otoparkSonAramalarimList)
         recentsearchautoparkListRecyclerView.adapter=otoparkSonAramalarimAdapter
 

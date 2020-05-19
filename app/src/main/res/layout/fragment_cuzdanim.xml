@@ -40,13 +40,24 @@
                 android:layout_marginTop="8dp"
                 android:layout_below="@+id/karekodImage" />
 
+    <TextView
+        android:id="@+id/bakiyemContentTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bakiyem:"
+        style="@style/textView"
+        android:layout_marginTop="8dp"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/bakiyemTextView"
+        android:layout_below="@+id/karekodImage" />
+
             <Button
                 android:id="@+id/ButtonParkUzat"
                 style="@style/Button"
                 android:layout_width="match_parent"
                 android:text="Hesaptan Aktar"
                 android:layout_marginTop="8dp"
-                android:layout_below="@+id/bakiyemTextView" />
+                android:layout_alignParentBottom="true" />
 
 
     </RelativeLayout>
