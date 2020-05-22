@@ -97,18 +97,19 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
 
 
 
-   fun createAlertDialog(title: String, message: String, positiveButtonName:String?, negativeButtonName:String?){
+   fun createAlertDialog(title: String, message: String, positiveButtonName:String?, positiveButtonAction:DialogInterface.OnClickListener?,
+                         negativeButtonName:String?, negativeButtonAction: DialogInterface.OnClickListener?){
         val builder = AlertDialog.Builder(this)
         with(builder)
         {
             setTitle(title)
             setMessage(message)
             positiveButtonName?.let {
-                setPositiveButton(it) {_,_ -> {} }
+                setPositiveButton(it, positiveButtonAction )
             }
 
             negativeButtonName?.let {
-                setNegativeButton(it) {_,_ -> {} }
+                setNegativeButton(it, negativeButtonAction )
             }
 
             show()

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.otopark.AramaEkraniFragment
 import com.example.otopark.BaseActivity
 import com.example.otopark.R
 import kotlinx.android.synthetic.main.fragment_ana_ekran.*
@@ -42,10 +43,15 @@ class AnaEkranFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+
         yakinimdakiOtoparklarAdapter= YakinimdakiOtoparklarAdapter(yakinimdakiotoparklarList)
         autoparkListRecyclerView.adapter=yakinimdakiOtoparklarAdapter
+
+        otoparkAramaEditText.setOnClickListener{
+            (activity as BaseActivity).changeFragment(AramaEkraniFragment(),"ARAMA_EKRANI_FRAGMENT")
+        }
     }
+
 
 
     companion object {

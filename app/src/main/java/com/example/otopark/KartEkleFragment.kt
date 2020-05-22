@@ -1,5 +1,8 @@
 package com.example.otopark
 
+import Adapter.OdemeAraclarimAdapter
+import DrawableMenuFragments.OdemeAraclarimFragment
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -43,9 +46,11 @@ class KartEkleFragment : Fragment() {
         buttonKartEkle.setOnClickListener {
             (activity as BaseActivity).createAlertDialog(
                 "Uyarı",
-                "Silmek istediğinize emin misiniz?",
-                "Evet",
-                "Hayır"
+                "Kart ekleme işleminiz gerçekleşti.",
+                "Tamam",
+               DialogInterface.OnClickListener { _, _ ->  (activity as BaseActivity).changeFragment(OdemeAraclarimFragment(),"ODEME_ARACLARIM") },
+                null,
+                null
             )
         }
     }
