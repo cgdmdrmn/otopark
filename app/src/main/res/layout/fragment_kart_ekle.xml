@@ -49,7 +49,7 @@
 
 
     <Button
-        android:id="@+id/ButtonKartEkle"
+        android:id="@+id/buttonKartEkle"
         style="@style/Button"
         android:drawableLeft="@drawable/ic_action_ekle"
         android:layout_width="match_parent"

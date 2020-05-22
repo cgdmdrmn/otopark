@@ -1,8 +1,12 @@
 package com.example.otopark
 
 import DrawableMenuFragments.*
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.WindowId
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -62,6 +66,7 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
         drawerToggle.syncState()
     }
 
+
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         when (menuItem.itemId) {
             R.id.nav_hesabim -> changeFragment(ProfileFragment(), PROFILE_TAG)
@@ -83,11 +88,31 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
 
     }
 
-    private fun changeFragment(fragment: Fragment, tag: String) {
+     fun changeFragment(fragment: Fragment, tag: String) {
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.frame_layout, fragment, tag)
             .commit()
+    }
+
+
+
+   fun createAlertDialog(title: String, message: String, positiveButtonName:String?, negativeButtonName:String?){
+        val builder = AlertDialog.Builder(this)
+        with(builder)
+        {
+            setTitle(title)
+            setMessage(message)
+            positiveButtonName?.let {
+                setPositiveButton(it) {_,_ -> {} }
+            }
+
+            negativeButtonName?.let {
+                setNegativeButton(it) {_,_ -> {} }
+            }
+
+            show()
+        }
     }
 
     override fun onBackPressed() {

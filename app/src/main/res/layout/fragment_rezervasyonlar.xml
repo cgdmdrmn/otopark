@@ -11,7 +11,7 @@
     android:background="@color/white">
 
             <Button
-                android:id="@+id/ButtonRezervasyonlarim"
+                android:id="@+id/buttonRezervasyonlarim"
                 style="@style/Button"
                 android:drawableLeft="@drawable/ic_action_date"
                 android:layout_width="match_parent"
@@ -21,20 +21,20 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="4dp"/>
             <Button
-                android:id="@+id/ButtonRezervasyonEkle"
+                android:id="@+id/buttonRezervasyonEkle"
                 style="@style/Button"
                 android:drawableLeft="@drawable/ic_action_add"
                 android:layout_width="match_parent"
                 android:text="Rezervasyon Ekle"
-                android:layout_below="@+id/ButtonRezervasyonlarim"
+                android:layout_below="@+id/buttonRezervasyonlarim"
                 android:layout_marginTop="4dp"/>
 
             <Button
-                android:id="@+id/ButtonParkUzat"
+                android:id="@+id/buttonParkUzat"
                 style="@style/Button"
                 android:drawableLeft="@drawable/ic_action_clock"
                 android:layout_width="match_parent"
                 android:text="Park Süremi Uzat"
-                android:layout_below="@+id/ButtonRezervasyonEkle"/>
+                android:layout_below="@+id/buttonRezervasyonEkle"/>
 
 </RelativeLayout>

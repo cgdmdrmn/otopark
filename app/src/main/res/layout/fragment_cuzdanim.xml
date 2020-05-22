@@ -52,7 +52,7 @@
         android:layout_below="@+id/karekodImage" />
 
             <Button
-                android:id="@+id/ButtonParkUzat"
+                android:id="@+id/buttonCuzdanaAktar"
                 style="@style/Button"
                 android:layout_width="match_parent"
                 android:text="Hesaptan Aktar"

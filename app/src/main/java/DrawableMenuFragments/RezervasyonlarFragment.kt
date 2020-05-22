@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.otopark.BaseActivity
-import com.example.otopark.R
+import com.example.otopark.*
+import kotlinx.android.synthetic.main.fragment_rezervasyonlar.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,6 +38,18 @@ class RezervasyonlarFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_rezervasyonlar, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        buttonRezervasyonlarim.setOnClickListener {
+            (activity as BaseActivity).changeFragment(GecmisRezervasyonlarimFragment(),"GECMİS_REZERVASYON_FRAGMENT")
+        }
+        buttonRezervasyonEkle.setOnClickListener {
+            (activity as BaseActivity).changeFragment(RezervasyonEkleFragment(),"GECMİS_REZERVASYON_FRAGMENT")
+        }
+        buttonParkUzat.setOnClickListener {
+            (activity as BaseActivity).changeFragment(ParkSureUzatFragment(),"PARK_SURE_FRAGMENT")
+        }
     }
 
     companion object {

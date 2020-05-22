@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.otopark.BaseActivity
-import com.example.otopark.R
+import com.example.otopark.*
+import kotlinx.android.synthetic.main.fragment_profile.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,6 +40,18 @@ class ProfileFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        buttonBilgilerim.setOnClickListener{
+            (activity as BaseActivity).changeFragment(BilgilerimFragment(),"BILGILERIM_FRAGMENT")
+        }
+        buttonRezervasyon.setOnClickListener {
+            (activity as BaseActivity).changeFragment(GecmisRezervasyonlarimFragment(),"GECMIS_REZERVASYONLAR_FRAGMENT")
+        }
+        buttonBildirim.setOnClickListener {
+            (activity as BaseActivity).changeFragment(IletisimTercihlerimFragment(),"REZERVASYONLAR_FRAGMENT")
+        }
+
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of

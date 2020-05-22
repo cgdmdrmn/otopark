@@ -11,7 +11,7 @@
     android:background="@color/white">
 
             <Button
-                android:id="@+id/ButtonHesabim"
+                android:id="@+id/buttonBilgilerim"
                 style="@style/Button"
                 android:drawableLeft="@drawable/ic_action_person"
                 android:layout_width="match_parent"
@@ -21,21 +21,21 @@
                 android:layout_alignParentStart="true" />
 
             <Button
-                android:id="@+id/ButtonRezervasyon"
+                android:id="@+id/buttonRezervasyon"
                 style="@style/Button"
                 android:drawableLeft="@drawable/ic_action_date"
                 android:layout_width="match_parent"
                 android:text="Otopark Geçmişim"
-                android:layout_below="@+id/ButtonHesabim"
+                android:layout_below="@+id/buttonBilgilerim"
                 android:layout_marginTop="4dp"/>
 
             <Button
-                android:id="@+id/ButtonBildirim"
+                android:id="@+id/buttonBildirim"
                 style="@style/Button"
                 android:drawableLeft="@drawable/ic_action_zil"
                 android:layout_width="match_parent"
                 android:text="İletişim Tercihlerim"
-                android:layout_below="@+id/ButtonRezervasyon"
+                android:layout_below="@+id/buttonRezervasyon"
                 android:layout_marginTop="4dp"/>
 
 
@@ -45,7 +45,7 @@
                 android:drawableLeft="@drawable/ic_action_cikis"
                 android:layout_width="match_parent"
                 android:text="Çıkış Yap"
-                android:layout_below="@+id/ButtonBildirim"
+                android:layout_below="@+id/buttonBildirim"
                 android:layout_marginTop="4dp"/>
 
 </RelativeLayout>

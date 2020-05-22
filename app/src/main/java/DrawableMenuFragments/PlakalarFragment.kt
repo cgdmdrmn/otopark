@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.otopark.BaseActivity
+import com.example.otopark.PlakaEkleFragment
 import com.example.otopark.R
 import kotlinx.android.synthetic.main.fragment_plakalar.*
 
@@ -34,7 +35,9 @@ class PlakalarFragment : Fragment() {
         plakalarAdapter= PlakalarAdapter(plakalarlist)
         plakalarListRecyclerView.adapter=plakalarAdapter
 
-
+        buttonPlakaEkle.setOnClickListener {
+            (activity as BaseActivity).changeFragment(PlakaEkleFragment(),"PLAKA_EKLE_FRAGMENT")
+        }
     }
 
     override fun onCreateView(
@@ -49,6 +52,7 @@ class PlakalarFragment : Fragment() {
         super.onCreate(savedInstanceState)
         (activity as BaseActivity).changeToolbarIconAndTitle("Plakalarım", R.drawable.toolbar_back_icon)
     }
+
 
     companion object {
         /**
