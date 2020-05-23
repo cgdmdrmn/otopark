@@ -2,6 +2,8 @@ package com.example.otopark
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -16,13 +18,17 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+
         val adapter = MyViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(LoginFragment() , title = "Giriş  Ekranı")
-        adapter.addFragment(RegisterFragment() , title = "Kayıt  Ekranı")
+        adapter.addFragment(RegisterFragment(), title = "Kayıt  Ekranı")
         viewPager.adapter = adapter
         tabs.setupWithViewPager(viewPager)
 
     }
+
+
+
 
     class MyViewPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager) {
 
@@ -47,6 +53,8 @@ class LoginActivity : AppCompatActivity() {
             return titleList[position]
         }
     }
+
+
 
 
 }
