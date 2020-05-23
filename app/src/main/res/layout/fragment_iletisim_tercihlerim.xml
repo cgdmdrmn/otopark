@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="25dp"
+    android:paddingBottom="5dp"
+    android:background="@color/white">
+
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kampanyalar ile ilgili bildirim almak istiyorum."
+        android:textColor="@color/black"
+        android:checked="true"
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:drawableStart="@drawable/ic_action_phone"/>
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kampanyalar ile ilgili e-posta almak istiyorum."
+        android:textColor="@color/black"
+        android:layout_marginTop="4dp"
+        android:checked="true"
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:layout_below="@+id/switch1"
+        android:drawableStart="@drawable/ic_action_mail"/>
+
+    <Switch
+        android:id="@+id/switch3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kampanyalar ile ilgili SMS almak istiyorum."
+        android:textColor="@color/black"
+        android:layout_marginTop="4dp"
+        android:checked="true"
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:layout_below="@+id/switch2"
+        android:drawableStart="@drawable/ic_action_message"/>
+
+    <Button
+        style="@style/Button"
+        android:id="@+id/kaydetButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Kaydet"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>
