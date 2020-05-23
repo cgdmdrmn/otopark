@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.otopark.R.layout.activity_forget_password
 import kotlinx.android.synthetic.main.activity_forget_password.*
 
 
@@ -15,7 +16,7 @@ class ForgetPassword : AppCompatActivity(){
 
      override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-     setContentView(R.layout.activity_forget_password)
+     setContentView(activity_forget_password)
 
         val btn_sfr = findViewById<Button>(R.id.btn_sfr)
 
