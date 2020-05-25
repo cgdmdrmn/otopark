@@ -1,10 +1,13 @@
 package com.example.otopark
 
+import DrawableMenuFragments.PlakalarFragment
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_plaka_ekle.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,6 +41,18 @@ class PlakaEkleFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_plaka_ekle, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        buttonPlakaEkle.setOnClickListener {
+            (activity as BaseActivity).createAlertDialog(
+                "Uyarı",
+                "Kart ekleme işleminiz gerçekleşti.",
+                "Tamam",
+                DialogInterface.OnClickListener { _, _ ->  (activity as BaseActivity).changeFragment(PlakalarFragment(),"PLAKALAR_FRAGMENT") },
+                null,
+                null
+            )
+        }
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of

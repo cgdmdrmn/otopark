@@ -116,6 +116,9 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
         }
     }
 
+
+
+
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)

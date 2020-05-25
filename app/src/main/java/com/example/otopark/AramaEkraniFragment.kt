@@ -1,6 +1,7 @@
 package com.example.otopark
 
 import Adapter.OtoparkSonAramalarimAdapter
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -26,8 +27,7 @@ class AramaEkraniFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         (activity as BaseActivity).changeToolbarIconAndTitle("Ara", R.drawable.toolbar_back_icon)
-        otoparkSonAramalarimAdapter= OtoparkSonAramalarimAdapter(otoparkSonAramalarimList)
-        recentsearchautoparkListRecyclerView.adapter=otoparkSonAramalarimAdapter
+
 
     }
 
@@ -37,6 +37,22 @@ class AramaEkraniFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_arama_ekrani, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        otoparkSonAramalarimAdapter= OtoparkSonAramalarimAdapter(otoparkSonAramalarimList)
+        recentsearchautoparkListRecyclerView.adapter=otoparkSonAramalarimAdapter
+
+        temizleTextView.setOnClickListener {
+            (activity as BaseActivity).createAlertDialog(
+                "Uyarı",
+                "Arama geçmişi temizlendi.",
+                "Tamam",
+                DialogInterface.OnClickListener { _, _ ->  (activity as BaseActivity).changeFragment(AramaEkraniFragment(),"ARAMA_EKRANI_FRAGMENT") },
+                null,
+                null
+            )
+        }
     }
 
     companion object {

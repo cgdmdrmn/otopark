@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
             <Button
-                android:id="@+id/ButtonKaydet"
+                android:id="@+id/buttonKaydet"
                 style="@style/Button"
                 android:layout_width="match_parent"
                 android:text="Kaydet" />

@@ -1,6 +1,7 @@
 package DrawableMenuFragments
 
 import Adapter.PlakalarAdapter
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -36,8 +37,19 @@ class PlakalarFragment : Fragment() {
         plakalarListRecyclerView.adapter=plakalarAdapter
 
         buttonPlakaEkle.setOnClickListener {
-            (activity as BaseActivity).changeFragment(PlakaEkleFragment(),"PLAKA_EKLE_FRAGMENT")
-        }
+            (activity as BaseActivity).changeFragment(PlakaEkleFragment(),"PLAKA_EKLE_FRAGMENT")}
+
+            plakalarListRecyclerView.setOnClickListener {
+                (activity as BaseActivity).createAlertDialog(
+                    "Uyarı",
+                    "Plaka silme işleminiz gerçekleşti.",
+                    "Tamam",
+                    DialogInterface.OnClickListener { _, _ ->  (activity as BaseActivity).changeFragment(PlakalarFragment(),"PLAKALER_FRAGMENT") },
+                    null,
+                    null
+                )
+            }
+
     }
 
     override fun onCreateView(

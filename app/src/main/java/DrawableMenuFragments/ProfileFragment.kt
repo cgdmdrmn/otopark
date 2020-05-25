@@ -1,10 +1,12 @@
 package DrawableMenuFragments
 
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.loginapp.LoginFragment
 import com.example.otopark.*
 import kotlinx.android.synthetic.main.fragment_profile.*
 
@@ -51,6 +53,16 @@ class ProfileFragment : Fragment() {
             (activity as BaseActivity).changeFragment(IletisimTercihlerimFragment(),"REZERVASYONLAR_FRAGMENT")
         }
 
+        buttonExit.setOnClickListener {
+            (activity as BaseActivity).createAlertDialog(
+                "Uyarı",
+                "Çıkış yapmak istediğinize emin misiniz?",
+                "Evet",
+                DialogInterface.OnClickListener { _, _ ->  (activity as BaseActivity).changeFragment(LoginFragment(),"LOGIN_FRAGMENT") },
+                "Hayır",
+                DialogInterface.OnClickListener { _, _ ->  (activity as BaseActivity).changeFragment(AnaEkranFragment(),"ANA_EKRAN_FRAGMENT") }
+            )
+        }
     }
     companion object {
         /**

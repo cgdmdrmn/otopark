@@ -38,7 +38,7 @@
         android:layout_marginTop="4dp"/>
 
     <Button
-        android:id="@+id/ButtonPlakaEkle"
+        android:id="@+id/buttonPlakaEkle"
         style="@style/Button"
         android:drawableLeft="@drawable/ic_action_ekle"
         android:layout_width="match_parent"

@@ -40,7 +40,7 @@
 
 
             <Button
-                android:id="@+id/ButtonExit"
+                android:id="@+id/buttonExit"
                 style="@style/Button"
                 android:drawableLeft="@drawable/ic_action_cikis"
                 android:layout_width="match_parent"
