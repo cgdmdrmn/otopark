@@ -11,10 +11,12 @@
     android:background="@color/white">
 
     <Spinner
-        style="@style/textView"
         android:id="@+id/spinner1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:entries="@array/odeme_araclarim_array"
+        android:spinnerMode="dialog"
+        android:prompt="@string/odemearacisec"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>

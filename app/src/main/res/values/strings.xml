@@ -4,6 +4,12 @@
     <string name="close">close</string>
     <string name="hamburger_menu">Hamburger Menu</string>
     <string name="hosgeldiniz">2-01-Ana Ekran</string>
+    <string name="aracsinifisec">Aracınızın sınıfını seçiniz</string>
+    <string name="saatsec">Saat seçiniz</string>
+    <string name="aracsec">Aracınızı seçiniz</string>
+    <string name="odemearacisec">Ödeme aracınızı seçin</string>
+    <string name="uzatmakistediginizrezsec">Uzatmak istediğiniz rezervasyonu seçin</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -25,4 +31,57 @@
     <string name="register">Kayıt Ol</string>
     <string name="re_type_password">Şifrenizi  tekrar  giriniz</string>
     <string name="your_name">İsim Soyisim</string>
+
+    <string-array name="plakalarim_array">
+        <item>34 GA 1527</item>
+        <item>34 CD 1993</item>
+        <item>34 HK 1994</item>
+    </string-array>
+
+    <string-array name="park_uzat_array">
+        <item>Beşiktaş Kapalı Otoparkı 34 GA 1527 12.04.2020</item>
+        <item>Ulus Otoparkı 34 CD 1993 15.04.2020</item>
+    </string-array>
+
+    <string-array name="arac_sinifi_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+    <string-array name="saat_array">
+        <item>01:00</item>
+        <item>02:00</item>
+        <item>03:00</item>
+        <item>04:00</item>
+        <item>05:00</item>
+        <item>06:00</item>
+        <item>07:00</item>
+        <item>08:00</item>
+        <item>09:00</item>
+        <item>10:00</item>
+        <item>11:00</item>
+        <item>12:00</item>
+        <item>13:00</item>
+        <item>14:00</item>
+        <item>15:00</item>
+        <item>16:00</item>
+        <item>17:00</item>
+        <item>18:00</item>
+        <item>19:00</item>
+        <item>20:00</item>
+        <item>21:00</item>
+        <item>22:00</item>
+        <item>23:00</item>
+        <item>00:00</item>
+    </string-array>
+
+    <string-array name="odeme_araclarim_array">
+        <item>4926 **** **** **11</item>
+        <item>1527 **** **** **89</item>
+        <item>2222 **** **** **15</item>
+    </string-array>
 </resources>

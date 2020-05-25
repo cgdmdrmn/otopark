@@ -10,12 +10,13 @@
     android:background="@color/white">
 
     <Spinner
-        style="@style/textView"
         android:id="@+id/rezSecSpinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Uzatmak istediğiniz rezervasyonu seçin."
+        android:layout_height="35dp"
         android:layout_marginTop="4dp"
+        android:entries="@array/park_uzat_array"
+        android:spinnerMode="dialog"
+        android:prompt="@string/uzatmakistediginizrezsec"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
@@ -98,11 +99,12 @@
         android:onClick="showDatePicker"
         android:layout_toRightOf="@+id/tarihbitEditText"/>
     <Spinner
-        style="@style/textView"
         android:id="@+id/spinner4"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="Saati seçin."
+        android:layout_height="35dp"
+        android:entries="@array/saat_array"
+        android:spinnerMode="dialog"
+        android:prompt="@string/saatsec"
         android:layout_toRightOf="@+id/dateBitBtn"
         android:layout_below="@+id/rezbitTextView" />
 
@@ -129,12 +131,13 @@
         android:layout_toRightOf="@+id/toplamTutarTextView"/>
 
     <Spinner
-        style="@style/textView"
         android:id="@+id/spinner2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginTop="8dp"
-        android:text="Ödeme aracınızı seçin."
+        android:entries="@array/odeme_araclarim_array"
+        android:spinnerMode="dialog"
+        android:prompt="@string/odemearacisec"
         android:layout_below="@+id/tutarTextView"/>
 
     <TextView
