@@ -32,7 +32,6 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
             .beginTransaction()
             .add(R.id.frame_layout, AnaEkranFragment(), "anaEkranFragment")
             .commit()
-
     }
 
     fun changeToolbarIconAndTitle(title:String,icon:Int){

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.otopark.BaseActivity
+import com.example.otopark.PlakalarOnClickListener
 import com.example.otopark.R
 import kotlinx.android.synthetic.main.fragment_plakalar.*
 
@@ -20,21 +21,26 @@ private const val ARG_PARAM2 = "param2"
  * Use the [PlakalarFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class PlakalarFragment : Fragment() {
+class PlakalarFragment : Fragment(), PlakalarOnClickListener{
 
-
-
-    private var plakalarAdapter: PlakalarAdapter? = null
-    private val plakalarlist : List<String> =
-        listOf("34 GA 1527", "34 CD 1527", "34 HK 2020")
-
+    private lateinit var plakalarAdapter: PlakalarAdapter
+    private val plakalarlist : MutableList<String> =
+        mutableListOf("34 GA 1527", "34 CD 1527", "34 HK 2020")
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        plakalarAdapter= PlakalarAdapter(plakalarlist)
+        plakalarAdapter= PlakalarAdapter(plakalarlist, this)
         plakalarListRecyclerView.adapter=plakalarAdapter
 
+    }
 
+    private fun removeItem(position: Int){
+        plakalarlist.removeAt(position)
+        plakalarAdapter.notifyDataSetChanged()
+    }
+
+    override fun onClick(position: Int){
+        removeItem(position)
     }
 
     override fun onCreateView(

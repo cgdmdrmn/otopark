@@ -22,8 +22,8 @@
 
             <ImageView
                 android:id="@+id/iconcar"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 app:srcCompat="@drawable/ic_action_car" />
 
             <TextView
@@ -40,11 +40,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/iconDelete"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:srcCompat="@drawable/ic_action_delete" />
+            <TextView
+                android:id="@+id/deleteTextView"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:padding="10dp"
+                android:text="Sil"
+                android:textColor="@color/colorPrimaryDark"/>
+
 
         </LinearLayout>
 
