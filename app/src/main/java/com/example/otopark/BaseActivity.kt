@@ -2,6 +2,8 @@ package com.example.otopark
 
 import DrawableMenuFragments.*
 import android.os.Bundle
+import android.os.PersistableBundle
+import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -61,6 +63,19 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
         drawerToggle.syncState()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.mainmenu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+     var itemview = item.itemId
+        when(itemview){
+            R.id.home -> changeFragment(AnaEkranFragment(), ANASAYFA_TAG)
+        }
+        return false
+    }
+
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         when (menuItem.itemId) {
             R.id.nav_hesabim -> changeFragment(ProfileFragment(), PROFILE_TAG)
@@ -79,7 +94,6 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
 
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
-
     }
 
     private fun changeFragment(fragment: Fragment, tag: String) {
@@ -103,5 +117,6 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
         const val REZERVASYONLARIM_TAG = "REZERVASYONLARIM"
         const val PLAKALARIM_TAG = "PLAKALARIM"
         const val PROFILE_TAG = "HESABIM"
+        const val ANASAYFA_TAG = "ANASAYFA"
     }
 }
