@@ -32,7 +32,6 @@
 
         <EditText
             android:id="@+id/otoparkAramaEditText"
-            style="@style/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/mapView"
@@ -40,7 +39,9 @@
             android:autofillHints=""
             android:drawableStart="@drawable/ic_action_search"
             android:gravity="center"
-            android:text="@string/ototopark_ara" />
+            android:hint="@string/ototopark_ara"
+            android:textColorHint="#8A9C99"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/yakinimdakiOtoparklarTextView"
@@ -59,6 +60,38 @@
             android:scrollbars="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/closest_auto_park_list_item" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mapView">
+
+            <TextView
+                android:id="@+id/otoparkTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="Büyük Beşiktaş Otoparkı 1,8km"
+                style="@style/textView" />
+
+            <Button
+                android:id="@+id/buttonYolTarifi"
+                style="@style/Button"
+                android:drawableLeft="@drawable/ic_action_yoltarifi"
+                android:layout_width="match_parent"
+                android:text="Yol Tarifi" />
+
+            <TextView
+                android:id="@+id/AdresTextView"
+                android:layout_width="200sp"
+                android:layout_height="200sp"
+                android:layout_gravity="left"
+                android:text="Ihlamurdere Caddesi 126B 34357 Beşiktaş İstanbul Türkiye"
+                style="@style/textView" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 </ScrollView>
