@@ -13,9 +13,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.view.isInvisible
 import androidx.fragment.app.Fragment
 import com.example.otopark.BaseActivity
 import com.example.otopark.R
+import com.example.otopark.YakinimdakiOtoparklarOnClickListener
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -28,11 +30,12 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.tasks.Task
 import kotlinx.android.synthetic.main.fragment_ana_ekran.*
 
-class AnaEkranFragment : Fragment() {
+class AnaEkranFragment : Fragment(), YakinimdakiOtoparklarOnClickListener {
     var fragment: Fragment? = null
     private var yakinimdakiOtoparklarAdapter: YakinimdakiOtoparklarAdapter? = null
-    private val yakinimdakiotoparklarList : List<String> =
-    listOf(" Büyük Beşiktaş Otoparkı", "Beşiktaş Kapalı Otopark", "Beltaş Otoparkı", "Ulus Otoparkı")
+    private val yakinimdakiotoparklarList : MutableList<String> =
+    mutableListOf(" Büyük Beşiktaş Otoparkı", "Beşiktaş Kapalı Otopark", "Beltaş Otoparkı", "Ulus Otoparkı")
+
     private lateinit var map: GoogleMap
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var locationCallback: LocationCallback
@@ -53,11 +56,14 @@ class AnaEkranFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        yakinimdakiOtoparklarAdapter= YakinimdakiOtoparklarAdapter(yakinimdakiotoparklarList)
+        yakinimdakiOtoparklarAdapter= YakinimdakiOtoparklarAdapter(yakinimdakiotoparklarList, this)
         autoparkListRecyclerView.adapter=yakinimdakiOtoparklarAdapter
         initializeMap(savedInstanceState)
         initializeLocationApiClientAndCallback()
+    }
 
+    override fun onClick(position: Int) {
+        autoparkListRecyclerView.visibility=View.GONE
     }
 
     private fun initializeMap(savedInstanceState: Bundle?){

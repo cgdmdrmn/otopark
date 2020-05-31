@@ -6,14 +6,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.otopark.R
+import com.example.otopark.YakinimdakiOtoparklarOnClickListener
 
 
-class YakinimdakiOtoparklarAdapter(private val yakinimdakiOtoparklarList: List<String>) : RecyclerView.Adapter<Adapter.YakinimdakiOtoparklarAdapter.PlateViewHolder>() {
+class YakinimdakiOtoparklarAdapter(private val yakinimdakiOtoparklarList: MutableList<String>,
+                                   private val listener: YakinimdakiOtoparklarOnClickListener
+) : RecyclerView.Adapter<Adapter.YakinimdakiOtoparklarAdapter.PlateViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):PlateViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.closest_auto_park_list_item, parent, false)
-        return PlateViewHolder(view)
-    }
     override fun getItemCount(): Int {
         return yakinimdakiOtoparklarList.size
     }
@@ -22,8 +21,12 @@ class YakinimdakiOtoparklarAdapter(private val yakinimdakiOtoparklarList: List<S
         holder.titleTextView.text=yakinimdakiOtoparklarList[position]
     }
 
-    class PlateViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):PlateViewHolder {
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.closest_auto_park_list_item, parent, false)
+        return PlateViewHolder(view)
+    }
 
+    class PlateViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleTextView: TextView = itemView.findViewById(R.id.textContent)
 
     }
