@@ -1,5 +1,6 @@
 package Adapter
 
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +12,7 @@ import com.example.otopark.YakinimdakiOtoparklarOnClickListener
 
 class YakinimdakiOtoparklarAdapter(private val yakinimdakiOtoparklarList: MutableList<String>,
                                    private val listener: YakinimdakiOtoparklarOnClickListener
-) : RecyclerView.Adapter<Adapter.YakinimdakiOtoparklarAdapter.PlateViewHolder>() {
+) : RecyclerView.Adapter<YakinimdakiOtoparklarAdapter.PlateViewHolder>() {
 
     override fun getItemCount(): Int {
         return yakinimdakiOtoparklarList.size
@@ -19,6 +20,8 @@ class YakinimdakiOtoparklarAdapter(private val yakinimdakiOtoparklarList: Mutabl
 
     override fun onBindViewHolder(holder:PlateViewHolder, position: Int) {
         holder.titleTextView.text=yakinimdakiOtoparklarList[position]
+        holder.titleTextView.paintFlags= Paint.UNDERLINE_TEXT_FLAG
+        holder.titleTextView.setOnClickListener { listener.onClick(position) }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):PlateViewHolder {

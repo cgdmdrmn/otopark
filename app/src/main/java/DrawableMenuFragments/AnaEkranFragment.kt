@@ -63,7 +63,8 @@ class AnaEkranFragment : Fragment(), YakinimdakiOtoparklarOnClickListener {
     }
 
     override fun onClick(position: Int) {
-        autoparkListRecyclerView.visibility=View.GONE
+        autoparkListRecyclerView.setVisibility(View.INVISIBLE)
+        linear.setVisibility(View.VISIBLE)
     }
 
     private fun initializeMap(savedInstanceState: Bundle?){
