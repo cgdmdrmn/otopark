@@ -1,5 +1,6 @@
 package com.example.otopark
 
+import DrawableMenuFragments.OdemeAraclarimFragment
 import DrawableMenuFragments.PlakalarFragment
 import android.content.DialogInterface
 import android.os.Bundle
@@ -7,7 +8,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Toast
+import kotlinx.android.synthetic.main.fragment_kart_ekle.*
 import kotlinx.android.synthetic.main.fragment_plaka_ekle.*
+import kotlinx.android.synthetic.main.fragment_plaka_ekle.checkBox
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,15 +48,39 @@ class PlakaEkleFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        buttonPlakaEkle.setOnClickListener {
-            (activity as BaseActivity).createAlertDialog(
-                "Uyarı",
-                "Kart ekleme işleminiz gerçekleşti.",
-                "Tamam",
-                DialogInterface.OnClickListener { _, _ ->  (activity as BaseActivity).changeFragment(PlakalarFragment(),"PLAKALAR_FRAGMENT") },
-                null,
-                null
-            )
+        val aracsinifi= arrayOf("1.","2.","3.","4.","5.","6.")
+        val arrayAdapter= ArrayAdapter(this.requireContext(), android.R.layout.simple_spinner_item, aracsinifi)
+        aracsinifiSpinner.adapter=arrayAdapter
+
+        aracsinifiSpinner.onItemSelectedListener=object :
+        AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+               spinnerResult.text=aracsinifi[position]
+            }
+        }
+
+
+        buttonPlakaEkle.setOnClickListener{
+
+            val plaka = plakagirEditText.text
+            if(plaka.isNotEmpty() && checkBox.isChecked){
+                (activity as BaseActivity).createAlertDialog(
+                    "Uyarı",
+                    "Kart ekleme işleminiz gerçekleşti.",
+                    "Tamam",
+                    DialogInterface.OnClickListener { _, _ ->  (activity as BaseActivity).changeFragment(PlakaEkleFragment(),"PLAKALA_EKLE_FRAGMENT") },
+                    null,
+                    null
+                )
+            }else{
+                Toast.makeText(this.requireContext(),"Lütfen boş alanları doldurun.", Toast.LENGTH_SHORT).show()
+            }
         }
     }
     companion object {

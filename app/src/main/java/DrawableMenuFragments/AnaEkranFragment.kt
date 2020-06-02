@@ -1,6 +1,7 @@
 package DrawableMenuFragments
 
 import Adapter.YakinimdakiOtoparklarAdapter
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,8 @@ import androidx.fragment.app.Fragment
 import com.example.otopark.AramaEkraniFragment
 import com.example.otopark.BaseActivity
 import com.example.otopark.R
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import kotlinx.android.synthetic.main.bottom_sheet.view.*
 import kotlinx.android.synthetic.main.fragment_ana_ekran.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -20,7 +23,6 @@ private const val ARG_PARAM2 = "param2"
 
 class AnaEkranFragment : Fragment() {
     var fragment: Fragment? = null
-
 
 
 
@@ -44,6 +46,12 @@ class AnaEkranFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+        val dialog = BottomSheetDialog(this.requireContext())
+        val bottomSheet = layoutInflater.inflate(R.layout.bottom_sheet, null)
+        bottomSheet.buttonYolTarifi.setOnClickListener { dialog.dismiss() }
+        dialog.setContentView(bottomSheet)
+        dialog.show()
+
         yakinimdakiOtoparklarAdapter= YakinimdakiOtoparklarAdapter(yakinimdakiotoparklarList)
         autoparkListRecyclerView.adapter=yakinimdakiOtoparklarAdapter
 
@@ -51,8 +59,6 @@ class AnaEkranFragment : Fragment() {
             (activity as BaseActivity).changeFragment(AramaEkraniFragment(),"ARAMA_EKRANI_FRAGMENT")
         }
     }
-
-
 
     companion object {
         /**

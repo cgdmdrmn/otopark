@@ -1,13 +1,16 @@
 package com.example.otopark
 
 import DrawableMenuFragments.AnaEkranFragment
+import DrawableMenuFragments.OdemeAraclarimFragment
 import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_bilgilerim.*
+import kotlinx.android.synthetic.main.fragment_kart_ekle.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -44,14 +47,22 @@ class BilgilerimFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         buttonKaydet.setOnClickListener {
-            (activity as BaseActivity).createAlertDialog(
-                "Uyarı",
-                "Şifre değiştirme işleminiz başarıyla gerçekleşti.",
-                "Tamam",
-                DialogInterface.OnClickListener { _, _ ->  (activity as BaseActivity).changeFragment(AnaEkranFragment(),"ANA_EKRAN_FRAGMENT") },
-                null,
-                null
-            )
+            val eskisifre = Texteskisifre.text
+            val yenisifre = Textyenisifre.text
+            if(eskisifre.isNotEmpty() && yenisifre.isNotEmpty() && eskisifre != yenisifre){
+                (activity as BaseActivity).createAlertDialog(
+                    "Uyarı",
+                    "Şifre değiştirme işleminiz başarıyla gerçekleşti.",
+                    "Tamam",
+                    DialogInterface.OnClickListener { _, _ ->  (activity as BaseActivity).changeFragment(BilgilerimFragment(),"BILGILERIM_FRAGMENT") },
+                    null,
+                    null
+                )
+            }else{
+                Toast.makeText(this.requireContext(),"Lütfen geçerli bir şifre giriniz.", Toast.LENGTH_SHORT).show()
+            }
+
+
         }
     }
 

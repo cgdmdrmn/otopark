@@ -28,7 +28,6 @@ class AramaEkraniFragment : Fragment() {
         super.onCreate(savedInstanceState)
         (activity as BaseActivity).changeToolbarIconAndTitle("Ara", R.drawable.toolbar_back_icon)
 
-
     }
 
     override fun onCreateView(

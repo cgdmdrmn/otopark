@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomSheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="40dp">
+
+
+    <TextView
+        android:id="@+id/otoparkTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Büyük Beşiktaş Otoparkı 1,2 km" />
+
+    <Button
+        android:id="@+id/buttonYolTarifi"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/otoparkTextView"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/ic_action_yoltarifi"
+        android:text="Yol Tarifi" />
+
+    <TextView
+        android:id="@+id/AdresTextView"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonYolTarifi"
+        android:layout_marginTop="10dp"
+        android:text="Ihlamurdere Caddesi 126B 34357 Beşiktaş İstanbul Türkiye" />
+
+</RelativeLayout>

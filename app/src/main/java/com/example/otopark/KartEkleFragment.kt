@@ -4,10 +4,17 @@ import Adapter.OdemeAraclarimAdapter
 import DrawableMenuFragments.OdemeAraclarimFragment
 import android.content.DialogInterface
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_kart_ekle.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -37,21 +44,33 @@ class KartEkleFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_kart_ekle, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        buttonKartEkle.setOnClickListener {
-            (activity as BaseActivity).createAlertDialog(
-                "Uyarı",
-                "Kart ekleme işleminiz gerçekleşti.",
-                "Tamam",
-               DialogInterface.OnClickListener { _, _ ->  (activity as BaseActivity).changeFragment(OdemeAraclarimFragment(),"ODEME_ARACLARIM") },
-                null,
-                null
-            )
+
+        buttonKartEkle.setOnClickListener{
+
+            val kartno = kartnoEditText.text
+            val ay = ayEditText.text
+            val yil = yilEditText.text
+            val ccv = editText3.text
+
+            if(kartno.isNotEmpty() && ay.isNotEmpty() && yil.isNotEmpty() && ccv.isNotEmpty() && checkBox.isChecked){
+                (activity as BaseActivity).createAlertDialog(
+                    "Uyarı",
+                    "Kart ekleme işleminiz gerçekleşti.",
+                    "Tamam",
+                    DialogInterface.OnClickListener { _, _ ->  (activity as BaseActivity).changeFragment(OdemeAraclarimFragment(),"ODEME_ARACLARIM") },
+                    null,
+                    null
+                )
+            }else{
+                Toast.makeText(this.requireContext(),"Lütfen boş alanları doldurun.",Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

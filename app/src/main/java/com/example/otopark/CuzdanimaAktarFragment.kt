@@ -1,10 +1,21 @@
 package com.example.otopark
 
+import DrawableMenuFragments.CuzdanimFragment
+import DrawableMenuFragments.OdemeAraclarimFragment
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Toast
+import kotlinx.android.synthetic.main.fragment_cuzdanima_aktar.*
+import kotlinx.android.synthetic.main.fragment_cuzdanima_aktar.kartsecSpinner
+import kotlinx.android.synthetic.main.fragment_kart_ekle.*
+import kotlinx.android.synthetic.main.fragment_park_sure_uzat.*
+import kotlinx.android.synthetic.main.fragment_rezervasyon_ekle.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +47,44 @@ class CuzdanimaAktarFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_cuzdanima_aktar, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        val odemearaclar= arrayOf("4926 **** **** **11","1527 **** **** **89","2222 **** **** **15")
+        val arrayAdapter= ArrayAdapter(this.requireContext(), android.R.layout.simple_spinner_item, odemearaclar)
+        kartsecSpinner.adapter=arrayAdapter
+        kartsecSpinner.onItemSelectedListener=object :
+            AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) { } }
+
+        kartekleTextView.setOnClickListener {
+            (activity as BaseActivity).changeFragment(
+                KartEkleFragment(),"KART_EKLE_FRAGMENT") }
+
+        cuzdanimaaktarButton.setOnClickListener {
+
+            val tutar = tutargirEditText.text
+            if(tutar.isNotEmpty() && kullanimkosullaricheckBox.isChecked){
+                (activity as BaseActivity).createAlertDialog(
+                    "Uyarı",
+                    "Bakiyeniz cüzdanınıza başarıyla aktarıldı.",
+                    "Tamam",
+                    DialogInterface.OnClickListener { _, _ ->  (activity as BaseActivity).changeFragment(
+                        CuzdanimaAktarFragment(),"CUZDANIMA_AKTAR_FRAGMENT") },
+                    null,
+                    null
+                )
+            }else{
+                Toast.makeText(this.requireContext(),"Lütfen boş alanları doldurun.", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     companion object {
