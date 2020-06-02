@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.otopark.BaseActivity
+import com.example.otopark.KartEkleFragment
 import com.example.otopark.R
 import kotlinx.android.synthetic.main.fragment_odeme_araclarim.*
 
@@ -22,19 +23,26 @@ private const val ARG_PARAM2 = "param2"
  */
 class OdemeAraclarimFragment : Fragment() {
     private var odemeAraclarimAdapter: OdemeAraclarimAdapter? = null
-    private val odemearaclarimlist : List<String> =
+    private val odemearaclarimlist: List<String> =
         listOf("4926 **** **** **11", "1527 **** **** **89", "2222 **** **** **15")
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        odemeAraclarimAdapter= OdemeAraclarimAdapter(odemearaclarimlist)
-        cardListRecyclerView.adapter=odemeAraclarimAdapter
+        odemeAraclarimAdapter = OdemeAraclarimAdapter(odemearaclarimlist)
+        cardListRecyclerView.adapter = odemeAraclarimAdapter
+
+        buttonKartEkle.setOnClickListener {
+            (activity as BaseActivity).changeFragment(KartEkleFragment(), "KART_EKLE_FRAGMENT")
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity as BaseActivity).changeToolbarIconAndTitle("Ödeme Araçlarım", R.drawable.toolbar_back_icon)
+        (activity as BaseActivity).changeToolbarIconAndTitle(
+            "Ödeme Araçlarım",
+            R.drawable.toolbar_hamburger_icon
+        )
     }
 
     override fun onCreateView(
@@ -44,7 +52,6 @@ class OdemeAraclarimFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_odeme_araclarim, container, false)
     }
-
 
 
     companion object {

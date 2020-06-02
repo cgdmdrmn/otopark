@@ -45,7 +45,8 @@
         android:layout_height="wrap_content"
         android:text="Kullanım koşullarını kabul ediyorum."
         android:layout_below="@+id/editText3"
-        android:layout_marginTop="4dp"/>
+        android:layout_marginTop="4dp"
+        android:theme="@style/MyCheckbox"/>
 
 
     <Button

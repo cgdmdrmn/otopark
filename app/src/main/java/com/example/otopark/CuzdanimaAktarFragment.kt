@@ -1,33 +1,25 @@
 package com.example.otopark
 
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Toast
+import kotlinx.android.synthetic.main.fragment_cuzdanima_aktar.*
+import kotlinx.android.synthetic.main.fragment_cuzdanima_aktar.kartsecSpinner
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [CuzdanimaAktarFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CuzdanimaAktarFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity as BaseActivity).changeToolbarIconAndTitle("Cüzdanıma Aktar", R.drawable.toolbar_back_icon)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        (activity as BaseActivity).changeToolbarIconAndTitle(
+            "Cüzdanıma Aktar",
+            R.drawable.toolbar_hamburger_icon
+        )
     }
 
     override fun onCreateView(
@@ -38,23 +30,58 @@ class CuzdanimaAktarFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_cuzdanima_aktar, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CuzdanimaAktarFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CuzdanimaAktarFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        val odemearaclar =
+            arrayOf("4926 **** **** **11", "1527 **** **** **89", "2222 **** **** **15")
+        val arrayAdapter =
+            ArrayAdapter(this.requireContext(), android.R.layout.simple_spinner_item, odemearaclar)
+        kartsecSpinner.adapter = arrayAdapter
+        kartsecSpinner.onItemSelectedListener = object :
+            AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
             }
+        }
+
+        kartekleTextView.setOnClickListener {
+            (activity as BaseActivity).changeFragment(
+                KartEkleFragment(), "KART_EKLE_FRAGMENT"
+            )
+        }
+
+        cuzdanimaaktarButton.setOnClickListener {
+
+            val tutar = tutargirEditText.text
+            if (tutar.isNotEmpty() && kullanimkosullaricheckBox.isChecked) {
+                (activity as BaseActivity).createAlertDialog(
+                    "Uyarı",
+                    "Bakiyeniz cüzdanınıza başarıyla aktarıldı.",
+                    "Tamam",
+                    DialogInterface.OnClickListener { _, _ ->
+                        (activity as BaseActivity).changeFragment(
+                            CuzdanimaAktarFragment(), "CUZDANIMA_AKTAR_FRAGMENT"
+                        )
+                    },
+                    null,
+                    null
+                )
+            } else {
+                Toast.makeText(
+                    this.requireContext(),
+                    "Lütfen boş alanları doldurun.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
+
+    companion object {
+        fun newInstance() = CuzdanimaAktarFragment()
     }
 }

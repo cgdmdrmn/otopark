@@ -10,63 +10,34 @@
     android:background="@color/white">
 
     <Spinner
-        style="@style/textView"
         android:id="@+id/rezSecSpinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Uzatmak istediğiniz rezervasyonu seçin."
+        android:layout_height="30dp"
         android:layout_marginTop="4dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:background="@drawable/spinnercustom"
+        android:popupBackground="@drawable/spinnercustom"
+        android:spinnerMode="dropdown"/>
+
+    <TextView
+        android:id="@+id/rezbilgilerinizTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Rezervasyon Bilgileriniz:"
+        style="@style/textView"
+        android:layout_below="@+id/rezSecSpinner"/>
 
     <TextView
         android:id="@+id/rezbittarihTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="Rezervasyonunuzun bitiş tarihi:"
+        android:text="TarihSaatBilgileri"
         style="@style/textView"
-        android:layout_below="@+id/rezSecSpinner"/>
-
-
-    <EditText
-        android:id="@+id/tarihbasEditText"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Seçilen rez. tarihi"
-        android:layout_marginTop="4dp"
-        style="@style/textView"
-        android:autofillHints=""
-        android:layout_below="@+id/rezbittarihTextView" />
-
-    <ImageButton
-        android:background="@color/white"
-        android:id="@+id/dateBtn"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
-        android:src="@drawable/ic_action_date"
-        android:layout_below="@+id/rezbittarihTextView"
-        android:onClick="showDatePicker"
-        android:layout_toRightOf="@+id/tarihbasEditText"/>
-
-    <Spinner
-        style="@style/textView"
-        android:id="@+id/spinner3"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="Saat"
-        android:layout_toRightOf="@+id/dateBtn"
-        android:layout_below="@+id/rezbittarihTextView"/>
-
-    <TextView
-        android:id="@+id/otoparkTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bu Otopark"
-        style="@style/textView"
-        android:layout_marginTop="4dp"
-        android:layout_below="@+id/tarihbasEditText"/>
+        android:layout_below="@+id/rezbilgilerinizTextView"/>
 
     <TextView
         android:id="@+id/rezbitTextView"
@@ -75,15 +46,15 @@
         android:layout_marginTop="4dp"
         android:text="Rezervasyonunuzu hangi tarihe kadar uzatmak istiyorsunuz?"
         style="@style/textView"
-        android:layout_below="@+id/otoparkTextView"/>
+        android:layout_below="@+id/rezbittarihTextView"/>
 
     <EditText
         android:id="@+id/tarihbitEditText"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="  /  /    "
+        android:textColorHint="#817B7B"
+        android:textColor="@color/black"
         android:layout_marginTop="4dp"
-        style="@style/textView"
         android:gravity="center"
         android:autofillHints=""
         android:layout_below="@+id/rezbitTextView" />
@@ -97,14 +68,18 @@
         android:layout_below="@+id/rezbitTextView"
         android:onClick="showDatePicker"
         android:layout_toRightOf="@+id/tarihbitEditText"/>
+
     <Spinner
         style="@style/textView"
-        android:id="@+id/spinner4"
+        android:id="@+id/saatsecSpinner"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:text="Saati seçin."
         android:layout_toRightOf="@+id/dateBitBtn"
-        android:layout_below="@+id/rezbitTextView" />
+        android:layout_below="@+id/rezbitTextView"
+        android:background="@drawable/spinnercustom"
+        android:popupBackground="@drawable/spinnercustom"
+        android:spinnerMode="dropdown"/>
 
 
 
@@ -115,7 +90,7 @@
         android:text="Toplam Tutar:"
         style="@style/textView"
         android:layout_marginTop="14dp"
-        android:layout_below="@+id/spinner4"/>
+        android:layout_below="@+id/saatsecSpinner"/>
 
     <TextView
         android:id="@+id/tutarTextView"
@@ -125,17 +100,18 @@
         style="@style/textView"
         android:layout_alignParentRight="true"
         android:layout_marginTop="14dp"
-        android:layout_below="@+id/spinner4"
+        android:layout_below="@+id/saatsecSpinner"
         android:layout_toRightOf="@+id/toplamTutarTextView"/>
 
     <Spinner
-        style="@style/textView"
-        android:id="@+id/spinner2"
+        android:id="@+id/kartsecSpinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginTop="8dp"
-        android:text="Ödeme aracınızı seçin."
-        android:layout_below="@+id/tutarTextView"/>
+        android:layout_below="@+id/tutarTextView"
+        android:background="@drawable/spinnercustom"
+        android:popupBackground="@drawable/spinnercustom"
+        android:spinnerMode="dropdown"/>
 
     <TextView
         android:id="@+id/yeniKartEkleTextView"
@@ -146,29 +122,7 @@
         style="@style/textView"
         android:layout_alignParentRight="true"
         android:layout_marginTop="4dp"
-        android:layout_below="@+id/spinner2"/>
-
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="date" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="date" />
-
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="date" />
+        android:layout_below="@+id/kartsecSpinner"/>
 
     <Button
         style="@style/Button"
