@@ -35,7 +35,6 @@
         android:padding="15dp"
         android:inputType="textPersonName"
         android:fontFamily="@font/roboto_regular"
-        android:background="@drawable/et_custom"
         android:textSize="15sp" />
 
     <EditText
@@ -51,7 +50,6 @@
         android:padding="15dp"
         android:fontFamily="@font/roboto_regular"
         android:inputType="textEmailAddress"
-        android:background="@drawable/et_custom"
         android:textSize="15sp" />
 
     <EditText
@@ -67,7 +65,6 @@
         android:padding="15dp"
         android:fontFamily="@font/roboto_regular"
         android:inputType="textPassword"
-        android:background="@drawable/et_custom"
         android:textSize="15sp" />
 
     <EditText
@@ -82,7 +79,6 @@
         android:padding="15dp"
         android:fontFamily="@font/roboto_regular"
         android:inputType="textPassword"
-        android:background="@drawable/et_custom"
         android:textSize="15sp" />
 
     <RelativeLayout

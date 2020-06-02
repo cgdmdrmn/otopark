@@ -149,6 +149,5 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
         const val REZERVASYONLARIM_TAG = "REZERVASYONLARIM"
         const val PLAKALARIM_TAG = "PLAKALARIM"
         const val PROFILE_TAG = "HESABIM"
-        const val ANASAYFA_TAG = "ANASAYFA"
     }
 }

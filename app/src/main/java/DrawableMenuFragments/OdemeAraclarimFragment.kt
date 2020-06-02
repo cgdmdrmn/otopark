@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.otopark.BaseActivity
 import com.example.otopark.CardsOnClickListener
+import com.example.otopark.KartEkleFragment
 import com.example.otopark.R
 import kotlinx.android.synthetic.main.fragment_odeme_araclarim.*
 
@@ -32,8 +33,7 @@ class OdemeAraclarimFragment : Fragment(), CardsOnClickListener {
         super.onViewCreated(view, savedInstanceState)
         odemeAraclarimAdapter= OdemeAraclarimAdapter(odemearaclarimlist, this)
         cardListRecyclerView.adapter=odemeAraclarimAdapter
-        odemeAraclarimAdapter = OdemeAraclarimAdapter(odemearaclarimlist)
-        cardListRecyclerView.adapter = odemeAraclarimAdapter
+
 
         buttonKartEkle.setOnClickListener {
             (activity as BaseActivity).changeFragment(KartEkleFragment(), "KART_EKLE_FRAGMENT")

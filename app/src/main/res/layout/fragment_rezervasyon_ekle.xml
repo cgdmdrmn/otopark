@@ -2,180 +2,181 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:paddingLeft="15dp"
-    android:paddingRight="15dp"
     android:paddingTop="25dp"
-    android:paddingBottom="5dp"
-    android:background="@color/white">
+    android:paddingRight="15dp"
+    android:paddingBottom="5dp">
 
     <TextView
         android:id="@+id/rezbasTextView"
+        style="@style/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Rezervasyonunuzun başlangıç tarihini girin."
-        style="@style/textView"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentTop="true"
+        android:text="Rezervasyonunuzun başlangıç tarihini girin." />
 
     <EditText
         android:id="@+id/tarihbasEditText"
+        style="@style/textView"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:textColorHint="#817B7B"
-        android:textColor="@color/black"
+        android:layout_below="@+id/rezbasTextView"
         android:layout_marginTop="4dp"
-        style="@style/textView"
         android:autofillHints=""
-        android:layout_below="@+id/rezbasTextView" />
+        android:textColor="@color/black"
+        android:textColorHint="#817B7B" />
 
     <ImageButton
-        android:background="@color/white"
         android:id="@+id/dateBtn"
         android:layout_width="50dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_action_date"
         android:layout_below="@+id/rezbasTextView"
+        android:layout_toRightOf="@+id/tarihbasEditText"
+        android:background="@color/white"
         android:onClick="showDatePicker"
-        android:layout_toRightOf="@+id/tarihbasEditText"/>
+        android:src="@drawable/ic_action_date" />
 
     <Spinner
         android:id="@+id/rezbassaatspinner"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_toRightOf="@+id/dateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/rezbasTextView"
+        android:layout_toRightOf="@+id/dateBtn"
         android:background="@drawable/spinnercustom"
         android:popupBackground="@drawable/spinnercustom"
-        android:spinnerMode="dropdown"/>
+        android:spinnerMode="dropdown" />
 
     <TextView
         android:id="@+id/rezbitTextView"
+        style="@style/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Rezervasyonunuzun bitiş tarihini girin."
-        style="@style/textView"
-        android:layout_below="@+id/tarihbasEditText"/>
+        android:layout_below="@+id/tarihbasEditText"
+        android:text="Rezervasyonunuzun bitiş tarihini girin." />
 
     <EditText
         android:id="@+id/tarihbitEditText"
+        style="@style/textView"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:textColorHint="#817B7B"
-        android:textColor="@color/black"
+        android:layout_below="@+id/rezbitTextView"
         android:layout_marginTop="4dp"
-        style="@style/textView"
-        android:gravity="center"
         android:autofillHints=""
-        android:layout_below="@+id/rezbitTextView" />
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textColorHint="#817B7B" />
 
     <ImageButton
-        android:background="@color/white"
         android:id="@+id/dateBitBtn"
         android:layout_width="50dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_action_date"
         android:layout_below="@+id/rezbitTextView"
+        android:layout_toRightOf="@+id/tarihbitEditText"
+        android:background="@color/white"
         android:onClick="showDatePicker"
-        android:layout_toRightOf="@+id/tarihbitEditText"/>
+        android:src="@drawable/ic_action_date" />
+
     <Spinner
         android:id="@+id/rezbitsaatspinner"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_toRightOf="@+id/dateBitBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/rezbitTextView"
+        android:layout_toRightOf="@+id/dateBitBtn"
         android:background="@drawable/spinnercustom"
         android:popupBackground="@drawable/spinnercustom"
-        android:spinnerMode="dropdown"/>
+        android:spinnerMode="dropdown" />
 
     <Spinner
         android:id="@+id/plakasecspinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_below="@+id/tarihbitEditText"/>
+        android:layout_below="@+id/tarihbitEditText"
+        android:layout_marginTop="4dp" />
 
     <TextView
         android:id="@+id/aracekleTextView"
+        style="@style/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+yeni bir araç ekleyin"
-        android:textColor="#200FB6"
-        style="@style/textView"
+        android:layout_below="@+id/plakasecspinner"
         android:layout_alignParentRight="true"
         android:layout_marginTop="4dp"
-        android:layout_below="@+id/plakasecspinner"/>
+        android:text="+yeni bir araç ekleyin"
+        android:textColor="#200FB6" />
 
     <TextView
         android:id="@+id/hangiOtoparkTextView"
+        style="@style/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hangi otopark?"
-        style="@style/textView"
+        android:layout_below="@+id/aracekleTextView"
         android:layout_marginTop="4dp"
-        android:layout_below="@+id/aracekleTextView"/>
+        android:text="Hangi otopark?" />
 
     <EditText
         android:id="@+id/otoparkAraEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColorHint="#817B7B"
-        android:textColor="@color/black"
+        android:layout_below="@+id/hangiOtoparkTextView"
         android:layout_marginTop="4dp"
+        android:autofillHints=""
         android:drawableStart="@drawable/ic_action_search"
         android:gravity="center"
-        android:autofillHints=""
-        android:layout_below="@+id/hangiOtoparkTextView" />
+        android:textColor="@color/black"
+        android:textColorHint="#817B7B" />
 
     <TextView
         android:id="@+id/toplamTutarTextView"
+        style="@style/textView"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Toplam Tutar:"
-        style="@style/textView"
+        android:layout_below="@+id/otoparkAraEditText"
         android:layout_marginTop="4dp"
-        android:layout_below="@+id/otoparkAraEditText"/>
+        android:text="Toplam Tutar:" />
 
     <TextView
         android:id="@+id/tutarTextView"
+        style="@style/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="10TL"
-        style="@style/textView"
+        android:layout_below="@+id/otoparkAraEditText"
         android:layout_alignParentRight="true"
         android:layout_marginTop="4dp"
-        android:layout_below="@+id/otoparkAraEditText"
-        android:layout_toRightOf="@+id/toplamTutarTextView"/>
+        android:layout_toRightOf="@+id/toplamTutarTextView"
+        android:text="10TL" />
 
     <Spinner
         android:id="@+id/odemearacisecspinner"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/tutarTextView"
+        android:layout_marginTop="8dp"
         android:background="@drawable/spinnercustom"
         android:popupBackground="@drawable/spinnercustom"
-        android:spinnerMode="dropdown"/>
+        android:spinnerMode="dropdown" />
 
     <TextView
         android:id="@+id/yeniKartEkleTextView"
+        style="@style/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+yeni kart ekleyin"
-        android:textColor="#200FB6"
-        style="@style/textView"
+        android:layout_below="@+id/odemearacisecspinner"
         android:layout_alignParentRight="true"
         android:layout_marginTop="4dp"
-        android:layout_below="@+id/odemearacisecspinner"/>
+        android:text="+yeni kart ekleyin"
+        android:textColor="#200FB6" />
 
     <Button
-        style="@style/Button"
         android:id="@+id/rezYapButton"
-        android:drawableLeft="@drawable/ic_action_add"
+        style="@style/Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="8dp"
-        android:text="Rezervasyon Yap"
-        android:layout_alignParentBottom="true" />
+        android:drawableLeft="@drawable/ic_action_add"
+        android:text="Rezervasyon Yap" />
 
 </RelativeLayout>
