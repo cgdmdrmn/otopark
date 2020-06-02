@@ -24,8 +24,11 @@
     <Spinner
         android:id="@+id/kartsecSpinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/kartsecTextView" />
+        android:layout_height="30dp"
+        android:layout_below="@+id/kartsecTextView"
+        android:background="@drawable/spinnercustom"
+        android:popupBackground="@drawable/spinnercustom"
+        android:spinnerMode="dropdown"/>
 
     <TextView
         android:id="@+id/kartekleTextView"
@@ -54,7 +57,8 @@
         android:layout_height="wrap_content"
         android:text="Kullanım koşullarını kabul ediyorum."
         android:layout_below="@+id/tutargirEditText"
-        android:layout_marginTop="4dp"/>
+        android:layout_marginTop="4dp"
+        android:theme="@style/MyCheckbox"/>
 
     <Button
         style="@style/Button"

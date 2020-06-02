@@ -1,9 +1,7 @@
 package com.example.otopark
 
-import DrawableMenuFragments.PlakalarFragment
 import android.app.DatePickerDialog
 import android.content.DialogInterface
-import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,39 +9,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.DatePicker
 import android.widget.Toast
-import androidx.annotation.RequiresApi
-import kotlinx.android.synthetic.main.fragment_kart_ekle.*
-import kotlinx.android.synthetic.main.fragment_plaka_ekle.*
 import kotlinx.android.synthetic.main.fragment_rezervasyon_ekle.*
 import java.util.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [RezervasyonEkleFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class RezervasyonEkleFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         (activity as BaseActivity).changeToolbarIconAndTitle(
             "Rezervasyon Ekle",
-            R.drawable.toolbar_back_icon
+            R.drawable.toolbar_hamburger_icon
         )
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
@@ -72,15 +49,20 @@ class RezervasyonEkleFragment : Fragment() {
             dpd.show()
         }
 
+        val c1 = Calendar.getInstance()
+        val year1 = c1.get(Calendar.YEAR)
+        val month1 = c1.get(Calendar.MONTH)
+        val day1 = c1.get(Calendar.DAY_OF_MONTH)
+
         dateBitBtn.setOnClickListener {
             val dpd1 = DatePickerDialog(
                 this.requireContext(),
                 DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
-                    tarihbasEditText.setText("" + mDay + "/" + mMonth + "/" + mYear)
+                    tarihbitEditText.setText("" + mDay + "/" + mMonth + "/" + mYear)
                 },
-                year,
-                month,
-                day
+                year1,
+                month1,
+                day1
             )
             dpd1.show()
         }
@@ -212,52 +194,36 @@ class RezervasyonEkleFragment : Fragment() {
             )
         }
 
-        rezYapButton.setOnClickListener{
-        val bastarih = tarihbasEditText.text
-        val bittarih = tarihbitEditText.text
-        val otopark = otoparkAraEditText.text
+        rezYapButton.setOnClickListener {
+            val bastarih = tarihbasEditText.text
+            val bittarih = tarihbitEditText.text
+            val otopark = otoparkAraEditText.text
 
-        if (bastarih.isNotEmpty() && bittarih.isNotEmpty() && otopark.isNotEmpty()) {
-            (activity as BaseActivity).createAlertDialog(
-                "Uyarı",
-                "Rezervasyonunuz başarıyla oluşturuldu.",
-                "Tamam",
-                DialogInterface.OnClickListener { _, _ ->
-                    (activity as BaseActivity).changeFragment(
-                        RezervasyonEkleFragment(), "REZERVASYONLAR_FRAGMENT"
-                    )
-                },
-                null,
-                null
-            )
-        } else {
-            Toast.makeText(
-                this.requireContext(),
-                "Lütfen boş alanları doldurunuz.",
-                Toast.LENGTH_SHORT
-            ).show()
+            if (bastarih.isNotEmpty() && bittarih.isNotEmpty() && otopark.isNotEmpty()) {
+                (activity as BaseActivity).createAlertDialog(
+                    "Uyarı",
+                    "Rezervasyonunuz başarıyla oluşturuldu.",
+                    "Tamam",
+                    DialogInterface.OnClickListener { _, _ ->
+                        (activity as BaseActivity).changeFragment(
+                            RezervasyonEkleFragment(), "REZERVASYONLAR_FRAGMENT"
+                        )
+                    },
+                    null,
+                    null
+                )
+            } else {
+                Toast.makeText(
+                    this.requireContext(),
+                    "Lütfen boş alanları doldurunuz.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
-}
-
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RezervasyonEkleFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RezervasyonEkleFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance(param1: String, param2: String) = RezervasyonEkleFragment()
     }
 }

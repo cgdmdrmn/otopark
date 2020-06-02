@@ -3,6 +3,10 @@
 
     <group>
         <item
+            android:id="@+id/nav_anasayfa"
+            android:icon="@drawable/ic_action_home"
+            android:title="Anasayfa"/>
+        <item
             android:id="@+id/nav_hesabim"
             android:icon="@drawable/ic_action_person"
             android:title="Hesabım"/>

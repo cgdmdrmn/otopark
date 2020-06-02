@@ -61,4 +61,12 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
+    <style name="MyCheckbox" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:colorControlNormal">#757E8A</item>
+        <item name="android:colorControlActivated">#38B3FF</item>
+        <item name="android:colorControlHighlight">#757E8A</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
+    </style>
+
+
 </resources>

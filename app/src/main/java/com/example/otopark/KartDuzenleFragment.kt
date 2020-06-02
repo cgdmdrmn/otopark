@@ -34,7 +34,10 @@ class KartDuzenleFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity as BaseActivity).changeToolbarIconAndTitle("Kart Düzenle", R.drawable.toolbar_back_icon)
+        (activity as BaseActivity).changeToolbarIconAndTitle(
+            "Kart Düzenle",
+            R.drawable.toolbar_hamburger_icon
+        )
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -50,25 +53,32 @@ class KartDuzenleFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        kaydetButton.setOnClickListener{
+        kaydetButton.setOnClickListener {
 
             val kartno = kartnoEditText.text
             val ay = ayEditText.text
             val yil = yilEditText.text
             val ccv = editText3.text
 
-            if(kartno.isNotEmpty() && ay.isNotEmpty() && yil.isNotEmpty() && ccv.isNotEmpty() && checkBox.isChecked){
+            if (kartno.isNotEmpty() && ay.isNotEmpty() && yil.isNotEmpty() && ccv.isNotEmpty() && checkBox.isChecked) {
                 (activity as BaseActivity).createAlertDialog(
                     "Uyarı",
                     "Değişiklikleriniz kaydedildi.",
                     "Tamam",
-                    DialogInterface.OnClickListener { _, _ ->  (activity as BaseActivity).changeFragment(
-                        KartDuzenleFragment(),"KART_DUZENLE_FRAGMENT") },
+                    DialogInterface.OnClickListener { _, _ ->
+                        (activity as BaseActivity).changeFragment(
+                            KartDuzenleFragment(), "KART_DUZENLE_FRAGMENT"
+                        )
+                    },
                     null,
                     null
                 )
-            }else{
-                Toast.makeText(this.requireContext(),"Lütfen boş alanları doldurun.", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(
+                    this.requireContext(),
+                    "Lütfen boş alanları doldurun.",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }

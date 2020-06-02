@@ -17,8 +17,8 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         val adapter = MyViewPagerAdapter(supportFragmentManager)
-        adapter.addFragment(LoginFragment() , title = "Giriş Yap")
-        adapter.addFragment(RegisterFragment() , title = "Kayıt Ol")
+        adapter.addFragment(LoginFragment(), title = "Giriş Yap")
+        adapter.addFragment(RegisterFragment(), title = "Kayıt Ol")
         viewPager.adapter = adapter
         tabs.setupWithViewPager(viewPager)
 
@@ -26,10 +26,10 @@ class LoginActivity : AppCompatActivity() {
 
     class MyViewPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager) {
 
-        private val fragmentList : MutableList<Fragment> = ArrayList ()
-        private val titleList : MutableList<String> = ArrayList ()
+        private val fragmentList: MutableList<Fragment> = ArrayList()
+        private val titleList: MutableList<String> = ArrayList()
         override fun getItem(position: Int): Fragment {
-            return fragmentList [position]
+            return fragmentList[position]
         }
 
         override fun getCount(): Int {
@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
 
         }
 
-        fun addFragment(fragment: Fragment, title:String){
+        fun addFragment(fragment: Fragment, title: String) {
             fragmentList.add(fragment)
             titleList.add(title)
         }

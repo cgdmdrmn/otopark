@@ -27,7 +27,10 @@ class ProfileFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity as BaseActivity).changeToolbarIconAndTitle("Hesabım", R.drawable.toolbar_back_icon)
+        (activity as BaseActivity).changeToolbarIconAndTitle(
+            "Hesabım",
+            R.drawable.toolbar_hamburger_icon
+        )
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -43,14 +46,20 @@ class ProfileFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        buttonBilgilerim.setOnClickListener{
-            (activity as BaseActivity).changeFragment(BilgilerimFragment(),"BILGILERIM_FRAGMENT")
+        buttonBilgilerim.setOnClickListener {
+            (activity as BaseActivity).changeFragment(BilgilerimFragment(), "BILGILERIM_FRAGMENT")
         }
         buttonRezervasyon.setOnClickListener {
-            (activity as BaseActivity).changeFragment(GecmisRezervasyonlarimFragment(),"GECMIS_REZERVASYONLAR_FRAGMENT")
+            (activity as BaseActivity).changeFragment(
+                GecmisRezervasyonlarimFragment(),
+                "GECMIS_REZERVASYONLAR_FRAGMENT"
+            )
         }
         buttonBildirim.setOnClickListener {
-            (activity as BaseActivity).changeFragment(IletisimTercihlerimFragment(),"REZERVASYONLAR_FRAGMENT")
+            (activity as BaseActivity).changeFragment(
+                IletisimTercihlerimFragment(),
+                "REZERVASYONLAR_FRAGMENT"
+            )
         }
 
         buttonExit.setOnClickListener {
@@ -58,12 +67,23 @@ class ProfileFragment : Fragment() {
                 "Uyarı",
                 "Çıkış yapmak istediğinize emin misiniz?",
                 "Evet",
-                DialogInterface.OnClickListener { _, _ ->  (activity as BaseActivity).changeFragment(LoginFragment(),"LOGIN_FRAGMENT") },
+                DialogInterface.OnClickListener { _, _ ->
+                    (activity as BaseActivity).changeFragment(
+                        LoginFragment(),
+                        "LOGIN_FRAGMENT"
+                    )
+                },
                 "Hayır",
-                DialogInterface.OnClickListener { _, _ ->  (activity as BaseActivity).changeFragment(AnaEkranFragment(),"ANA_EKRAN_FRAGMENT") }
+                DialogInterface.OnClickListener { _, _ ->
+                    (activity as BaseActivity).changeFragment(
+                        AnaEkranFragment(),
+                        "ANA_EKRAN_FRAGMENT"
+                    )
+                }
             )
         }
     }
+
     companion object {
         /**
          * Use this factory method to create a new instance of

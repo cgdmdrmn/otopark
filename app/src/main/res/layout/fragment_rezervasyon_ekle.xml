@@ -42,9 +42,12 @@
     <Spinner
         android:id="@+id/rezbassaatspinner"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_toRightOf="@+id/dateBtn"
-        android:layout_below="@+id/rezbasTextView"/>
+        android:layout_below="@+id/rezbasTextView"
+        android:background="@drawable/spinnercustom"
+        android:popupBackground="@drawable/spinnercustom"
+        android:spinnerMode="dropdown"/>
 
     <TextView
         android:id="@+id/rezbitTextView"
@@ -78,9 +81,12 @@
     <Spinner
         android:id="@+id/rezbitsaatspinner"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_toRightOf="@+id/dateBitBtn"
-        android:layout_below="@+id/rezbitTextView" />
+        android:layout_below="@+id/rezbitTextView"
+        android:background="@drawable/spinnercustom"
+        android:popupBackground="@drawable/spinnercustom"
+        android:spinnerMode="dropdown"/>
 
     <Spinner
         android:id="@+id/plakasecspinner"
@@ -134,9 +140,7 @@
         android:id="@+id/tutarTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="10TL"
-        android:textColorHint="#817B7B"
-        android:textColor="@color/black"
+        android:text="10TL"
         style="@style/textView"
         android:layout_alignParentRight="true"
         android:layout_marginTop="4dp"
@@ -146,9 +150,12 @@
     <Spinner
         android:id="@+id/odemearacisecspinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginTop="8dp"
-        android:layout_below="@+id/tutarTextView"/>
+        android:layout_below="@+id/tutarTextView"
+        android:background="@drawable/spinnercustom"
+        android:popupBackground="@drawable/spinnercustom"
+        android:spinnerMode="dropdown"/>
 
     <TextView
         android:id="@+id/yeniKartEkleTextView"

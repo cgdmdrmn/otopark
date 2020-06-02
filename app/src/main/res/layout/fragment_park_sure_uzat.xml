@@ -12,11 +12,14 @@
     <Spinner
         android:id="@+id/rezSecSpinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginTop="4dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:background="@drawable/spinnercustom"
+        android:popupBackground="@drawable/spinnercustom"
+        android:spinnerMode="dropdown"/>
 
     <TextView
         android:id="@+id/rezbilgilerinizTextView"
@@ -70,10 +73,13 @@
         style="@style/textView"
         android:id="@+id/saatsecSpinner"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:text="Saati seçin."
         android:layout_toRightOf="@+id/dateBitBtn"
-        android:layout_below="@+id/rezbitTextView" />
+        android:layout_below="@+id/rezbitTextView"
+        android:background="@drawable/spinnercustom"
+        android:popupBackground="@drawable/spinnercustom"
+        android:spinnerMode="dropdown"/>
 
 
 
@@ -100,9 +106,12 @@
     <Spinner
         android:id="@+id/kartsecSpinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginTop="8dp"
-        android:layout_below="@+id/tutarTextView"/>
+        android:layout_below="@+id/tutarTextView"
+        android:background="@drawable/spinnercustom"
+        android:popupBackground="@drawable/spinnercustom"
+        android:spinnerMode="dropdown"/>
 
     <TextView
         android:id="@+id/yeniKartEkleTextView"

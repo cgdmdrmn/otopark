@@ -5,8 +5,6 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.WindowId
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -36,22 +34,22 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
             .beginTransaction()
             .add(R.id.frame_layout, AnaEkranFragment(), "anaEkranFragment")
             .commit()
-
     }
 
-    fun changeToolbarIconAndTitle(title:String,icon:Int){
+    fun changeToolbarIconAndTitle(title: String, icon: Int) {
         supportActionBar?.title = title
         drawerToggle.setHomeAsUpIndicator(icon)
     }
 
     private fun initializeDrawableToggle() {
-            drawerToggle = ActionBarDrawerToggle(
+        drawerToggle = ActionBarDrawerToggle(
             this,
             drawerLayout,
             toolbar,
             (R.string.open),
             (R.string.close)
         )
+
         drawerToggle.isDrawerIndicatorEnabled = false
         drawerToggle.setHomeAsUpIndicator(R.drawable.toolbar_hamburger_icon)
         drawerToggle.setToolbarNavigationClickListener {
@@ -60,15 +58,17 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
             } else {
                 drawerLayout.openDrawer(GravityCompat.START)
             }
-
         }
+
         drawerLayout.addDrawerListener(drawerToggle)
         drawerToggle.syncState()
     }
 
-
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         when (menuItem.itemId) {
+
+            R.id.nav_anasayfa -> changeFragment(AnaEkranFragment(), ANASAYFA_TAG)
+
             R.id.nav_hesabim -> changeFragment(ProfileFragment(), PROFILE_TAG)
 
             R.id.nav_plakalarim -> changeFragment(PlakalarFragment(), PLAKALARIM_TAG)
@@ -85,39 +85,39 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
 
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
-
     }
 
-     fun changeFragment(fragment: Fragment, tag: String) {
+    fun changeFragment(fragment: Fragment, tag: String) {
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.frame_layout, fragment, tag)
             .commit()
     }
 
-
-
-   fun createAlertDialog(title: String, message: String, positiveButtonName:String?, positiveButtonAction:DialogInterface.OnClickListener?,
-                         negativeButtonName:String?, negativeButtonAction: DialogInterface.OnClickListener?){
+    fun createAlertDialog(
+        title: String,
+        message: String,
+        positiveButtonName: String?,
+        positiveButtonAction: DialogInterface.OnClickListener?,
+        negativeButtonName: String?,
+        negativeButtonAction: DialogInterface.OnClickListener?
+    ) {
         val builder = AlertDialog.Builder(this)
         with(builder)
         {
             setTitle(title)
             setMessage(message)
             positiveButtonName?.let {
-                setPositiveButton(it, positiveButtonAction )
+                setPositiveButton(it, positiveButtonAction)
             }
 
             negativeButtonName?.let {
-                setNegativeButton(it, negativeButtonAction )
+                setNegativeButton(it, negativeButtonAction)
             }
 
             show()
         }
     }
-
-
-
 
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -128,6 +128,7 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
     }
 
     companion object {
+        const val ANASAYFA_TAG = "ANASAYFA"
         const val ODEME_ARACLARIM_TAG = "ODEME_ARACLARIM"
         const val CUZDANIM_TAG = "CUZDANIM"
         const val REZERVASYONLARIM_TAG = "REZERVASYONLARIM"

@@ -11,19 +11,22 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-class YakinimdakiOtoparklarAdapter(private val yakinimdakiOtoparklarList: List<String>) : RecyclerView.Adapter<Adapter.YakinimdakiOtoparklarAdapter.PlateViewHolder>() {
+class YakinimdakiOtoparklarAdapter(private val yakinimdakiOtoparklarList: MutableList<String>) :
+    RecyclerView.Adapter<Adapter.YakinimdakiOtoparklarAdapter.PlateViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):PlateViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.closest_auto_park_list_item, parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlateViewHolder {
+        val view: View = LayoutInflater.from(parent.context)
+            .inflate(R.layout.closest_auto_park_list_item, parent, false)
         return PlateViewHolder(view)
     }
+
     override fun getItemCount(): Int {
         return yakinimdakiOtoparklarList.size
 
     }
 
-    override fun onBindViewHolder(holder:PlateViewHolder, position: Int) {
-        holder.titleTextView.text=yakinimdakiOtoparklarList[position]
+    override fun onBindViewHolder(holder: PlateViewHolder, position: Int) {
+        holder.titleTextView.text = yakinimdakiOtoparklarList[position]
 
     }
 

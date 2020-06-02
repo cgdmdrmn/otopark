@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="250dp"
     android:padding="40dp"
-    app:layout_behavior="com.google.android.material.BottomSheet">
+    app:layout_behavior="com.google.android.material.BottomSheet"
+    android:background="@drawable/spinnercustom">
 
     <TextView
         android:id="@+id/otoparkTextView"

@@ -37,7 +37,10 @@ class ParkSureUzatFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity as BaseActivity).changeToolbarIconAndTitle("Park Süremi Uzat", R.drawable.toolbar_back_icon)
+        (activity as BaseActivity).changeToolbarIconAndTitle(
+            "Park Süremi Uzat",
+            R.drawable.toolbar_hamburger_icon
+        )
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -58,17 +61,31 @@ class ParkSureUzatFragment : Fragment() {
         val year = c.get(Calendar.YEAR)
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
-        dateBitBtn.setOnClickListener{
-            val dpd = DatePickerDialog(this.requireContext(), DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
-                tarihbitEditText.setText("" +mDay + "/"+ mMonth + "/" + mYear)
-            }, year, month, day)
-            dpd.show() }
+        dateBitBtn.setOnClickListener {
+            val dpd = DatePickerDialog(
+                this.requireContext(),
+                DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
+                    tarihbitEditText.setText("" + mDay + "/" + mMonth + "/" + mYear)
+                },
+                year,
+                month,
+                day
+            )
+            dpd.show()
+        }
 
-        val rezervasyonlar= arrayOf("Beşiktaş Kapalı Otoparkı 34 GA 1527 12.04.2020 14:00-16:00","Ulus Otoparkı 15.04.2020 15:00-16:00")
-        val arrayAdapter= ArrayAdapter(this.requireContext(), android.R.layout.simple_spinner_item, rezervasyonlar)
-        rezSecSpinner.adapter=arrayAdapter
-        rezSecSpinner.onItemSelectedListener=object :
-            AdapterView.OnItemSelectedListener{
+        val rezervasyonlar = arrayOf(
+            "Beşiktaş Kapalı Otoparkı 34 GA 1527 12.04.2020 14:00-16:00",
+            "Ulus Otoparkı 15.04.2020 15:00-16:00"
+        )
+        val arrayAdapter = ArrayAdapter(
+            this.requireContext(),
+            android.R.layout.simple_spinner_item,
+            rezervasyonlar
+        )
+        rezSecSpinner.adapter = arrayAdapter
+        rezSecSpinner.onItemSelectedListener = object :
+            AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
             override fun onItemSelected(
                 parent: AdapterView<*>?,
@@ -76,54 +93,96 @@ class ParkSureUzatFragment : Fragment() {
                 position: Int,
                 id: Long
             ) {
-                rezbittarihTextView.text=rezervasyonlar[position]
-            } }
+                rezbittarihTextView.text = rezervasyonlar[position]
+            }
+        }
 
-        val odemearaclar= arrayOf("4926 **** **** **11","1527 **** **** **89","2222 **** **** **15")
-        val arrayAdapter1= ArrayAdapter(this.requireContext(), android.R.layout.simple_spinner_item, odemearaclar)
-        kartsecSpinner.adapter=arrayAdapter1
-        kartsecSpinner.onItemSelectedListener=object :
-            AdapterView.OnItemSelectedListener{
+        val odemearaclar =
+            arrayOf("4926 **** **** **11", "1527 **** **** **89", "2222 **** **** **15")
+        val arrayAdapter1 =
+            ArrayAdapter(this.requireContext(), android.R.layout.simple_spinner_item, odemearaclar)
+        kartsecSpinner.adapter = arrayAdapter1
+        kartsecSpinner.onItemSelectedListener = object :
+            AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
                 position: Int,
                 id: Long
-            ) { } }
+            ) {
+            }
+        }
 
-        val rezbitsaat= arrayOf("00:00","01:00","02:00","03:00","04:00","05:00","06:00","07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00")
-        val arrayAdapter2= ArrayAdapter(this.requireContext(), android.R.layout.simple_spinner_item, rezbitsaat)
-        saatsecSpinner.adapter=arrayAdapter2
-        saatsecSpinner.onItemSelectedListener=object :
-            AdapterView.OnItemSelectedListener{
+        val rezbitsaat = arrayOf(
+            "00:00",
+            "01:00",
+            "02:00",
+            "03:00",
+            "04:00",
+            "05:00",
+            "06:00",
+            "07:00",
+            "08:00",
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00",
+            "18:00",
+            "19:00",
+            "20:00",
+            "21:00",
+            "22:00",
+            "23:00"
+        )
+        val arrayAdapter2 =
+            ArrayAdapter(this.requireContext(), android.R.layout.simple_spinner_item, rezbitsaat)
+        saatsecSpinner.adapter = arrayAdapter2
+        saatsecSpinner.onItemSelectedListener = object :
+            AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
                 position: Int,
                 id: Long
-            ) { } }
+            ) {
+            }
+        }
 
         yeniKartEkleTextView.setOnClickListener {
             (activity as BaseActivity).changeFragment(
-                KartEkleFragment(),"KART_EKLE_FRAGMENT") }
+                KartEkleFragment(), "KART_EKLE_FRAGMENT"
+            )
+        }
 
         buttonParkUzat.setOnClickListener {
 
             val tarih = tarihbitEditText.text
-            if(tarih.isNotEmpty()){
+            if (tarih.isNotEmpty()) {
                 (activity as BaseActivity).createAlertDialog(
                     "Uyarı",
                     "Rezervasyonunuz başarıyla güncellendi.",
                     "Tamam",
-                    DialogInterface.OnClickListener { _, _ ->  (activity as BaseActivity).changeFragment(
-                        ParkSureUzatFragment(),"PARK_UZAT_FRAGMENT") },
+                    DialogInterface.OnClickListener { _, _ ->
+                        (activity as BaseActivity).changeFragment(
+                            ParkSureUzatFragment(), "PARK_UZAT_FRAGMENT"
+                        )
+                    },
                     null,
                     null
                 )
-            }else{
-                Toast.makeText(this.requireContext(),"Lütfen rezervasyonunuzu uzatmak istediğiniz tarihi seçin.", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(
+                    this.requireContext(),
+                    "Lütfen rezervasyonunuzu uzatmak istediğiniz tarihi seçin.",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
