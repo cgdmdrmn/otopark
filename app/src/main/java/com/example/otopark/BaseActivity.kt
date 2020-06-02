@@ -66,19 +66,6 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
         drawerToggle.syncState()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.mainmenu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-     var itemview = item.itemId
-        when(itemview){
-            R.id.home -> changeFragment(AnaEkranFragment(), ANASAYFA_TAG)
-        }
-        return false
-    }
-
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         when (menuItem.itemId) {
 

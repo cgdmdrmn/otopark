@@ -1,6 +1,5 @@
 package com.example.otopark
 
-import DrawableMenuFragments.OdemeAraclarimFragment
 import android.app.DatePickerDialog
 import android.content.DialogInterface
 import android.os.Bundle
@@ -11,29 +10,14 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import kotlinx.android.synthetic.main.fragment_kart_ekle.*
 import kotlinx.android.synthetic.main.fragment_park_sure_uzat.*
-import kotlinx.android.synthetic.main.fragment_rezervasyon_ekle.*
 import kotlinx.android.synthetic.main.fragment_rezervasyon_ekle.dateBitBtn
 import kotlinx.android.synthetic.main.fragment_rezervasyon_ekle.tarihbitEditText
 import kotlinx.android.synthetic.main.fragment_rezervasyon_ekle.yeniKartEkleTextView
 import kotlinx.android.synthetic.main.fragment_rezervasyonlar.*
 import java.util.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ParkSureUzatFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ParkSureUzatFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,10 +25,6 @@ class ParkSureUzatFragment : Fragment() {
             "Park Süremi Uzat",
             R.drawable.toolbar_hamburger_icon
         )
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
@@ -188,22 +168,8 @@ class ParkSureUzatFragment : Fragment() {
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ParkSureUzatFragment.
-         */
-        // TODO: Rename and change types and number of parameters
+
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ParkSureUzatFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance() = ParkSureUzatFragment()
     }
 }

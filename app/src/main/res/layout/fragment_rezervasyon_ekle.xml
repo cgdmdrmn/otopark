@@ -18,16 +18,15 @@
         android:layout_alignParentTop="true"
         android:text="Rezervasyonunuzun başlangıç tarihini girin." />
 
-    <EditText
+    <TextView
         android:id="@+id/tarihbasEditText"
         style="@style/textView"
-        android:layout_width="200dp"
+        android:text="Başlangıç tarihini seçin."
+        android:layout_width="250sp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rezbasTextView"
         android:layout_marginTop="4dp"
-        android:autofillHints=""
-        android:textColor="@color/black"
-        android:textColorHint="#817B7B" />
+        android:autofillHints="" />
 
     <ImageButton
         android:id="@+id/dateBtn"
@@ -57,17 +56,16 @@
         android:layout_below="@+id/tarihbasEditText"
         android:text="Rezervasyonunuzun bitiş tarihini girin." />
 
-    <EditText
+    <TextView
         android:id="@+id/tarihbitEditText"
         style="@style/textView"
-        android:layout_width="200dp"
+        android:text="Başlangıç tarihini seçin."
+        android:layout_width="250sp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rezbitTextView"
         android:layout_marginTop="4dp"
         android:autofillHints=""
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textColorHint="#817B7B" />
+        android:gravity="center" />
 
     <ImageButton
         android:id="@+id/dateBitBtn"
@@ -91,10 +89,13 @@
 
     <Spinner
         android:id="@+id/plakasecspinner"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tarihbitEditText"
-        android:layout_marginTop="4dp" />
+        android:layout_marginTop="4dp"
+        android:background="@drawable/spinnercustom"
+        android:popupBackground="@drawable/spinnercustom"
+        android:spinnerMode="dropdown"/>
 
     <TextView
         android:id="@+id/aracekleTextView"
@@ -125,6 +126,7 @@
         android:autofillHints=""
         android:drawableStart="@drawable/ic_action_search"
         android:gravity="center"
+        android:hint="Otopark arayın."
         android:textColor="@color/black"
         android:textColorHint="#817B7B" />
 

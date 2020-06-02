@@ -1,136 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
     android:paddingLeft="15dp"
-    android:paddingRight="15dp"
     android:paddingTop="25dp"
-    android:paddingBottom="5dp"
-    android:background="@color/white">
+    android:paddingRight="15dp"
+    android:paddingBottom="5dp">
 
     <Spinner
         android:id="@+id/rezSecSpinner"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="4dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="4dp"
         android:background="@drawable/spinnercustom"
         android:popupBackground="@drawable/spinnercustom"
-        android:spinnerMode="dropdown"/>
+        android:spinnerMode="dropdown" />
 
     <TextView
         android:id="@+id/rezbilgilerinizTextView"
+        style="@style/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/rezSecSpinner"
         android:layout_marginTop="4dp"
-        android:text="Rezervasyon Bilgileriniz:"
-        style="@style/textView"
-        android:layout_below="@+id/rezSecSpinner"/>
+        android:text="Rezervasyon Bilgileriniz:" />
 
     <TextView
         android:id="@+id/rezbittarihTextView"
+        style="@style/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/rezbilgilerinizTextView"
         android:layout_marginTop="4dp"
-        android:text="TarihSaatBilgileri"
-        style="@style/textView"
-        android:layout_below="@+id/rezbilgilerinizTextView"/>
+        android:text="TarihSaatBilgileri" />
 
     <TextView
         android:id="@+id/rezbitTextView"
+        style="@style/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/rezbittarihTextView"
         android:layout_marginTop="4dp"
-        android:text="Rezervasyonunuzu hangi tarihe kadar uzatmak istiyorsunuz?"
-        style="@style/textView"
-        android:layout_below="@+id/rezbittarihTextView"/>
+        android:text="Rezervasyonunuzu hangi tarihe kadar uzatmak istiyorsunuz?" />
 
-    <EditText
+    <TextView
+        style="@style/textView"
         android:id="@+id/tarihbitEditText"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:textColorHint="#817B7B"
-        android:textColor="@color/black"
+        android:layout_below="@+id/rezbitTextView"
         android:layout_marginTop="4dp"
-        android:gravity="center"
         android:autofillHints=""
-        android:layout_below="@+id/rezbitTextView" />
+        android:gravity="center"
+        android:text="Başlangıç tarihini seçin." />
 
     <ImageButton
-        android:background="@color/white"
         android:id="@+id/dateBitBtn"
         android:layout_width="50dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_action_date"
         android:layout_below="@+id/rezbitTextView"
+        android:layout_toRightOf="@+id/tarihbitEditText"
+        android:background="@color/white"
         android:onClick="showDatePicker"
-        android:layout_toRightOf="@+id/tarihbitEditText"/>
+        android:src="@drawable/ic_action_date" />
 
     <Spinner
-        style="@style/textView"
         android:id="@+id/saatsecSpinner"
         android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:text="Saati seçin."
-        android:layout_toRightOf="@+id/dateBitBtn"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/rezbitTextView"
+        android:layout_toRightOf="@+id/dateBitBtn"
         android:background="@drawable/spinnercustom"
         android:popupBackground="@drawable/spinnercustom"
-        android:spinnerMode="dropdown"/>
-
+        android:spinnerMode="dropdown"
+        android:text="Saati seçin." />
 
 
     <TextView
         android:id="@+id/toplamTutarTextView"
+        style="@style/textView"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Toplam Tutar:"
-        style="@style/textView"
+        android:layout_below="@+id/tarihbitEditText"
         android:layout_marginTop="14dp"
-        android:layout_below="@+id/saatsecSpinner"/>
+        android:text="Toplam Tutar:" />
 
     <TextView
         android:id="@+id/tutarTextView"
+        style="@style/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="10TL"
-        style="@style/textView"
+        android:layout_below="@+id/tarihbitEditText"
         android:layout_alignParentRight="true"
         android:layout_marginTop="14dp"
-        android:layout_below="@+id/saatsecSpinner"
-        android:layout_toRightOf="@+id/toplamTutarTextView"/>
+        android:layout_toRightOf="@+id/toplamTutarTextView"
+        android:text="10TL" />
 
     <Spinner
         android:id="@+id/kartsecSpinner"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/tutarTextView"
+        android:layout_marginTop="8dp"
         android:background="@drawable/spinnercustom"
         android:popupBackground="@drawable/spinnercustom"
-        android:spinnerMode="dropdown"/>
+        android:spinnerMode="dropdown" />
 
     <TextView
         android:id="@+id/yeniKartEkleTextView"
+        style="@style/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+yeni kart ekleyin"
-        android:textColor="#200FB6"
-        style="@style/textView"
+        android:layout_below="@+id/kartsecSpinner"
         android:layout_alignParentRight="true"
         android:layout_marginTop="4dp"
-        android:layout_below="@+id/kartsecSpinner"/>
+        android:text="+yeni kart ekleyin"
+        android:textColor="#200FB6" />
 
     <Button
-        style="@style/Button"
         android:id="@+id/rezYapButton"
-        android:drawableLeft="@drawable/ic_action_add"
+        style="@style/Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="8dp"
-        android:text="Rezervasyonumu Uzat"
-        android:layout_alignParentBottom="true" />
+        android:drawableLeft="@drawable/ic_action_add"
+        android:text="Rezervasyonumu Uzat" />
 </RelativeLayout>
