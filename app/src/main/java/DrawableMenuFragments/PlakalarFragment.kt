@@ -8,25 +8,43 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.otopark.BaseActivity
-import com.example.otopark.PlakaEkleFragment
+import com.example.otopark.PlakalarOnClickListener
 import com.example.otopark.R
 import kotlinx.android.synthetic.main.fragment_plakalar.*
 
-class PlakalarFragment : Fragment() {
+// TODO: Rename parameter arguments, choose names that match
+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
 
-    private var plakalarAdapter: PlakalarAdapter? = null
-    private val plakalarlist: List<String> =
-        listOf("34 GA 1527", "34 CD 1527", "34 HK 2020")
+/**
+ * A simple [Fragment] subclass.
+ * Use the [PlakalarFragment.newInstance] factory method to
+ * create an instance of this fragment.
+ */
+class PlakalarFragment : Fragment(), PlakalarOnClickListener{
+
+    private lateinit var plakalarAdapter: PlakalarAdapter
+    private val plakalarlist : MutableList<String> =
+        mutableListOf("34 GA 1527", "34 CD 1527", "34 HK 2020")
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        plakalarAdapter = PlakalarAdapter(plakalarlist)
-        plakalarListRecyclerView.adapter = plakalarAdapter
+        plakalarAdapter= PlakalarAdapter(plakalarlist, this)
+        plakalarListRecyclerView.adapter=plakalarAdapter
 
+    }
         buttonPlakaEkle.setOnClickListener {
             (activity as BaseActivity).changeFragment(PlakaEkleFragment(), "PLAKA_EKLE_FRAGMENT")
         }
 
+    private fun removeItem(position: Int){
+        plakalarlist.removeAt(position)
+        plakalarAdapter.notifyDataSetChanged()
+    }
+
+    override fun onClick(position: Int){
+        removeItem(position)
         plakalarListRecyclerView.setOnClickListener {
             (activity as BaseActivity).createAlertDialog(
                 "Uyarı",
