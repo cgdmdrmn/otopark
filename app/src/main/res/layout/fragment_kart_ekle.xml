@@ -19,7 +19,7 @@
         android:textColor="@color/black"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:maxLenght="11"/>
+        android:maxLength="11"/>
 
     <EditText
         android:id="@+id/ayEditText"
@@ -31,7 +31,7 @@
         android:paddingLeft="150dp"
         android:layout_marginTop="4dp"
         android:layout_below="@+id/kartnoEditText"
-        android:maxLenght="2"/>
+        android:maxLength="2"/>
 
     <EditText
         android:id="@+id/yilEditText"
@@ -56,7 +56,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="4dp"
         android:layout_below="@+id/ayEditText"
-        android:maxLenght="4"/>
+        android:maxLength="4"/>
 
     <CheckBox
         style="@style/textView"

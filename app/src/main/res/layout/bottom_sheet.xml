@@ -22,7 +22,6 @@
         android:layout_width="match_parent"
         android:layout_below="@+id/otoparkTextView"
         android:layout_marginTop="10dp"
-        android:drawableLeft="@drawable/ic_action_yoltarifi"
         android:text="Yol Tarifi" />
 
     <TextView
