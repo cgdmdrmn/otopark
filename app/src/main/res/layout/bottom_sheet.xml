@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/bottomSheet"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="40dp">
-
+    android:layout_height="250dp"
+    android:padding="40dp"
+    app:layout_behavior="com.google.android.material.BottomSheet">
 
     <TextView
         android:id="@+id/otoparkTextView"

@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.otopark.AramaEkraniFragment
 import com.example.otopark.BaseActivity
@@ -46,18 +48,19 @@ class AnaEkranFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        val dialog = BottomSheetDialog(this.requireContext())
-        val bottomSheet = layoutInflater.inflate(R.layout.bottom_sheet, null)
-        bottomSheet.buttonYolTarifi.setOnClickListener { dialog.dismiss() }
-        dialog.setContentView(bottomSheet)
-        dialog.show()
+        val bottomSheetDialog =BottomSheetDialog(this.requireContext())
+        val view =layoutInflater.inflate(R.layout.bottom_sheet, null)
+        bottomSheetDialog.setContentView(view)
+        otoparkAramaEditText.setOnClickListener{
+            bottomSheetDialog.show()
+        }
+
+        view.buttonYolTarifi.setOnClickListener {
+            Toast.makeText(this.requireContext(),"Yol Tarifi Tıklandı", Toast.LENGTH_LONG).show()
+        }
 
         yakinimdakiOtoparklarAdapter= YakinimdakiOtoparklarAdapter(yakinimdakiotoparklarList)
         autoparkListRecyclerView.adapter=yakinimdakiOtoparklarAdapter
-
-        otoparkAramaEditText.setOnClickListener{
-            (activity as BaseActivity).changeFragment(AramaEkraniFragment(),"ARAMA_EKRANI_FRAGMENT")
-        }
     }
 
     companion object {

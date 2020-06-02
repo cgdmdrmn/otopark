@@ -17,8 +17,8 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         val adapter = MyViewPagerAdapter(supportFragmentManager)
-        adapter.addFragment(LoginFragment() , title = "Giriş  Ekranı")
-        adapter.addFragment(RegisterFragment() , title = "Kayıt  Ekranı")
+        adapter.addFragment(LoginFragment() , title = "Giriş Yap")
+        adapter.addFragment(RegisterFragment() , title = "Kayıt Ol")
         viewPager.adapter = adapter
         tabs.setupWithViewPager(viewPager)
 

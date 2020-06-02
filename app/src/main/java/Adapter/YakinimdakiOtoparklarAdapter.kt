@@ -3,9 +3,12 @@ package Adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.otopark.R
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class YakinimdakiOtoparklarAdapter(private val yakinimdakiOtoparklarList: List<String>) : RecyclerView.Adapter<Adapter.YakinimdakiOtoparklarAdapter.PlateViewHolder>() {
@@ -16,10 +19,12 @@ class YakinimdakiOtoparklarAdapter(private val yakinimdakiOtoparklarList: List<S
     }
     override fun getItemCount(): Int {
         return yakinimdakiOtoparklarList.size
+
     }
 
     override fun onBindViewHolder(holder:PlateViewHolder, position: Int) {
         holder.titleTextView.text=yakinimdakiOtoparklarList[position]
+
     }
 
     class PlateViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
