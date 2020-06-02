@@ -42,7 +42,7 @@
         android:textColor="@color/black"
         android:layout_marginTop="4dp"
         android:paddingRight="155dp"
-        android:maxLenght="4"
+        android:maxLength="4"
         android:layout_toRightOf="@+id/ayEditText"
         android:layout_below="@+id/kartnoEditText"/>
 
