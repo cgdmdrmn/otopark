@@ -8,13 +8,16 @@ import android.widget.Filter
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.otopark.R
+import com.example.otopark.YakinimdakiOtoparklarOnClickListener
 import java.util.*
 import kotlin.collections.ArrayList
 
 
-class YakinimdakiOtoparklarAdapter(private val yakinimdakiOtoparklarList: MutableList<String>,
-                                   private val listener: YakinimdakiOtoparklarOnClickListener) :
-    RecyclerView.Adapter<Adapter.YakinimdakiOtoparklarAdapter.PlateViewHolder>() {
+class YakinimdakiOtoparklarAdapter(
+    private var yakinimdakiOtoparklarList: MutableList<String>,
+    private val listener: YakinimdakiOtoparklarOnClickListener
+) :
+    RecyclerView.Adapter<YakinimdakiOtoparklarAdapter.PlateViewHolder>() {
 
     override fun getItemCount(): Int {
         return yakinimdakiOtoparklarList.size
@@ -23,8 +26,8 @@ class YakinimdakiOtoparklarAdapter(private val yakinimdakiOtoparklarList: Mutabl
 
     override fun onBindViewHolder(holder: PlateViewHolder, position: Int) {
         holder.titleTextView.text = yakinimdakiOtoparklarList[position]
-        holder.titleTextView.paintFlags= Paint.UNDERLINE_TEXT_FLAG
-        holder.titleTextView.setOnClickListener{
+        holder.titleTextView.paintFlags = Paint.UNDERLINE_TEXT_FLAG
+        holder.titleTextView.setOnClickListener {
             listener.onClick(position)
         }
     }

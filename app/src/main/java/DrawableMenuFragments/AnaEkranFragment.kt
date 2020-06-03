@@ -22,7 +22,8 @@ class AnaEkranFragment : Fragment(), YakinimdakiOtoparklarOnClickListener {
             " Büyük Beşiktaş Otoparkı",
             "Beşiktaş Kapalı Otopark",
             "Beltaş Otoparkı",
-            "Ulus Otoparkı")
+            "Ulus Otoparkı"
+        )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -30,18 +31,16 @@ class AnaEkranFragment : Fragment(), YakinimdakiOtoparklarOnClickListener {
         autoparkListRecyclerView.adapter = yakinimdakiOtoparklarAdapter
     }
 
-    private fun bottomsheet(position: Int) {
+    override fun onClick(position: Int) {
+
         val bottomSheetDialog = BottomSheetDialog(this.requireContext())
         val view = layoutInflater.inflate(R.layout.bottom_sheet, null)
         bottomSheetDialog.setContentView(view)
-            bottomSheetDialog.show()
+        bottomSheetDialog.show()
+
         view.buttonYolTarifi.setOnClickListener {
             Toast.makeText(this.requireContext(), "Yol Tarifi Tıklandı", Toast.LENGTH_LONG).show()
         }
-    }
-
-    override fun onClick(position: Int) {
-        bottomsheet(position)
     }
 
     override fun onCreateView(
