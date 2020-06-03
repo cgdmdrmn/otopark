@@ -200,18 +200,11 @@ class RezervasyonEkleFragment : Fragment() {
             val otopark = otoparkAraEditText.text
 
             if (bastarih.isNotEmpty() && bittarih.isNotEmpty() && otopark.isNotEmpty()) {
-                (activity as BaseActivity).createAlertDialog(
-                    "Uyarı",
-                    "Rezervasyonunuz başarıyla oluşturuldu.",
-                    "Tamam",
-                    DialogInterface.OnClickListener { _, _ ->
-                        (activity as BaseActivity).changeFragment(
-                            RezervasyonEkleFragment(), "REZERVASYONLAR_FRAGMENT"
-                        )
-                    },
-                    null,
-                    null
-                )
+                Toast.makeText(
+                    this.requireContext(),
+                    "Rezervasyonunuz oluşturuldu.",
+                    Toast.LENGTH_SHORT
+                ).show()
             } else {
                 Toast.makeText(
                     this.requireContext(),

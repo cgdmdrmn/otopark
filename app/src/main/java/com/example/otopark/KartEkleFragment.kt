@@ -39,19 +39,11 @@ class KartEkleFragment : Fragment() {
             val ccv = editText3.text
 
             if (kartno.isNotEmpty() && ay.isNotEmpty() && yil.isNotEmpty() && ccv.isNotEmpty() && checkBox.isChecked) {
-                (activity as BaseActivity).createAlertDialog(
-                    "Uyarı",
-                    "Kart ekleme işleminiz gerçekleşti.",
-                    "Tamam",
-                    DialogInterface.OnClickListener { _, _ ->
-                        (activity as BaseActivity).changeFragment(
-                            OdemeAraclarimFragment(),
-                            "ODEME_ARACLARIM"
-                        )
-                    },
-                    null,
-                    null
-                )
+                Toast.makeText(
+                    this.requireContext(),
+                    "Kartınız eklendi.",
+                    Toast.LENGTH_SHORT
+                ).show()
             } else {
                 Toast.makeText(
                     this.requireContext(),

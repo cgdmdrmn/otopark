@@ -1,6 +1,8 @@
 package DrawableMenuFragments
 
 import Adapter.OdemeAraclarimAdapter
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -35,7 +37,16 @@ class OdemeAraclarimFragment : Fragment(), CardsOnClickListener {
     }
 
     override fun onClick(position: Int) {
-        removeItem(position)
+
+        val builder = AlertDialog.Builder(this.requireContext())
+        builder.setTitle("Uyarı")
+        builder.setMessage("Silmek istediğinize emin misiniz?")
+        builder.setCancelable(false)
+        builder.setPositiveButton("Evet", { dialog: DialogInterface?, which: Int ->
+            removeItem(position)
+        })
+        builder.setNegativeButton("Hayır", { dialog: DialogInterface?, which: Int -> })
+        builder.show()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

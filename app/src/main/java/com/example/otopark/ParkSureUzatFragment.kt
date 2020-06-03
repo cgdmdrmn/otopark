@@ -145,18 +145,11 @@ class ParkSureUzatFragment : Fragment() {
 
             val tarih = tarihbitEditText.text
             if (tarih.isNotEmpty()) {
-                (activity as BaseActivity).createAlertDialog(
-                    "Uyarı",
-                    "Rezervasyonunuz başarıyla güncellendi.",
-                    "Tamam",
-                    DialogInterface.OnClickListener { _, _ ->
-                        (activity as BaseActivity).changeFragment(
-                            ParkSureUzatFragment(), "PARK_UZAT_FRAGMENT"
-                        )
-                    },
-                    null,
-                    null
-                )
+                Toast.makeText(
+                    this.requireContext(),
+                    "Rezervasyonunuz güncellendi.",
+                    Toast.LENGTH_SHORT
+                ).show()
             } else {
                 Toast.makeText(
                     this.requireContext(),

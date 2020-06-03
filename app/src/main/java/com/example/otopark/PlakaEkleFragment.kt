@@ -1,5 +1,6 @@
 package com.example.otopark
 
+import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -53,19 +54,11 @@ class PlakaEkleFragment : Fragment() {
 
             val plaka = plakagirEditText.text
             if (plaka.isNotEmpty() && checkBox.isChecked) {
-                (activity as BaseActivity).createAlertDialog(
-                    "Uyarı",
-                    "Kart ekleme işleminiz gerçekleşti.",
-                    "Tamam",
-                    DialogInterface.OnClickListener { _, _ ->
-                        (activity as BaseActivity).changeFragment(
-                            PlakaEkleFragment(),
-                            "PLAKALA_EKLE_FRAGMENT"
-                        )
-                    },
-                    null,
-                    null
-                )
+                Toast.makeText(
+                    this.requireContext(),
+                    "Plakanız başarıyla eklendi.",
+                    Toast.LENGTH_SHORT
+                ).show()
             } else {
                 Toast.makeText(
                     this.requireContext(),

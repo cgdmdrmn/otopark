@@ -42,18 +42,11 @@ class KartDuzenleFragment : Fragment() {
             val ccv = editText3.text
 
             if (kartno.isNotEmpty() && ay.isNotEmpty() && yil.isNotEmpty() && ccv.isNotEmpty() && checkBox.isChecked) {
-                (activity as BaseActivity).createAlertDialog(
-                    "Uyarı",
+                Toast.makeText(
+                    this.requireContext(),
                     "Değişiklikleriniz kaydedildi.",
-                    "Tamam",
-                    DialogInterface.OnClickListener { _, _ ->
-                        (activity as BaseActivity).changeFragment(
-                            KartDuzenleFragment(), "KART_DUZENLE_FRAGMENT"
-                        )
-                    },
-                    null,
-                    null
-                )
+                    Toast.LENGTH_SHORT
+                ).show()
             } else {
                 Toast.makeText(
                     this.requireContext(),

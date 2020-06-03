@@ -2,6 +2,8 @@ package com.example.otopark
 
 import Adapter.GecmisRezervasyonlarimAdapter
 import Adapter.OdemeAraclarimAdapter
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -22,23 +24,35 @@ private const val ARG_PARAM2 = "param2"
  */
 class GecmisRezervasyonlarimFragment : Fragment(), HistoryRezervationOnClickListener {
     private lateinit var gecmisRezervasyonlarimAdapter: GecmisRezervasyonlarimAdapter
-    private val gecmisrezervasyonlarimlist : MutableList<String> =
-        mutableListOf("Beşiktaş Kapalı O. 34 GA 1527 12.04.2020 14:00 12.04.2020 16:00", "Ulus O. 34 CD 1993 15.04.2020 15:30 18.04.2020 15:30")
+    private val gecmisrezervasyonlarimlist: MutableList<String> =
+        mutableListOf(
+            "Beşiktaş Kapalı O. 34 GA 1527 12.04.2020 14:00 12.04.2020 16:00",
+            "Ulus O. 34 CD 1993 15.04.2020 15:30 18.04.2020 15:30"
+        )
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        gecmisRezervasyonlarimAdapter= GecmisRezervasyonlarimAdapter(gecmisrezervasyonlarimlist, this)
-        historyRezervationListRecyclerView.adapter=gecmisRezervasyonlarimAdapter
+        gecmisRezervasyonlarimAdapter =
+            GecmisRezervasyonlarimAdapter(gecmisrezervasyonlarimlist, this)
+        historyRezervationListRecyclerView.adapter = gecmisRezervasyonlarimAdapter
     }
 
-    private fun removeItem(position: Int){
+    private fun removeItem(position: Int) {
         gecmisrezervasyonlarimlist.removeAt(position)
         gecmisRezervasyonlarimAdapter.notifyDataSetChanged()
     }
 
     override fun onClick(position: Int) {
-        removeItem(position)
+        val builder = AlertDialog.Builder(this.requireContext())
+        builder.setTitle("Uyarı")
+        builder.setMessage("Silmek istediğinize emin misiniz?")
+        builder.setCancelable(false)
+        builder.setPositiveButton("Evet", { dialog: DialogInterface?, which: Int ->
+            removeItem(position)
+        })
+        builder.setNegativeButton("Hayır", { dialog: DialogInterface?, which: Int -> })
+        builder.show()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

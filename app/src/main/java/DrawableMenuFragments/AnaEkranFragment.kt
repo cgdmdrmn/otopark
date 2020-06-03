@@ -9,19 +9,40 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.otopark.BaseActivity
 import com.example.otopark.R
+import com.example.otopark.YakinimdakiOtoparklarOnClickListener
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.bottom_sheet.view.*
 import kotlinx.android.synthetic.main.fragment_ana_ekran.*
 
-class AnaEkranFragment : Fragment() {
-    var fragment: Fragment? = null
+class AnaEkranFragment : Fragment(), YakinimdakiOtoparklarOnClickListener {
 
-    private var yakinimdakiOtoparklarAdapter: YakinimdakiOtoparklarAdapter? = null
-    private var yakinimdakiotoparklarList: MutableList<String> =
-        mutableListOf(" Büyük Beşiktaş Otoparkı",
+    private lateinit var yakinimdakiOtoparklarAdapter: YakinimdakiOtoparklarAdapter
+    private val yakinimdakiotoparklarList: MutableList<String> =
+        mutableListOf(
+            " Büyük Beşiktaş Otoparkı",
             "Beşiktaş Kapalı Otopark",
             "Beltaş Otoparkı",
             "Ulus Otoparkı")
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        yakinimdakiOtoparklarAdapter = YakinimdakiOtoparklarAdapter(yakinimdakiotoparklarList, this)
+        autoparkListRecyclerView.adapter = yakinimdakiOtoparklarAdapter
+    }
+
+    private fun bottomsheet(position: Int) {
+        val bottomSheetDialog = BottomSheetDialog(this.requireContext())
+        val view = layoutInflater.inflate(R.layout.bottom_sheet, null)
+        bottomSheetDialog.setContentView(view)
+            bottomSheetDialog.show()
+        view.buttonYolTarifi.setOnClickListener {
+            Toast.makeText(this.requireContext(), "Yol Tarifi Tıklandı", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    override fun onClick(position: Int) {
+        bottomsheet(position)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,26 +60,11 @@ class AnaEkranFragment : Fragment() {
         )
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
-        val bottomSheetDialog = BottomSheetDialog(this.requireContext())
-        val view = layoutInflater.inflate(R.layout.bottom_sheet, null)
-        bottomSheetDialog.setContentView(view)
-        otoparkAramaEditText.setOnClickListener {
-            bottomSheetDialog.show()
-        }
-
-        view.buttonYolTarifi.setOnClickListener {
-            Toast.makeText(this.requireContext(), "Yol Tarifi Tıklandı", Toast.LENGTH_LONG).show()
-        }
-
-        yakinimdakiOtoparklarAdapter = YakinimdakiOtoparklarAdapter(yakinimdakiotoparklarList)
-        autoparkListRecyclerView.adapter = yakinimdakiOtoparklarAdapter
-    }
-
     companion object {
 
         @JvmStatic
         fun newInstance() = AnaEkranFragment()
     }
+
+
 }

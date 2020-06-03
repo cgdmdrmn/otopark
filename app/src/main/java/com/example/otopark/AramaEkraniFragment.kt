@@ -1,6 +1,7 @@
 package com.example.otopark
 
 import Adapter.OtoparkSonAramalarimAdapter
+import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -33,22 +34,6 @@ class AramaEkraniFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         otoparkSonAramalarimAdapter = OtoparkSonAramalarimAdapter(otoparkSonAramalarimList)
         recentsearchautoparkListRecyclerView.adapter = otoparkSonAramalarimAdapter
-
-        temizleTextView.setOnClickListener {
-            (activity as BaseActivity).createAlertDialog(
-                "Uyarı",
-                "Arama geçmişi temizlendi.",
-                "Tamam",
-                DialogInterface.OnClickListener { _, _ ->
-                    (activity as BaseActivity).changeFragment(
-                        AramaEkraniFragment(),
-                        "ARAMA_EKRANI_FRAGMENT"
-                    )
-                },
-                null,
-                null
-            )
-        }
     }
 
     companion object {

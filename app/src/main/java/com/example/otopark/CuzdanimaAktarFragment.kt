@@ -1,5 +1,6 @@
 package com.example.otopark
 
+import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -59,18 +60,11 @@ class CuzdanimaAktarFragment : Fragment() {
 
             val tutar = tutargirEditText.text
             if (tutar.isNotEmpty() && kullanimkosullaricheckBox.isChecked) {
-                (activity as BaseActivity).createAlertDialog(
-                    "Uyarı",
-                    "Bakiyeniz cüzdanınıza başarıyla aktarıldı.",
-                    "Tamam",
-                    DialogInterface.OnClickListener { _, _ ->
-                        (activity as BaseActivity).changeFragment(
-                            CuzdanimaAktarFragment(), "CUZDANIMA_AKTAR_FRAGMENT"
-                        )
-                    },
-                    null,
-                    null
-                )
+                Toast.makeText(
+                    this.requireContext(),
+                    "Tutar cüzdanınıza aktarıldı.",
+                    Toast.LENGTH_SHORT
+                ).show()
             } else {
                 Toast.makeText(
                     this.requireContext(),

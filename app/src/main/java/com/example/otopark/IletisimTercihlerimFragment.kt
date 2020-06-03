@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_iletisim_tercihlerim.*
 
 class IletisimTercihlerimFragment : Fragment() {
@@ -29,19 +30,11 @@ class IletisimTercihlerimFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         kaydetButton.setOnClickListener {
-            (activity as BaseActivity).createAlertDialog(
-                "Uyarı",
+            Toast.makeText(
+                this.requireContext(),
                 "İletişim tercihleriniz kaydedildi.",
-                "Tamam",
-                DialogInterface.OnClickListener { _, _ ->
-                    (activity as BaseActivity).changeFragment(
-                        AnaEkranFragment(),
-                        "ANA_EKRAN_FRAGMENT"
-                    )
-                },
-                null,
-                null
-            )
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 

@@ -1,5 +1,6 @@
 package DrawableMenuFragments
 
+import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -46,24 +47,25 @@ class ProfileFragment : Fragment() {
         }
 
         buttonExit.setOnClickListener {
-            (activity as BaseActivity).createAlertDialog(
-                "Uyarı",
-                "Çıkış yapmak istediğinize emin misiniz?",
-                "Evet",
-                DialogInterface.OnClickListener { _, _ ->
-                    (activity as BaseActivity).changeFragment(
-                        LoginFragment(),
-                        "LOGIN_FRAGMENT"
-                    )
-                },
-                "Hayır",
-                DialogInterface.OnClickListener { _, _ ->
-                    (activity as BaseActivity).changeFragment(
-                        AnaEkranFragment(),
-                        "ANA_EKRAN_FRAGMENT"
-                    )
-                }
-            )
+
+            val builder = AlertDialog.Builder(this.requireContext())
+            builder.setTitle("Çıkış")
+            builder.setMessage("Çıkış yapmak istediğinize emin misiniz?")
+            builder.setCancelable(false)
+            builder.setPositiveButton("Evet", { dialog: DialogInterface?, which: Int ->
+                (activity as BaseActivity).changeFragment(
+                    LoginFragment(),
+                    "LOGIN_FRAGMENT"
+                )
+            })
+            builder.setNegativeButton("Hayır", { dialog: DialogInterface?, which: Int ->
+
+                (activity as BaseActivity).changeFragment(
+                    ProfileFragment(),
+                    "PROFILE_FRAGMENT"
+                )
+            })
+            builder.show()
         }
     }
 

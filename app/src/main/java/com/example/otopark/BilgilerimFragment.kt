@@ -1,5 +1,6 @@
 package com.example.otopark
 
+import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -32,19 +33,11 @@ class BilgilerimFragment : Fragment() {
             val eskisifre = Texteskisifre.text
             val yenisifre = Textyenisifre.text
             if (eskisifre.isNotEmpty() && yenisifre.isNotEmpty() && eskisifre != yenisifre) {
-                (activity as BaseActivity).createAlertDialog(
-                    "Uyarı",
-                    "Şifre değiştirme işleminiz başarıyla gerçekleşti.",
-                    "Tamam",
-                    DialogInterface.OnClickListener { _, _ ->
-                        (activity as BaseActivity).changeFragment(
-                            BilgilerimFragment(),
-                            "BILGILERIM_FRAGMENT"
-                        )
-                    },
-                    null,
-                    null
-                )
+                Toast.makeText(
+                    this.requireContext(),
+                    "Şifreniz güncellendi.",
+                    Toast.LENGTH_SHORT
+                ).show()
             } else {
                 Toast.makeText(
                     this.requireContext(),
