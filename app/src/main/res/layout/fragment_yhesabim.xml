@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="YhesabimFragment"
+    android:paddingTop="25dp"
+    android:background="@color/white">
+
+            <Button
+                android:id="@+id/buttonKullaniciBilgileri"
+                style="@style/Button"
+                android:drawableLeft="@drawable/ic_action_person"
+                android:layout_width="match_parent"
+                android:text="Bilgilerim"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <Button
+                android:id="@+id/buttonOtoparkBilgileri"
+                style="@style/Button"
+                android:drawableLeft="@drawable/ic_action_location"
+                android:layout_width="match_parent"
+                android:text="Otopark Bilgileri"
+                android:layout_below="@+id/buttonKullaniciBilgileri"
+                android:layout_marginTop="4dp"/>
+
+            <Button
+                android:id="@+id/buttonCikis"
+                style="@style/Button"
+                android:drawableLeft="@drawable/ic_action_cikis"
+                android:layout_width="match_parent"
+                android:text="Çıkış"
+                android:layout_below="@+id/buttonOtoparkBilgileri"
+                android:layout_marginTop="4dp"/>
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/navigation"
+        android:background="?android:attr/windowBackground"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"/>
+
+</RelativeLayout>

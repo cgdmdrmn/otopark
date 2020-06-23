@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="25dp"
+    android:paddingBottom="5dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/textOtoparkAdi"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Beşiktaş Kapalı Otoparkı"
+        style="@style/textView"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/textOtoparkAdres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Türkali Mah., Ihlamurdere Cad., No:126/1, Beşiktaş, İstanbul, Türkiye"
+        style="@style/textView"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/textOtoparkAdi" />
+
+    <TextView
+        android:id="@+id/textKapasite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kapasite:"
+        style="@style/textView"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/textOtoparkAdres" />
+
+    <TextView
+        android:id="@+id/textOtoKapasitesi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="150"
+        style="@style/textView"
+        android:layout_marginTop="8dp"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/textKapasite"
+        android:layout_below="@+id/textOtoparkAdres" />
+
+    <TextView
+        android:id="@+id/textParkYeri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Park Yeri:"
+        style="@style/textView"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/textOtoKapasitesi" />
+
+    <TextView
+        android:id="@+id/textOtoParkYeri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Korumalı, Açık hava, Uzun Süre"
+        style="@style/textView"
+        android:layout_marginTop="8dp"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/textParkYeri"
+        android:layout_below="@+id/textOtoKapasitesi" />
+
+    <TextView
+        android:id="@+id/textSure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="24 saat açık"
+        style="@style/textView"
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/ic_action_clock"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textOtoParkYeri" />
+
+</RelativeLayout>

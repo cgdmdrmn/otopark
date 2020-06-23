@@ -24,13 +24,14 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         btn_login.setOnClickListener {
-            context?.startActivity(
-                Intent(
-                    context,
-                    BaseActivity::class.java
+                context?.startActivity(
+                    Intent(
+                        context,
+                        BaseActivity::class.java
+                    )
                 )
-            )
         }
         btn_frgt.setOnClickListener {
             context?.startActivity(

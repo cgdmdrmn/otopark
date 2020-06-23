@@ -15,6 +15,7 @@
             android:value="AIzaSyCcAMCQHoJBVymkKmLmse3d8_oUGUmMTjE"/>
         <activity android:name=".ForgetPassword" />
         <activity android:name=".LoginActivity" />
+        <activity android:name="YbaseActivity" />
         <activity
             android:name=".BaseActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -23,7 +24,6 @@
             android:theme="@style/Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

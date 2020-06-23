@@ -1,6 +1,7 @@
-package DrawableMenuFragments
+package com.example.otopark
 
 import Adapter.OdemeAraclarimAdapter
+import Adapter.RezSecAdapter
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
@@ -10,27 +11,23 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.otopark.*
 import kotlinx.android.synthetic.main.fragment_odeme_araclarim.*
+import kotlinx.android.synthetic.main.y_bottom_sheet.*
 
-class OdemeAraclarimFragment : Fragment(), CardsOnClickListener {
+class RezSecFragment : Fragment(), RezSecOnClickListener {
 
-    private var odemeAraclarimAdapter: OdemeAraclarimAdapter? = null
-    private val odemearaclarimlist: MutableList<String> =
+    private var rezsecAdapter: RezSecAdapter? = null
+    private val rezsecList: MutableList<String> =
         mutableListOf("4926 **** **** **11", "1527 **** **** **89", "2222 **** **** **15")
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        odemeAraclarimAdapter = OdemeAraclarimAdapter(odemearaclarimlist, this)
-        cardListRecyclerView.adapter = odemeAraclarimAdapter
-
-
-        buttonKartEkle.setOnClickListener {
-            (activity as BaseActivity).changeFragment(YanasayfaFragment(), "Anasayfa")
-        }
+        rezsecAdapter = RezSecAdapter(rezsecList, this)
+        rezSecRecyclerView.adapter = rezsecAdapter
     }
 
     private fun removeItem(position: Int) {
-        odemearaclarimlist.removeAt(position)
-        odemeAraclarimAdapter?.notifyDataSetChanged()
+        rezsecList.removeAt(position)
+        rezsecAdapter?.notifyDataSetChanged()
     }
 
     override fun onClick(position: Int) {
@@ -48,10 +45,6 @@ class OdemeAraclarimFragment : Fragment(), CardsOnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity as BaseActivity).changeToolbarIconAndTitle(
-            "Ödeme Araçlarım",
-            R.drawable.toolbar_hamburger_icon
-        )
     }
 
     override fun onCreateView(
@@ -59,12 +52,11 @@ class OdemeAraclarimFragment : Fragment(), CardsOnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_odeme_araclarim, container, false)
+        return inflater.inflate(R.layout.bottom_sheet, container, false)
     }
-
 
     companion object {
         @JvmStatic
-        fun newInstance() = OdemeAraclarimFragment()
+        fun newInstance() = RezSecFragment()
     }
 }
