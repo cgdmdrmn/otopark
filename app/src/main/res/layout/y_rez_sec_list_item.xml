@@ -42,10 +42,10 @@
 
             <TextView
                 android:id="@+id/deleteTextView"
-                android:layout_width="40sp"
+                android:layout_width="45sp"
                 android:layout_height="40sp"
                 android:padding="10dp"
-                android:text="Sil"
+                android:text="Seç"
                 android:textColor="@color/colorPrimaryDark"/>
 
         </LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.otopark
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -34,10 +35,8 @@ class YanasayfaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         buttonA1.setOnClickListener{
-            val ybottomSheetDialog = BottomSheetDialog(this.requireContext())
-            val view = layoutInflater.inflate(R.layout.bottom_sheet, null)
-            ybottomSheetDialog.setContentView(view)
-            ybottomSheetDialog.show()
+            buttonA1.setBackgroundColor(Color.WHITE)
+            (activity as BaseActivity).changeFragment(RezSecFragment(),"Rezervasyon Seç")
         }
 
         bottom_navigation.setOnNavigationItemSelectedListener {
