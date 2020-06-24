@@ -10,6 +10,8 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -30,6 +32,7 @@ import com.google.android.gms.tasks.Task
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.bottom_sheet.view.*
 import kotlinx.android.synthetic.main.fragment_ana_ekran.*
+import kotlinx.android.synthetic.main.fragment_park_sure_uzat.*
 
 class AnaEkranFragment : Fragment(), YakinimdakiOtoparklarOnClickListener {
 
@@ -222,6 +225,7 @@ class AnaEkranFragment : Fragment(), YakinimdakiOtoparklarOnClickListener {
         bottomSheetDialog.setContentView(view)
         bottomSheetDialog.show()
 
+        view.otoparkTextView.text=yakinimdakiotoparklarList[position]
         view.buttonYolTarifi.setOnClickListener {
             Toast.makeText(this.requireContext(), "Yol Tarifi Tıklandı", Toast.LENGTH_LONG).show()
         }

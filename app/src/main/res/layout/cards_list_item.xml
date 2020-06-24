@@ -49,7 +49,7 @@
                 android:textColor="@color/colorPrimaryDark"/>
             <TextView
                 android:id="@+id/editTextView"
-                android:layout_width="70sp"
+                android:layout_width="75sp"
                 android:layout_height="40sp"
                 android:padding="10dp"
                 android:text="Düzenle"
