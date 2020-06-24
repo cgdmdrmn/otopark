@@ -16,18 +16,17 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="4dp"
         android:background="@drawable/spinnercustom"
         android:popupBackground="@drawable/spinnercustom"
         android:spinnerMode="dropdown" />
 
     <TextView
         android:id="@+id/rezbilgilerinizTextView"
-        style="@style/textView"
+        android:textColor="#716E6E"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rezSecSpinner"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="12dp"
         android:text="Rezervasyon Bilgileriniz:" />
 
     <TextView
@@ -41,17 +40,17 @@
 
     <TextView
         android:id="@+id/rezbitTextView"
-        style="@style/textView"
+        android:textColor="#716E6E"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rezbittarihTextView"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="12dp"
         android:text="Rezervasyonunuzu hangi tarihe kadar uzatmak istiyorsunuz?" />
 
     <TextView
         style="@style/textView"
         android:id="@+id/tarihbitEditText"
-        android:layout_width="200dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rezbitTextView"
         android:layout_marginTop="4dp"
@@ -60,13 +59,14 @@
         android:text="Başlangıç tarihini seçin." />
 
     <ImageButton
-        android:id="@+id/dateBitBtn"
+        android:id="@+id/dateBitisBtn"
         android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_height="20dp"
         android:layout_below="@+id/rezbitTextView"
         android:layout_toRightOf="@+id/tarihbitEditText"
         android:background="@color/white"
         android:onClick="showDatePicker"
+        android:layout_marginTop="4dp"
         android:src="@drawable/ic_action_date" />
 
     <Spinner
@@ -74,11 +74,11 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rezbitTextView"
-        android:layout_toRightOf="@+id/dateBitBtn"
+        android:layout_toRightOf="@+id/dateBitisBtn"
         android:background="@drawable/spinnercustom"
         android:popupBackground="@drawable/spinnercustom"
         android:spinnerMode="dropdown"
-        android:text="Saati seçin." />
+        android:layout_marginTop="4dp" />
 
 
     <TextView
@@ -123,7 +123,7 @@
         android:textColor="#200FB6" />
 
     <Button
-        android:id="@+id/rezYapButton"
+        android:id="@+id/parkUzatButton"
         style="@style/Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

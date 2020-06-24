@@ -11,7 +11,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_park_sure_uzat.*
-import kotlinx.android.synthetic.main.fragment_rezervasyon_ekle.dateBitBtn
+import kotlinx.android.synthetic.main.fragment_rezervasyon_ekle.*
 import kotlinx.android.synthetic.main.fragment_rezervasyon_ekle.tarihbitEditText
 import kotlinx.android.synthetic.main.fragment_rezervasyon_ekle.yeniKartEkleTextView
 import kotlinx.android.synthetic.main.fragment_rezervasyonlar.*
@@ -41,7 +41,7 @@ class ParkSureUzatFragment : Fragment() {
         val year = c.get(Calendar.YEAR)
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
-        dateBitBtn.setOnClickListener {
+        dateBitisBtn.setOnClickListener {
             val dpd = DatePickerDialog(
                 this.requireContext(),
                 DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
@@ -58,11 +58,9 @@ class ParkSureUzatFragment : Fragment() {
             "Beşiktaş Kapalı Otoparkı 34 GA 1527 12.04.2020 14:00-16:00",
             "Ulus Otoparkı 15.04.2020 15:00-16:00"
         )
-        val arrayAdapter = ArrayAdapter(
-            this.requireContext(),
-            android.R.layout.simple_spinner_item,
-            rezervasyonlar
-        )
+
+        val arrayAdapter =
+            ArrayAdapter(this.requireContext(), android.R.layout.simple_spinner_item, rezervasyonlar)
         rezSecSpinner.adapter = arrayAdapter
         rezSecSpinner.onItemSelectedListener = object :
             AdapterView.OnItemSelectedListener {
@@ -76,6 +74,7 @@ class ParkSureUzatFragment : Fragment() {
                 rezbittarihTextView.text = rezervasyonlar[position]
             }
         }
+
 
         val odemearaclar =
             arrayOf("4926 **** **** **11", "1527 **** **** **89", "2222 **** **** **15")
@@ -141,23 +140,14 @@ class ParkSureUzatFragment : Fragment() {
             )
         }
 
-        buttonParkUzat.setOnClickListener {
-
-            val tarih = tarihbitEditText.text
-            if (tarih.isNotEmpty()) {
-                Toast.makeText(
-                    this.requireContext(),
-                    "Rezervasyonunuz güncellendi.",
-                    Toast.LENGTH_SHORT
-                ).show()
-            } else {
-                Toast.makeText(
-                    this.requireContext(),
-                    "Lütfen rezervasyonunuzu uzatmak istediğiniz tarihi seçin.",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
+        parkUzatButton.setOnClickListener {
+            Toast.makeText(
+                this.requireContext(),
+                "Rezervasyonunuz güncellendi.",
+                Toast.LENGTH_SHORT
+            ).show()
         }
+
     }
 
     companion object {

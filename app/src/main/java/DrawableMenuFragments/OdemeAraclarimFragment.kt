@@ -24,9 +24,10 @@ class OdemeAraclarimFragment : Fragment(), CardsOnClickListener {
 
 
         buttonKartEkle.setOnClickListener {
-            (activity as BaseActivity).changeFragment(YanasayfaFragment(), "Anasayfa")
+            (activity as BaseActivity).changeFragment(KartEkleFragment(), "KART_EKLE_FRAGMENT")
         }
     }
+
 
     private fun removeItem(position: Int) {
         odemearaclarimlist.removeAt(position)

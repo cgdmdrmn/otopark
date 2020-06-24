@@ -20,10 +20,12 @@ class OdemeAraclarimAdapter(
     }
 
     override fun onBindViewHolder(holder: PlateViewHolder, position: Int) {
-        holder.editText.text = odemeAraclarimList[position]
         holder.titleTextView.text = odemeAraclarimList[position]
         holder.removeButton.paintFlags = Paint.UNDERLINE_TEXT_FLAG
         holder.removeButton.setOnClickListener { listener.onClick(position) }
+        holder.editText.paintFlags = Paint.UNDERLINE_TEXT_FLAG
+
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlateViewHolder {

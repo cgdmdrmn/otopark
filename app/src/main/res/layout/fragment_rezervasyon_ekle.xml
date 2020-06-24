@@ -16,13 +16,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Rezervasyonunuzun başlangıç tarihini girin." />
+        android:text="Rezervasyonunuzun hangi tarihte başlasın?" />
 
     <TextView
         android:id="@+id/tarihbasEditText"
         style="@style/textView"
         android:text="Başlangıç tarihini seçin."
-        android:layout_width="250sp"
+        android:layout_width="180sp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rezbasTextView"
         android:layout_marginTop="4dp"
@@ -31,9 +31,10 @@
     <ImageButton
         android:id="@+id/dateBtn"
         android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_height="20dp"
         android:layout_below="@+id/rezbasTextView"
         android:layout_toRightOf="@+id/tarihbasEditText"
+        android:layout_marginTop="4dp"
         android:background="@color/white"
         android:onClick="showDatePicker"
         android:src="@drawable/ic_action_date" />
@@ -43,6 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rezbasTextView"
+        android:layout_marginTop="4dp"
         android:layout_toRightOf="@+id/dateBtn"
         android:background="@drawable/spinnercustom"
         android:popupBackground="@drawable/spinnercustom"
@@ -53,14 +55,15 @@
         style="@style/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:layout_below="@+id/tarihbasEditText"
-        android:text="Rezervasyonunuzun bitiş tarihini girin." />
+        android:text="Rezervasyonunuz hangi tarihte bitsin?" />
 
     <TextView
         android:id="@+id/tarihbitEditText"
         style="@style/textView"
-        android:text="Başlangıç tarihini seçin."
-        android:layout_width="250sp"
+        android:text="Bitiş tarihini seçin."
+        android:layout_width="180sp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rezbitTextView"
         android:layout_marginTop="4dp"
@@ -70,11 +73,12 @@
     <ImageButton
         android:id="@+id/dateBitBtn"
         android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_height="20dp"
         android:layout_below="@+id/rezbitTextView"
         android:layout_toRightOf="@+id/tarihbitEditText"
         android:background="@color/white"
         android:onClick="showDatePicker"
+        android:layout_marginTop="4dp"
         android:src="@drawable/ic_action_date" />
 
     <Spinner
@@ -84,12 +88,13 @@
         android:layout_below="@+id/rezbitTextView"
         android:layout_toRightOf="@+id/dateBitBtn"
         android:background="@drawable/spinnercustom"
+        android:layout_marginTop="4dp"
         android:popupBackground="@drawable/spinnercustom"
         android:spinnerMode="dropdown" />
 
     <Spinner
         android:id="@+id/plakasecspinner"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tarihbitEditText"
         android:layout_marginTop="4dp"
