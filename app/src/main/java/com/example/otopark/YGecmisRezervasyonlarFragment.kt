@@ -52,7 +52,9 @@ class YGecmisRezervasyonlarFragment : Fragment(), GecmisRezervasyonlarOnClickLis
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity as BaseActivity).changeToolbarTitle("Geçmiş Rezervasyonlar")
+        (activity as BaseActivity).changeToolbarIconAndTitle(
+            "Geçmiş Rezervasyonlar",
+            R.drawable.toolbar_hamburger_icon)
     }
 
     companion object {

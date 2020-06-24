@@ -12,7 +12,9 @@ import kotlinx.android.synthetic.main.fragment_yrezervasyonlar.bottom_navigation
 class YrezervasyonlarFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity as BaseActivity).changeToolbarTitle("Rezervasyonlar")
+        (activity as BaseActivity).changeToolbarIconAndTitle(
+            "Rezervasyonlar",
+            R.drawable.toolbar_hamburger_icon)
     }
 
     override fun onCreateView(

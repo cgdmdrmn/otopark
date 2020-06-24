@@ -15,7 +15,9 @@ class YhesabimFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity as BaseActivity).changeToolbarTitle("Hesabım")
+        (activity as BaseActivity).changeToolbarIconAndTitle(
+            "Hesabım",
+            R.drawable.toolbar_hamburger_icon)
     }
 
     override fun onCreateView(

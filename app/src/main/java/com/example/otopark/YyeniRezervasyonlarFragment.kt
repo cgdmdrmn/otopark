@@ -50,7 +50,9 @@ class YyeniRezervasyonlarFragment : Fragment(), YeniRezervasyonlarOnClickListene
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity as BaseActivity).changeToolbarTitle("Yeni Rezervasyonlar")
+        (activity as BaseActivity).changeToolbarIconAndTitle(
+            "Yeni Rezervasyonlar",
+            R.drawable.toolbar_hamburger_icon)
     }
 
     companion object {

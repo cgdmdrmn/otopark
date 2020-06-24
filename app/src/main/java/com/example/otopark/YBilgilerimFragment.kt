@@ -14,7 +14,9 @@ class YBilgilerimFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity as BaseActivity).changeToolbarTitle("Bilgilerim")
+        (activity as BaseActivity).changeToolbarIconAndTitle(
+            "Bilgilerim",
+            R.drawable.toolbar_hamburger_icon)
     }
 
     override fun onCreateView(

@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/spinnercustom"
     tools:context="YanasayfaFragment"
-    android:paddingTop="25dp">
+    android:paddingTop="8dp">
 
     <Button
         android:id="@+id/buttonA1"
@@ -338,228 +332,6 @@
         android:background="#ED1010"
         android:text="F4"></Button>
 
-    <Button
-        android:id="@+id/buttonF5"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttonE4"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_toRightOf="@+id/buttonF4"
-        android:background="#ED1010"
-        android:text="F5"></Button>
-
-    <Button
-        android:id="@+id/buttonF6"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttonE6"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_toRightOf="@+id/buttonF5"
-        android:background="#ED1010"
-        android:text="F6"></Button>
-
-    <Button
-        android:id="@+id/buttonG1"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttonF1"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:background="#ED1010"
-        android:text="G1"></Button>
-    <Button
-        android:id="@+id/buttonG2"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttonF2"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_toRightOf="@+id/buttonG1"
-        android:background="#ED1010"
-        android:text="G2"></Button>
-
-    <Button
-        android:id="@+id/buttonG3"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttonF3"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_toRightOf="@+id/buttonG2"
-        android:background="#ED1010"
-        android:text="G3"></Button>
-
-    <Button
-        android:id="@+id/buttonG4"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttonF4"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_toRightOf="@+id/buttonG3"
-        android:background="#ED1010"
-        android:text="G4"></Button>
-
-    <Button
-        android:id="@+id/buttonG5"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttonF4"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_toRightOf="@+id/buttonG4"
-        android:background="#ED1010"
-        android:text="G5"></Button>
-
-    <Button
-        android:id="@+id/buttonG6"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttonF6"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_toRightOf="@+id/buttonG5"
-        android:background="#ED1010"
-        android:text="G6"></Button>
-
-    <Button
-        android:id="@+id/buttonH1"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttonG1"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:background="#ED1010"
-        android:text="H1"></Button>
-    <Button
-        android:id="@+id/buttonH2"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttonG2"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_toRightOf="@+id/buttonH1"
-        android:background="#ED1010"
-        android:text="H2"></Button>
-
-    <Button
-        android:id="@+id/buttonH3"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttonG3"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_toRightOf="@+id/buttonH2"
-        android:background="#ED1010"
-        android:text="H3"></Button>
-
-    <Button
-        android:id="@+id/buttoni1"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttonH1"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="14dp"
-        android:background="#ED1010"
-        android:text="I1"></Button>
-    <Button
-        android:id="@+id/buttoni2"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttonH2"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="14dp"
-        android:layout_toRightOf="@+id/buttoni1"
-        android:background="#ED1010"
-        android:text="I2"></Button>
-
-    <Button
-        android:id="@+id/buttoni3"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttonH3"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="14dp"
-        android:layout_toRightOf="@+id/buttoni2"
-        android:background="#ED1010"
-        android:text="I3"></Button>
-
-    <Button
-        android:id="@+id/buttoni4"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttonG4"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="58dp"
-        android:layout_toRightOf="@+id/buttoni3"
-        android:background="#ED1010"
-        android:text="I4"></Button>
-
-    <Button
-        android:id="@+id/buttonJ1"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttoni1"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:background="#ED1010"
-        android:text="J1"></Button>
-    <Button
-        android:id="@+id/buttonJ2"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttoni2"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_toRightOf="@+id/buttonJ1"
-        android:background="#ED1010"
-        android:text="J2"></Button>
-
-    <Button
-        android:id="@+id/buttonJ3"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttoni3"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_toRightOf="@+id/buttonJ2"
-        android:background="#29E829"
-        android:text="J3"></Button>
-
-    <Button
-        android:id="@+id/buttonJ4"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttoni4"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_toRightOf="@+id/buttonJ3"
-        android:background="#29E829"
-        android:text="J4"></Button>
-
-    <Button
-        android:id="@+id/buttonJ5"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttonG5"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="102dp"
-        android:layout_toRightOf="@+id/buttonJ4"
-        android:background="#29E829"
-        android:text="J5"></Button>
-
-    <Button
-        android:id="@+id/buttonJ6"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/buttonG6"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="102dp"
-        android:layout_toRightOf="@+id/buttonJ5"
-        android:background="#29E829"
-        android:text="J6"></Button>
 
     <FrameLayout
         android:id="@+id/fragment_container"
@@ -567,29 +339,16 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/bottom_navigation"/>
 
-    <Button
-        android:id="@+id/buttonRezOnayla"
-        style="@style/Button"
-        android:layout_width="match_parent"
-        android:layout_below="@+id/buttonJ1"
-        android:text="Rezervasyon Onayla"
-        android:layout_marginTop="20dp"/>
-
     <TextView
-        android:id="@+id/buttonnumber"
+        android:id="@+id/bekleyentextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonRezOnayla"
-        android:visibility="invisible"/>
-
-    <LinearLayout
-        android:id="@+id/Linear"
-        android:layout_below="@+id/buttonRezOnayla"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonF4"
+        style="@style/textView"
+        android:text="Bekleyen Rezervasyonlar"
         android:layout_marginTop="20dp"
-        android:orientation="vertical"
-        android:visibility="visible">
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentLeft="true"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rezSecRecyclerView"
@@ -597,8 +356,8 @@
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:scrollbars="vertical"
-            tools:listitem="@layout/y_rez_sec_list_item"></androidx.recyclerview.widget.RecyclerView>
-    </LinearLayout>
+            tools:listitem="@layout/y_rez_sec_list_item"
+            android:layout_below="@+id/bekleyentextView"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -610,4 +369,4 @@
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"/>
 </RelativeLayout>
-</ScrollView>
+

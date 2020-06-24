@@ -42,13 +42,21 @@
             android:hint="@string/ototopark_ara"
             android:textColorHint="#817B7B"
             android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/enlemboylamtextView"
+            style="@style/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/otoparkAramaEditText"
+            android:layout_marginTop="8dp"
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/yakinimdakiOtoparklarTextView"
             style="@style/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/otoparkAramaEditText"
+            android:layout_below="@+id/enlemboylamtextView"
             android:layout_marginTop="8dp"
             android:text="@string/yakinimdaki_otoparklar" />
 

@@ -10,7 +10,9 @@ class YotoparkBilgilerimFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity as BaseActivity).changeToolbarTitle("Otopark Bilgileri")
+        (activity as BaseActivity).changeToolbarIconAndTitle(
+            "Otopark Bilgileri",
+            R.drawable.toolbar_hamburger_icon)
     }
 
     override fun onCreateView(

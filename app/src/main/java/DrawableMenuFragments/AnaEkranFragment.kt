@@ -229,23 +229,27 @@ class AnaEkranFragment : Fragment(), YakinimdakiOtoparklarOnClickListener {
 
         view.otoparkTextView.text=yakinimdakiotoparklarList[position]
         if(yakinimdakiotoparklarList[position]=="Büyük Beşiktaş Otoparkı"){
-            view.AdresTextView.text="Adres1"
+            view.AdresTextView.text="Cihannüma, Selamlık Cd. No:17, 34353 Beşiktaş/İstanbul"
+            enlemboylamtextView.text="geo:41.044972, 29.005509"
         }
 
         if(yakinimdakiotoparklarList[position]=="Beşiktaş Kapalı Otopark"){
-            view.AdresTextView.text="Adres2"
+            view.AdresTextView.text="Ihlamurdere Cd. No:126 D:1 Beşiktaş/İstanbul"
+            enlemboylamtextView.text="geo:41.049008, 29.002810"
         }
 
         if(yakinimdakiotoparklarList[position]=="Beltaş Otoparkı"){
-            view.AdresTextView.text="Adres3"
+            view.AdresTextView.text="Levent, Çalıkuşu Sk. No:15, 34330 Beşiktaş/İstanbul"
+            enlemboylamtextView.text="geo:41.076821, 29.019120"
         }
 
         if(yakinimdakiotoparklarList[position]=="Ulus Otoparkı"){
-            view.AdresTextView.text="Adres4"
+            view.AdresTextView.text="Kültür, Venüs Sokağı No:1, 34340 Beşiktaş/İstanbul"
+            enlemboylamtextView.text="geo:41.072419, 29.029185"
         }
 
         view.buttonYolTarifi.setOnClickListener {
-            val uri= Uri.parse("geo:39.480188, 29.099289?z=15")
+            val uri= Uri.parse(enlemboylamtextView.text.toString())
             val intent = Intent(Intent.ACTION_VIEW,uri)
             startActivity(intent)
         }

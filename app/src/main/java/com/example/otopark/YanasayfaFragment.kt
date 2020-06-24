@@ -24,9 +24,6 @@ class YanasayfaFragment : Fragment(), RezSecOnClickListener  {
         rezsecAdapter = RezSecAdapter(rezsecList, this)
         rezSecRecyclerView.adapter = rezsecAdapter
 
-        buttonRezOnayla.setOnClickListener{
-            Linear.visibility= View.VISIBLE
-        }
 
         bottom_navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
@@ -64,17 +61,13 @@ class YanasayfaFragment : Fragment(), RezSecOnClickListener  {
             Toast.LENGTH_SHORT
         ).show()
         buttonA1.setOnClickListener {
-            buttonnumber.text=buttonA1.text.toString()}
-        if(buttonnumber.text=="A1"){
             removeItem(position)
             buttonA1.setBackgroundColor(Color.RED)
-        }
-        else { Toast.makeText(
-            this.requireContext(),
-            "Lütfen boş alanlardan birini seçin.",
-            Toast.LENGTH_SHORT
-        ).show()}
-
+            Toast.makeText(
+                this.requireContext(),
+                "Rezervasyon onaylandı.",
+                Toast.LENGTH_SHORT
+            ).show()}
     }
 
     override fun onCreateView(
@@ -87,7 +80,9 @@ class YanasayfaFragment : Fragment(), RezSecOnClickListener  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity as BaseActivity).changeToolbarTitle("Anasayfa")
+        (activity as BaseActivity).changeToolbarIconAndTitle(
+            "Anasayfa",
+            R.drawable.toolbar_hamburger_icon)
     }
 
     companion object {
