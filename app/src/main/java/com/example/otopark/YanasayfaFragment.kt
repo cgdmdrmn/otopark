@@ -1,5 +1,6 @@
 package com.example.otopark
 
+import Adapter.RezSecAdapter
 import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,29 +15,17 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.bottom_sheet.view.*
 import kotlinx.android.synthetic.main.fragment_y_anasayfa.*
 
-class YanasayfaFragment : Fragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        (activity as BaseActivity).changeToolbarIconAndTitle(
-            "Anasayfa",  R.drawable.logo5
-        )
-
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
-        return inflater.inflate(R.layout.fragment_y_anasayfa, container, false)
-    }
+class YanasayfaFragment : Fragment(), RezSecOnClickListener  {
+    private var rezsecAdapter: RezSecAdapter? = null
+    private val rezsecList: MutableList<String> =
+        mutableListOf("29.6.20/16:30-17:30 34 GA 1527", "30.6.20/18:30-21:00 34 CD 1993")
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        rezsecAdapter = RezSecAdapter(rezsecList, this)
+        rezSecRecyclerView.adapter = rezsecAdapter
 
         buttonA1.setOnClickListener{
-            buttonA1.setBackgroundColor(Color.WHITE)
-            (activity as BaseActivity).changeFragment(RezSecFragment(),"Rezervasyon Seç")
+            Linear.visibility= View.VISIBLE
         }
 
         bottom_navigation.setOnNavigationItemSelectedListener {
@@ -60,6 +49,32 @@ class YanasayfaFragment : Fragment() {
             false
 
         }
+    }
+
+
+    private fun removeItem(position: Int) {
+        rezsecList.removeAt(position)
+        rezsecAdapter?.notifyDataSetChanged()
+    }
+
+    override fun onClick(position: Int) {
+        removeItem(position)
+        buttonA1.setBackgroundColor(Color.RED)
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+
+        return inflater.inflate(R.layout.fragment_y_anasayfa, container, false)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        (activity as BaseActivity).changeToolbarIconAndTitle(
+            "Anasayfa",  R.drawable.logo5
+        )
     }
 
     companion object {

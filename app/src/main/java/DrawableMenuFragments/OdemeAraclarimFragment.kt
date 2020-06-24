@@ -24,7 +24,7 @@ class OdemeAraclarimFragment : Fragment(), CardsOnClickListener {
 
 
         buttonKartEkle.setOnClickListener {
-            (activity as BaseActivity).changeFragment(KartEkleFragment(), "KART_EKLE_FRAGMENT")
+            (activity as BaseActivity).changeFragment(YanasayfaFragment(), "KART_EKLE_FRAGMENT")
         }
     }
 
