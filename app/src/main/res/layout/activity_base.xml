@@ -17,8 +17,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:titleTextColor="@color/black"
-            android:background="@color/darkbluebutton" />
+            app:titleTextColor="@color/white"
+            android:background="?android:attr/windowBackground" />
 
         <FrameLayout
             android:id="@+id/frame_layout"

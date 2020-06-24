@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -561,14 +567,29 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/bottom_navigation"/>
 
+    <Button
+        android:id="@+id/buttonRezOnayla"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/buttonJ1"
+        android:text="Rezervasyon Onayla"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/buttonnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonRezOnayla"
+        android:visibility="invisible"/>
+
     <LinearLayout
         android:id="@+id/Linear"
-        android:layout_below="@+id/buttonJ6"
+        android:layout_below="@+id/buttonRezOnayla"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
-        android:visibility="invisible">
+        android:visibility="visible">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rezSecRecyclerView"
@@ -589,3 +610,4 @@
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"/>
 </RelativeLayout>
+</ScrollView>

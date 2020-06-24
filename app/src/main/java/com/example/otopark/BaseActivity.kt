@@ -43,6 +43,11 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
         drawerToggle.setHomeAsUpIndicator(icon)
     }
 
+    fun changeToolbarTitle(title: String) {
+        supportActionBar?.title = title
+    }
+
+
     private fun initializeDrawableToggle() {
         drawerToggle = ActionBarDrawerToggle(
             this,
@@ -93,6 +98,7 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.frame_layout, fragment, tag)
+            .addToBackStack(null)
             .commit()
     }
 

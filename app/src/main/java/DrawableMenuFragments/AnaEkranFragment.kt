@@ -3,8 +3,10 @@ package DrawableMenuFragments
 import Adapter.YakinimdakiOtoparklarAdapter
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.IntentSender
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.os.Looper
 import android.view.LayoutInflater
@@ -39,7 +41,7 @@ class AnaEkranFragment : Fragment(), YakinimdakiOtoparklarOnClickListener {
     private lateinit var yakinimdakiOtoparklarAdapter: YakinimdakiOtoparklarAdapter
     private val yakinimdakiotoparklarList: MutableList<String> =
         mutableListOf(
-            " Büyük Beşiktaş Otoparkı",
+            "Büyük Beşiktaş Otoparkı",
             "Beşiktaş Kapalı Otopark",
             "Beltaş Otoparkı",
             "Ulus Otoparkı"
@@ -226,8 +228,26 @@ class AnaEkranFragment : Fragment(), YakinimdakiOtoparklarOnClickListener {
         bottomSheetDialog.show()
 
         view.otoparkTextView.text=yakinimdakiotoparklarList[position]
+        if(yakinimdakiotoparklarList[position]=="Büyük Beşiktaş Otoparkı"){
+            view.AdresTextView.text="Adres1"
+        }
+
+        if(yakinimdakiotoparklarList[position]=="Beşiktaş Kapalı Otopark"){
+            view.AdresTextView.text="Adres2"
+        }
+
+        if(yakinimdakiotoparklarList[position]=="Beltaş Otoparkı"){
+            view.AdresTextView.text="Adres3"
+        }
+
+        if(yakinimdakiotoparklarList[position]=="Ulus Otoparkı"){
+            view.AdresTextView.text="Adres4"
+        }
+
         view.buttonYolTarifi.setOnClickListener {
-            Toast.makeText(this.requireContext(), "Yol Tarifi Tıklandı", Toast.LENGTH_LONG).show()
+            val uri= Uri.parse("geo:39.480188, 29.099289?z=15")
+            val intent = Intent(Intent.ACTION_VIEW,uri)
+            startActivity(intent)
         }
     }
 
