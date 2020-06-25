@@ -1,12 +1,13 @@
 package com.example.otopark
 
 import DrawableMenuFragments.*
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -15,7 +16,8 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 
-open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var toolbar: Toolbar
     lateinit var drawerLayout: DrawerLayout
     lateinit var navView: NavigationView
@@ -32,10 +34,12 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
         initializeDrawableToggle()
         navView.setNavigationItemSelectedListener(this)
 
-        supportFragmentManager
-            .beginTransaction()
-            .add(R.id.frame_layout, AnaEkranFragment(), "anaEkranFragment")
-            .commit()
+        val isUserAdministrator = intent.getBooleanExtra("IS_USER_ADMINISTRATOR", false)
+        if (isUserAdministrator) {
+            changeFragment(YanasayfaFragment(), "YAnasayfa")
+        } else {
+            changeFragment(AnaEkranFragment(), "anaEkranFragment")
+        }
     }
 
     fun changeToolbarIconAndTitle(title: String, icon: Int) {
@@ -63,6 +67,7 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
         }
 
         drawerLayout.addDrawerListener(drawerToggle)
+
         drawerToggle.syncState()
     }
 
@@ -128,6 +133,10 @@ open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItem
         } else {
             super.onBackPressed()
         }
+    }
+
+    fun setNavViewVisibility(isVisible: Boolean) {
+        navView.visibility = if (isVisible) View.VISIBLE else View.GONE
     }
 
     companion object {

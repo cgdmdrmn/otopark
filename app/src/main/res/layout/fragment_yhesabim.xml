@@ -5,7 +5,10 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="YhesabimFragment"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
     android:paddingTop="25dp"
+    android:paddingBottom="5dp"
     android:background="@color/white">
 
             <Button

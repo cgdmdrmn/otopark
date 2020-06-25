@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:text="Beşiktaş Kapalı Otoparkı"
-        style="@style/textView"
+        style="@style/baslik"
         android:gravity="center"
         android:layout_centerInParent="true"
         android:layout_alignParentTop="true"
@@ -25,8 +25,10 @@
         android:id="@+id/textOtoparkAdres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_action_location"
         android:text="Türkali Mah., Ihlamurdere Cad., No:126/1, Beşiktaş, İstanbul, Türkiye"
         style="@style/textView"
+        android:textColor="#E99C9491"
         android:layout_marginTop="8dp"
         android:layout_below="@+id/textOtoparkAdi" />
 
@@ -35,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kapasite:"
-        style="@style/textView"
+        style="@style/baslik"
         android:layout_marginTop="8dp"
         android:layout_below="@+id/textOtoparkAdres" />
 
@@ -55,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Park Yeri:"
-        style="@style/textView"
+        style="@style/baslik"
         android:layout_marginTop="8dp"
         android:layout_below="@+id/textOtoKapasitesi" />
 
@@ -76,6 +78,7 @@
         android:layout_height="wrap_content"
         android:text="24 saat açık"
         style="@style/textView"
+        android:textColor="#E99C9491"
         android:layout_marginTop="8dp"
         android:drawableStart="@drawable/ic_action_clock"
         android:layout_alignParentRight="true"

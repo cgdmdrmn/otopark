@@ -35,17 +35,20 @@ class LoginFragment : Fragment() {
                     )
                 )
             } else if (kullanici == "2" && sifre == "2") {
-                (activity as BaseActivity).changeFragment(
-                    YanasayfaFragment(), "ANASAYFA"
-                )
+                context?.startActivity(
+                    Intent(
+                        context,
+                        BaseActivity::class.java
+                    ).apply {
+                        putExtra("IS_USER_ADMINISTRATOR", true)
+                    })
             } else if (kullanici.isEmpty() && sifre.isEmpty()) {
                 Toast.makeText(
                     this.requireContext(),
                     "Boş alanları doldurunuz!",
                     Toast.LENGTH_SHORT
                 ).show()
-            }
-            else {
+            } else {
                 Toast.makeText(
                     this.requireContext(),
                     "Giriş bilgileri hatalı !",
@@ -55,16 +58,13 @@ class LoginFragment : Fragment() {
             }
         }
 
-            btn_frgt.setOnClickListener {
-                context?.startActivity(
-                    Intent(
-                        context,
-                        ForgetPassword::class.java
-                    )
+        btn_frgt.setOnClickListener {
+            context?.startActivity(
+                Intent(
+                    context,
+                    ForgetPassword::class.java
                 )
-            }
+            )
         }
     }
-
-
-
+}
