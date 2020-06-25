@@ -29,8 +29,8 @@
                 android:id="@+id/Textisimsoyisim"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="İsim Soyisim"
-                style="@style/textView"
+                android:text="Ayşe YILMAZ"
+                style="@style/baslik"
                 android:gravity="center"
                 android:layout_centerInParent="true"
                 android:layout_weight="1" />

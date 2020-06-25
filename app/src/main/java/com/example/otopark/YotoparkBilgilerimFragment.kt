@@ -19,6 +19,7 @@ class YotoparkBilgilerimFragment : Fragment() {
         (activity as BaseActivity).changeToolbarIconAndTitle(
             "Otopark Bilgileri",
             R.drawable.toolbar_hamburger_icon)
+        (activity as BaseActivity).setNavViewVisibility(false)
     }
 
     override fun onCreateView(

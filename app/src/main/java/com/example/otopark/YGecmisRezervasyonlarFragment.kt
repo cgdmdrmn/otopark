@@ -55,6 +55,7 @@ class YGecmisRezervasyonlarFragment : Fragment(), GecmisRezervasyonlarOnClickLis
         (activity as BaseActivity).changeToolbarIconAndTitle(
             "Geçmiş Rezervasyonlar",
             R.drawable.toolbar_hamburger_icon)
+        (activity as BaseActivity).setNavViewVisibility(false)
     }
 
     companion object {

@@ -31,12 +31,12 @@ class KartEkleFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        buttonKartEkle.setOnClickListener {
+        kartkleButton.setOnClickListener {
 
-            val kartno = kartnoEditText.text
-            val ay = ayEditText.text
-            val yil = yilEditText.text
-            val ccv = editText3.text
+            val kartno = kartnoText.text.toString()
+            val ay = ayText.text.toString()
+            val yil = yilText.text.toString()
+            val ccv = ccvText.text.toString()
 
             if (kartno.isNotEmpty() && ay.isNotEmpty() && yil.isNotEmpty() && ccv.isNotEmpty() && checkBox.isChecked) {
                 Toast.makeText(

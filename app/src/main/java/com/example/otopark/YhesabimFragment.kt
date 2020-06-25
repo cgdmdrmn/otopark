@@ -18,6 +18,7 @@ class YhesabimFragment : Fragment() {
         (activity as BaseActivity).changeToolbarIconAndTitle(
             "Hesabım",
             R.drawable.toolbar_hamburger_icon)
+        (activity as BaseActivity).setNavViewVisibility(false)
     }
 
     override fun onCreateView(

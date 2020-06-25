@@ -53,6 +53,7 @@ class YyeniRezervasyonlarFragment : Fragment(), YeniRezervasyonlarOnClickListene
         (activity as BaseActivity).changeToolbarIconAndTitle(
             "Yeni Rezervasyonlar",
             R.drawable.toolbar_hamburger_icon)
+        (activity as BaseActivity).setNavViewVisibility(false)
     }
 
     companion object {

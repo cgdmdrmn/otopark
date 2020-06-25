@@ -77,6 +77,33 @@ class YanasayfaFragment : Fragment(), RezSecOnClickListener  {
                 "Rezervasyon onaylandı.",
                 Toast.LENGTH_SHORT
             ).show()}
+
+        buttonA4.setOnClickListener {
+            removeItem(position)
+            buttonA4.setBackgroundColor(Color.YELLOW)
+            Toast.makeText(
+                this.requireContext(),
+                "Rezervasyon onaylandı.",
+                Toast.LENGTH_SHORT
+            ).show()}
+
+        buttonA6.setOnClickListener {
+            removeItem(position)
+            buttonA6.setBackgroundColor(Color.YELLOW)
+            Toast.makeText(
+                this.requireContext(),
+                "Rezervasyon onaylandı.",
+                Toast.LENGTH_SHORT
+            ).show()}
+
+        buttonC2.setOnClickListener {
+            removeItem(position)
+            buttonC2.setBackgroundColor(Color.YELLOW)
+            Toast.makeText(
+                this.requireContext(),
+                "Rezervasyon onaylandı.",
+                Toast.LENGTH_SHORT
+            ).show()}
     }
 
     override fun onCreateView(
@@ -92,6 +119,7 @@ class YanasayfaFragment : Fragment(), RezSecOnClickListener  {
         (activity as BaseActivity).changeToolbarIconAndTitle(
             "Anasayfa",
             R.drawable.toolbar_hamburger_icon)
+        (activity as BaseActivity).setNavViewVisibility(false)
     }
 
     companion object {

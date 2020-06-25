@@ -288,6 +288,7 @@ class AnaEkranFragment : Fragment(), YakinimdakiOtoparklarOnClickListener {
         (activity as BaseActivity).changeToolbarIconAndTitle(
             "Anasayfa",
             R.drawable.toolbar_hamburger_icon)
+        (activity as BaseActivity).setNavViewVisibility(true)
     }
 
     companion object {

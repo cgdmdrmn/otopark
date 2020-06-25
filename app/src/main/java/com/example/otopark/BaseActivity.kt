@@ -1,9 +1,10 @@
 package com.example.otopark
 
 import DrawableMenuFragments.*
-import android.app.Activity
 import android.app.AlertDialog
+import android.content.Context
 import android.content.DialogInterface
+import android.hardware.input.InputManager
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
@@ -16,8 +17,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 
-
-open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+open class BaseActivity() : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var toolbar: Toolbar
     lateinit var drawerLayout: DrawerLayout
     lateinit var navView: NavigationView
@@ -95,6 +95,10 @@ open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     }
 
     fun changeFragment(fragment: Fragment, tag: String) {
+        (getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.hideSoftInputFromWindow(
+            currentFocus?.windowToken,
+            InputMethodManager.HIDE_NOT_ALWAYS
+        )
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.frame_layout, fragment, tag)
@@ -136,7 +140,12 @@ open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     }
 
     fun setNavViewVisibility(isVisible: Boolean) {
-        navView.visibility = if (isVisible) View.VISIBLE else View.GONE
+        if (isVisible) {
+            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
+        } else {
+            toolbar.navigationIcon = null
+            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+        }
     }
 
     companion object {

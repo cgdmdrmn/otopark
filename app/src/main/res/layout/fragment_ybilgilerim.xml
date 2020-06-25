@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Veli AKDENİZ"
-                style="@style/textView"
+                style="@style/baslik"
                 android:gravity="center"
                 android:layout_centerInParent="true"
                 android:layout_weight="1" />
@@ -40,30 +40,29 @@
             android:layout_width="match_parent"
             android:layout_height="350dp"
             android:orientation="vertical" >
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/Texteskisifre"
+            <EditText
+                android:id="@+id/yTexteskisifre"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Eski Sifreniz"
+                android:importantForAutofill="no"
+                android:layout_height="50dp"
+                android:hint="Eski şifreniz"
                 android:textColorHint="#817B7B"
-                android:textColor="@color/black">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </com.google.android.material.textfield.TextInputLayout>
+                android:textColor="@color/black"
+                android:drawableLeft="@drawable/ic_action_key"
+                android:gravity="center"
+                android:layout_centerInParent="true" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/Textyenisifre"
+            <EditText
+                android:id="@+id/yTextyenisifre"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Eski Sifreniz"
+                android:layout_height="50dp"
+                android:hint="Yeni şifreniz"
                 android:textColorHint="#817B7B"
-                android:textColor="@color/black">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-            </com.google.android.material.textfield.TextInputLayout>
+                android:textColor="@color/black"
+                android:importantForAutofill="no"
+                android:drawableLeft="@drawable/ic_action_key"
+                android:gravity="center"
+                android:layout_centerInParent="true" />
         </LinearLayout>
 
         <LinearLayout

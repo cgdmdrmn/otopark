@@ -15,6 +15,7 @@ class YrezervasyonlarFragment : Fragment() {
         (activity as BaseActivity).changeToolbarIconAndTitle(
             "Rezervasyonlar",
             R.drawable.toolbar_hamburger_icon)
+        (activity as BaseActivity).setNavViewVisibility(false)
     }
 
     override fun onCreateView(

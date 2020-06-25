@@ -34,6 +34,41 @@
     </Button>
 
     <Button
+        android:id="@+id/buttonyesil"
+        android:layout_width="15dp"
+        android:layout_height="70dp"
+        android:text="Boş"
+        android:layout_marginLeft="75dp"
+        android:background="#29E829"
+        android:layout_toRightOf="@+id/buttonB5"
+        android:layout_below="@+id/buttonA6">
+    </Button>
+
+    <Button
+        android:id="@+id/buttonsari"
+        android:layout_width="15dp"
+        android:layout_height="70dp"
+        android:text="Rez"
+        android:layout_marginLeft="173dp"
+        android:layout_marginTop="6dp"
+        android:background="#FFEB3B"
+        android:layout_toRightOf="@+id/buttonA3"
+        android:layout_below="@+id/buttonyesil">
+    </Button>
+
+    <Button
+        android:id="@+id/buttonkirmizi"
+        android:layout_width="15dp"
+        android:layout_height="70dp"
+        android:text="Dolu"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="6dp"
+        android:background="#ED1010"
+        android:layout_toRightOf="@+id/buttonD6"
+        android:layout_below="@+id/buttonsari">
+    </Button>
+
+    <Button
         android:id="@+id/buttonA3"
         android:layout_width="45dp"
         android:layout_height="40dp"
@@ -80,7 +115,7 @@
         android:text="B1"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="4dp"
-        android:background="#29E829"
+        android:background="#ED1010"
         android:layout_below="@+id/buttonA1">
     </Button>
 
@@ -91,7 +126,7 @@
         android:text="B2"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="4dp"
-        android:background="#29E829"
+        android:background="#ED1010"
         android:layout_toRightOf="@+id/buttonB1"
         android:layout_below="@+id/buttonA2">
     </Button>
@@ -103,7 +138,7 @@
         android:text="B3"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="4dp"
-        android:background="#29E829"
+        android:background="#ED1010"
         android:layout_toRightOf="@+id/buttonB2"
         android:layout_below="@+id/buttonA3">
     </Button>
@@ -115,7 +150,7 @@
         android:text="B4"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="4dp"
-        android:background="#29E829"
+        android:background="#ED1010"
         android:layout_toRightOf="@+id/buttonB3"
         android:layout_below="@+id/buttonA4">
     </Button>
@@ -127,7 +162,7 @@
         android:text="B5"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="4dp"
-        android:background="#29E829"
+        android:background="#ED1010"
         android:layout_toRightOf="@+id/buttonB4"
         android:layout_below="@+id/buttonA5">
     </Button>
@@ -347,7 +382,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonF4"
-        style="@style/textView"
+        style="@style/baslik"
         android:text="Bekleyen Rezervasyonlar"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
