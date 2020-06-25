@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/spinnercustom"
+    android:background="@color/white"
     tools:context="YanasayfaFragment"
     android:paddingTop="8dp">
 
@@ -318,7 +318,7 @@
         android:layout_marginLeft="4dp"
         android:layout_marginTop="4dp"
         android:layout_toRightOf="@+id/buttonF2"
-        android:background="#ED1010"
+        android:background="#FFEB3B"
         android:text="F3"></Button>
 
     <Button
@@ -329,7 +329,7 @@
         android:layout_marginLeft="4dp"
         android:layout_marginTop="4dp"
         android:layout_toRightOf="@+id/buttonF3"
-        android:background="#ED1010"
+        android:background="#FFEB3B"
         android:text="F4"></Button>
 
 

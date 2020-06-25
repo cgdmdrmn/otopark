@@ -62,7 +62,16 @@ class YanasayfaFragment : Fragment(), RezSecOnClickListener  {
         ).show()
         buttonA1.setOnClickListener {
             removeItem(position)
-            buttonA1.setBackgroundColor(Color.RED)
+            buttonA1.setBackgroundColor(Color.YELLOW)
+            Toast.makeText(
+                this.requireContext(),
+                "Rezervasyon onaylandı.",
+                Toast.LENGTH_SHORT
+            ).show()}
+
+        buttonA3.setOnClickListener {
+            removeItem(position)
+            buttonA3.setBackgroundColor(Color.YELLOW)
             Toast.makeText(
                 this.requireContext(),
                 "Rezervasyon onaylandı.",

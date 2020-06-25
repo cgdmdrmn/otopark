@@ -4,6 +4,10 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="Android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="Android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.Android.providers.gsf.permission.READ_GSERVICES" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_round"
@@ -11,11 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
         <meta-data android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCcAMCQHoJBVymkKmLmse3d8_oUGUmMTjE"/>
         <activity android:name=".ForgetPassword" />
         <activity android:name=".LoginActivity" />
-        <activity android:name="YbaseActivity" />
         <activity
             android:name=".BaseActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -28,5 +32,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

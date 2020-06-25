@@ -6,15 +6,15 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentSender
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Toast
+import android.widget.*
+import androidx.appcompat.widget.SearchView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -39,8 +39,8 @@ import kotlinx.android.synthetic.main.fragment_park_sure_uzat.*
 class AnaEkranFragment : Fragment(), YakinimdakiOtoparklarOnClickListener {
 
     private lateinit var yakinimdakiOtoparklarAdapter: YakinimdakiOtoparklarAdapter
-    private val yakinimdakiotoparklarList: MutableList<String> =
-        mutableListOf(
+    private val yakinimdakiotoparklarList: ArrayList<String> =
+        arrayListOf(
             "Büyük Beşiktaş Otoparkı",
             "Beşiktaş Kapalı Otopark",
             "Beltaş Otoparkı",
@@ -56,6 +56,26 @@ class AnaEkranFragment : Fragment(), YakinimdakiOtoparklarOnClickListener {
         super.onViewCreated(view, savedInstanceState)
         yakinimdakiOtoparklarAdapter = YakinimdakiOtoparklarAdapter(yakinimdakiotoparklarList, this)
         autoparkListRecyclerView.adapter = yakinimdakiOtoparklarAdapter
+
+        otoparksearch.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                yakinimdakiOtoparklarAdapter.filter.filter(newText)
+                return false
+            }
+        })
+        val searchIcon = otoparksearch.findViewById<ImageView>(R.id.search_mag_icon)
+        searchIcon.setColorFilter(Color.WHITE)
+
+        val cancelIcon = otoparksearch.findViewById<ImageView>(R.id.search_close_btn)
+        cancelIcon.setColorFilter(Color.WHITE)
+
+        val textView = otoparksearch.findViewById<TextView>(R.id.search_src_text)
+        textView.setTextColor(Color.WHITE)
+
         initializeMap(savedInstanceState)
         initializeLocationApiClientAndCallback()
     }
@@ -267,8 +287,7 @@ class AnaEkranFragment : Fragment(), YakinimdakiOtoparklarOnClickListener {
         super.onCreate(savedInstanceState)
         (activity as BaseActivity).changeToolbarIconAndTitle(
             "Anasayfa",
-            R.drawable.toolbar_hamburger_icon
-        )
+            R.drawable.toolbar_hamburger_icon)
     }
 
     companion object {
